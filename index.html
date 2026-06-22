@@ -691,6 +691,35 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
 .cta-form-btn:hover{background:var(--gold-l,#D4A832);transform:translateY(-1px);}
 .cta-form-note{font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;text-align:center;}
 @media(max-width:640px){.cta-form-row{grid-template-columns:1fr;}}
+
+/* ══════ PAIN SECTION ══════ */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:32px;}
+.pain-card{background:var(--stone);padding:40px 32px;transition:background 0.25s;}
+.pain-card:hover{background:#EFEAE0;}
+.pain-num{font-family:var(--serif);font-size:52px;font-weight:700;line-height:1;margin-bottom:14px;}
+.pain-label{font-size:14px;line-height:1.75;color:var(--text-mid);}
+.pain-callout{background:rgba(184,138,34,0.07);border:1px solid var(--border-g);border-left:3px solid var(--gold);border-radius:8px;padding:28px 32px;}
+.pain-callout-inner{display:flex;align-items:flex-start;gap:20px;}
+.pain-callout-icon{width:32px;height:32px;min-width:32px;margin-top:2px;}
+.pain-callout-icon svg{width:100%;height:100%;}
+.pain-callout-title{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--navy);margin-bottom:8px;}
+.pain-callout-body{font-size:14px;line-height:1.8;color:var(--text-mid);margin:0;}
+@media(max-width:768px){.pain-grid{grid-template-columns:1fr;}}
+
+/* ══════ OBJECTION SECTION ══════ */
+.objection-list{display:flex;flex-direction:column;gap:0;}
+.objection-item{border-bottom:1px solid var(--border);padding:28px 0;}
+.objection-item:first-child{padding-top:0;}
+.objection-item:last-child{border-bottom:none;}
+.objection-q{display:flex;align-items:flex-start;gap:16px;font-family:var(--serif);font-size:18px;font-weight:600;color:var(--navy);line-height:1.4;margin-bottom:14px;}
+.objection-num{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--gold);letter-spacing:1px;background:rgba(184,138,34,0.10);border:1px solid rgba(184,138,34,0.22);border-radius:3px;padding:3px 8px;margin-top:3px;flex-shrink:0;}
+.objection-a{font-size:14px;line-height:1.85;color:var(--text-mid);padding-left:calc(34px + 16px);}
+@media(max-width:768px){.objection-a{padding-left:0;}.objection-section-inner>div{grid-template-columns:1fr!important;gap:40px!important;}}
+
+/* ══════ CTA URGENCY BANNER ══════ */
+.cta-urgency{display:flex;align-items:flex-start;gap:12px;background:rgba(45,207,122,0.07);border:1px solid rgba(45,207,122,0.2);border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:rgba(247,245,240,0.72);line-height:1.6;}
+.cta-urgency-dot{width:8px;height:8px;min-width:8px;background:#2DCF7A;border-radius:50%;margin-top:5px;box-shadow:0 0 0 3px rgba(45,207,122,0.2);animation:pulsedot 2s ease-in-out infinite;}
+@keyframes pulsedot{0%,100%{box-shadow:0 0 0 3px rgba(45,207,122,0.2);}50%{box-shadow:0 0 0 7px rgba(45,207,122,0.07);}}
 </style>
 </head>
 <body>
@@ -804,6 +833,46 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
     </div>
   </div>
 </div>
+
+<!-- ══ PAIN / AGITATION ══ -->
+<section class="section bg-stone2" id="pain">
+  <div class="section-inner">
+    <div style="max-width:720px;margin:0 auto;text-align:center;">
+      <div class="sec-eyebrow fade-up" style="justify-content:center;display:flex;">The Problem Nobody Talks About</div>
+      <h2 class="sec-title fade-up" style="text-align:center;">Your Clients Are Overpaying the IRS.<br><em style="font-style:italic;color:var(--green);">Significantly.</em></h2>
+      <p class="sec-body fade-up" style="max-width:600px;margin:0 auto 48px;text-align:center;">These strategies have been codified in the IRC since 2022. They are used every year by institutional family offices. Most advisors don't know how to access them. That is not a compliance problem. It is an access problem.</p>
+    </div>
+    <div class="pain-grid fade-up">
+      <div class="pain-card">
+        <div class="pain-num" style="color:var(--gold);">$750K</div>
+        <div class="pain-label">Left on the table by a client paying $5M in federal tax — had they purchased §45Q credits this year at $0.85 on the dollar.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num" style="color:var(--gold);">$1.5M</div>
+        <div class="pain-label">Left on the table by a client paying $10M in tax — same strategy, same statute, same vintage year.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-num" style="color:var(--green);">$30M</div>
+        <div class="pain-label">Face value of 2025-vintage §45Q credits currently available. When this pool clears, it does not reopen until new credits are registered.</div>
+      </div>
+    </div>
+    <div class="pain-callout fade-up">
+      <div class="pain-callout-inner">
+        <div class="pain-callout-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" stroke="#B88A22" stroke-width="1.5"/>
+            <line x1="12" y1="7" x2="12" y2="13" stroke="#B88A22" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="12" cy="16.5" r="1.2" fill="#B88A22"/>
+          </svg>
+        </div>
+        <div>
+          <div class="pain-callout-title">The 2025 window is closing.</div>
+          <p class="pain-callout-body">Carbon credits are issued by vintage year. Our last two vintage pools cleared in under 60 days. Advisors who act first serve their clients. Advisors who wait serve the next advisor's clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ PHILOSOPHY ══ -->
 <section class="section bg-stone" id="philosophy">
@@ -1273,6 +1342,43 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
   </div>
 </section>
 
+<!-- ══ OBJECTIONS / Q&A ══ -->
+<section class="section bg-stone2" id="objections">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start;" class="objection-section-inner">
+      <div>
+        <div class="sec-eyebrow fade-up">Before You Ask</div>
+        <h2 class="sec-title fade-up">The Three Questions<br>Every Advisor<br>Gets Right.</h2>
+        <p class="sec-body fade-up" style="margin-bottom:36px;">We have run this process with CPAs, RIAs, and family office attorneys. These are the first three questions — and the direct answers.</p>
+        <a href="#cta" class="btn-navy fade-up">Get the Full Documentation &rarr;</a>
+      </div>
+      <div class="objection-list fade-up">
+        <div class="objection-item">
+          <div class="objection-q">
+            <span class="objection-num">01</span>
+            <span>"Is this a listed transaction? Will my client face disclosure penalties?"</span>
+          </div>
+          <div class="objection-a">No. The §45Q credit transfer is a clean statutory transaction under IRC §6418 as enacted by the Inflation Reduction Act. The §170 leveraged donation is explicitly excluded from listed transaction status per IRS Rev. Proc. 2004-65. Neither strategy triggers Form 8886 disclosure.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-q">
+            <span class="objection-num">02</span>
+            <span>"What if the credits are recaptured after my client files?"</span>
+          </div>
+          <div class="objection-a">The credit holder provides 100% seller indemnity for any pre-transfer recapture event. Three-times (3×) redundancy reserves are held against every transfer obligation. A replace-or-refund guarantee covers any invalidated credit units. Your client has zero liability for any pre-transfer compliance failure.</div>
+        </div>
+        <div class="objection-item">
+          <div class="objection-q">
+            <span class="objection-num">03</span>
+            <span>"Will the documentation hold up with my client's CPA at filing?"</span>
+          </div>
+          <div class="objection-a">You receive the complete documentation package before any client conversation: IRS pre-filing registration number, credit transfer agreement, independent audit of carbon sequestration volumes, legal opinion, and tax return instructions ready to attach to a 1040. Most CPAs review and approve in under 48 hours.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ CTA ══ -->
 <section class="section" id="cta" style="background:var(--navy);">
   <div class="cta-arc"></div>
@@ -1280,6 +1386,10 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
     <div class="cta-eyebrow fade-up">Get the Advisor Packet</div>
     <h2 class="cta-title fade-up">See the Numbers.<br>Decide from There.</h2>
     <p class="cta-sub fade-up">We send you the full documentation package — credit pricing, deduction mechanics, K-1 structure, appraisal summary — before any conversation. <em>No pitch. Just the math.</em></p>
+    <div class="cta-urgency fade-up">
+      <div class="cta-urgency-dot"></div>
+      <span>$30M in 2025-vintage §45Q credits available now. Our last two vintage pools cleared in under 60 days. Advisors on the list get first allocation notice when new credits are registered.</span>
+    </div>
     <div class="cta-form-wrap fade-up">
       <div class="cta-form-title">Request the Advisor Packet &mdash; Delivered Within 48 Hours</div>
       <form class="cta-form" action="https://formspree.io/f/xdarooko" method="POST">
