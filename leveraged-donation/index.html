@@ -372,6 +372,22 @@
 .cta-btn,.btn-primary{background-size:200% auto;transition:background-position 0.4s ease!important;}
 .cta-btn:hover,.btn-primary:hover{animation:btn-shimmer 1.2s linear;}
 
+
+/* ═══ LEAD CAPTURE FORM ═══ */
+.lead-form-wrap{background:var(--steel);border:1px solid var(--border);border-radius:var(--radius);padding:28px 28px 24px;margin-top:24px;text-align:left;}
+.lead-form-title{font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:18px;}
+.lead-form{display:flex;flex-direction:column;gap:14px;}
+.lead-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.lead-form-group{display:flex;flex-direction:column;gap:5px;}
+.lead-form-label{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);}
+.lead-form-input{background:var(--navy2);border:1px solid var(--border2);border-radius:4px;padding:10px 13px;font-size:14px;color:var(--white);outline:none;transition:border-color 0.2s ease;font-family:inherit;width:100%;}
+.lead-form-input:focus{border-color:var(--gold);}
+.lead-form-input::placeholder{color:rgba(232,228,222,0.3);}
+.lead-form-input option{background:var(--navy2);color:var(--white);}
+.lead-form-btn{background:var(--gold);color:var(--navy);font-size:14px;font-weight:700;padding:13px 24px;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s ease,transform 0.1s ease;margin-top:4px;width:100%;}
+.lead-form-btn:hover{background:var(--gold2);transform:translateY(-1px);}
+.lead-form-note{font-size:11px;color:var(--muted);margin-top:4px;}
+@media(max-width:900px){.lead-form-row{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -952,6 +968,64 @@
         <div class="cta-detail"><div class="cta-detail-lbl">Referral Fee</div><div class="cta-detail-val">10% – 20% + Custom</div></div>
       </div>
       <a class="btn-primary" href="mailto:advisors@roicfo.com?subject=Leveraged%20Donation%20Strategy%20%E2%80%94%20Advisor%20Package%20Request">Request Advisor Agreement &rarr;</a>
+      <div class="lead-form-wrap">
+        <div class="lead-form-title">Or fill out your info — we'll reply within 24 hours</div>
+        <form class="lead-form" action="https://formspree.io/f/xdarooko" method="POST">
+          <input type="hidden" name="_subject" value="Leveraged Donation — ROI CFO — New Advisor Lead">
+          <input type="hidden" name="product" value="Leveraged Donation Strategy — ROI CFO">
+          <div class="lead-form-row">
+            <div class="lead-form-group">
+              <label class="lead-form-label">First Name</label>
+              <input class="lead-form-input" type="text" name="first_name" placeholder="Jane" required>
+            </div>
+            <div class="lead-form-group">
+              <label class="lead-form-label">Last Name</label>
+              <input class="lead-form-input" type="text" name="last_name" placeholder="Smith" required>
+            </div>
+          </div>
+          <div class="lead-form-row">
+            <div class="lead-form-group">
+              <label class="lead-form-label">Email</label>
+              <input class="lead-form-input" type="email" name="email" placeholder="jane@smithcpa.com" required>
+            </div>
+            <div class="lead-form-group">
+              <label class="lead-form-label">Phone (optional)</label>
+              <input class="lead-form-input" type="tel" name="phone" placeholder="(801) 555-0100">
+            </div>
+          </div>
+          <div class="lead-form-row">
+            <div class="lead-form-group">
+              <label class="lead-form-label">Firm Name</label>
+              <input class="lead-form-input" type="text" name="firm" placeholder="Smith CPA Group" required>
+            </div>
+            <div class="lead-form-group">
+              <label class="lead-form-label">Your Role</label>
+              <select class="lead-form-input" name="role">
+                <option value="">Select...</option>
+                <option>CPA / Tax Partner</option>
+                <option>RIA / Financial Advisor</option>
+                <option>CFP</option>
+                <option>CFO / Business Manager</option>
+                <option>Family Office</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="lead-form-group">
+            <label class="lead-form-label">Client Tax Liability Range</label>
+            <select class="lead-form-input" name="tax_liability">
+              <option value="">Select range...</option>
+              <option>Under $500K</option>
+              <option>$500K – $1M</option>
+              <option>$1M – $5M</option>
+              <option>$5M – $20M</option>
+              <option>$20M+</option>
+            </select>
+          </div>
+          <button class="lead-form-btn" type="submit">Send My Advisor Packet &rarr;</button>
+          <p class="lead-form-note">For licensed professionals only. We'll reply within 24 hours with the full advisor package and referral agreement template. bryson@roicfo.com</p>
+        </form>
+      </div>
       <p class="cta-legal">
         This document is for licensed financial professionals, CPAs, and business advisors only. Referral fees are paid pursuant to a written referral agreement. Licensed advisors must comply with applicable SEC/FINRA solicitor disclosure requirements. Flat referral fees paid to unlicensed introducers are not subject to securities regulations but require a signed referral agreement with ROI CFO LLC &mdash; <a href="https://roicfo.com" style="color:var(--gold);">roicfo.com</a>. All tax outcomes depend on individual taxpayer circumstances. Consult qualified tax and legal counsel before advising clients. All appraisals under IRC &sect;170(f)(11)(E). 2025 Offering &middot; ROI CFO &middot; Utah.
       </p>

@@ -675,6 +675,22 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
 }
+
+/* ═══ LEAD CAPTURE FORM ═══ */
+.cta-form-wrap{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:6px;padding:36px 36px 28px;margin-top:32px;max-width:640px;margin-left:auto;margin-right:auto;text-align:left;}
+.cta-form-title{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:20px;text-align:center;}
+.cta-form{display:flex;flex-direction:column;gap:14px;}
+.cta-form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cta-form-group{display:flex;flex-direction:column;gap:5px;}
+.cta-form-label{font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);}
+.cta-form-input{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:4px;padding:11px 14px;font-size:14px;color:#fff;outline:none;transition:border-color 0.2s;font-family:inherit;width:100%;}
+.cta-form-input:focus{border-color:var(--gold);}
+.cta-form-input::placeholder{color:rgba(255,255,255,0.28);}
+.cta-form-input option{background:var(--navy-mid,#0f3060);color:#fff;}
+.cta-form-btn{background:var(--gold,#B88A22);color:var(--navy,#0B2545);font-size:14px;font-weight:700;padding:14px 28px;border:none;border-radius:4px;cursor:pointer;transition:background 0.2s,transform 0.1s;margin-top:4px;width:100%;letter-spacing:0.04em;}
+.cta-form-btn:hover{background:var(--gold-l,#D4A832);transform:translateY(-1px);}
+.cta-form-note{font-size:11px;color:rgba(255,255,255,0.35);margin-top:4px;text-align:center;}
+@media(max-width:640px){.cta-form-row{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -1269,9 +1285,73 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
     <div class="cta-eyebrow fade-up">Begin the Conversation</div>
     <h2 class="cta-title fade-up">Request a Confidential<br>Consultation.</h2>
     <p class="cta-sub fade-up">Our conversations begin with listening — not selling. Tell us about your practice and your clients. <em>We'll tell you whether we can add value.</em></p>
-    <div class="cta-actions fade-up">
-      <a href="mailto:advisors@roicfo.com" class="btn-stone">advisors@roicfo.com →</a>
-      <a href="tel:+1" class="btn-outline-light">Schedule a Call</a>
+    <div class="cta-form-wrap fade-up">
+      <div class="cta-form-title">Request a Confidential Introduction &mdash; 48-Hour Response</div>
+      <form class="cta-form" action="https://formspree.io/f/xdarooko" method="POST">
+        <input type="hidden" name="_subject" value="ROI CFO Homepage — Advisor Introduction Request">
+        <input type="hidden" name="product" value="ROI CFO — General Inquiry">
+        <div class="cta-form-row">
+          <div class="cta-form-group">
+            <label class="cta-form-label">First Name</label>
+            <input class="cta-form-input" type="text" name="first_name" placeholder="Jane" required>
+          </div>
+          <div class="cta-form-group">
+            <label class="cta-form-label">Last Name</label>
+            <input class="cta-form-input" type="text" name="last_name" placeholder="Smith" required>
+          </div>
+        </div>
+        <div class="cta-form-row">
+          <div class="cta-form-group">
+            <label class="cta-form-label">Email</label>
+            <input class="cta-form-input" type="email" name="email" placeholder="jane@smithcpa.com" required>
+          </div>
+          <div class="cta-form-group">
+            <label class="cta-form-label">Phone (optional)</label>
+            <input class="cta-form-input" type="tel" name="phone" placeholder="(801) 555-0100">
+          </div>
+        </div>
+        <div class="cta-form-row">
+          <div class="cta-form-group">
+            <label class="cta-form-label">Firm Name</label>
+            <input class="cta-form-input" type="text" name="firm" placeholder="Smith CPA Group" required>
+          </div>
+          <div class="cta-form-group">
+            <label class="cta-form-label">Your Role</label>
+            <select class="cta-form-input" name="role">
+              <option value="">Select...</option>
+              <option>CPA / Tax Partner</option>
+              <option>RIA / Financial Advisor</option>
+              <option>CFP</option>
+              <option>CFO / Business Manager</option>
+              <option>Family Office</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="cta-form-group">
+          <label class="cta-form-label">Interested In</label>
+          <select class="cta-form-input" name="product_interest">
+            <option value="">Select strategy...</option>
+            <option>Section 45Q Carbon Tax Credits</option>
+            <option>Leveraged Donation Strategy</option>
+            <option>Both / Not Sure Yet</option>
+            <option>Other Strategy</option>
+          </select>
+        </div>
+        <div class="cta-form-group">
+          <label class="cta-form-label">Client Tax Liability Range</label>
+          <select class="cta-form-input" name="tax_liability">
+            <option value="">Select range...</option>
+            <option>Under $500K</option>
+            <option>$500K – $1M</option>
+            <option>$1M – $5M</option>
+            <option>$5M – $30M</option>
+            <option>$30M+</option>
+          </select>
+        </div>
+        <button class="cta-form-btn" type="submit">Request Confidential Introduction &rarr;</button>
+        <p class="cta-form-note">Advisor-only. Conversations held in strict confidence. 48-hour response commitment. bryson@roicfo.com</p>
+      </form>
     </div>
     <p class="cta-legal fade-up">Conversations held in strict confidence. No obligation. ROI CFO engages exclusively with credentialed advisors and does not market directly to end investors.</p>
     <div class="cta-meta fade-up">
