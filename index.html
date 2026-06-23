@@ -193,8 +193,21 @@ nav.main-nav a:hover { color: var(--stone); }
 }
 .comp-chip-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; flex-shrink: 0; }
 
-/* Hero right — icon stat card */
+/* Hero right — globe */
 .hero-right {}
+.hero-globe-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.hero-globe-wrap canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
 .hero-card {
   background: var(--navy); border-radius: 12px;
   padding: 44px 40px; position: relative; overflow: hidden;
@@ -778,30 +791,8 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
         </div>
       </div>
       <div class="hero-right fade-in">
-        <div class="hero-card">
-          <div class="hero-card-eyebrow">Live Opportunities — 2025</div>
-          <div class="hero-card-stat">
-            <div class="hero-card-val gold">$0.85</div>
-            <div class="hero-card-label">Per dollar of federal tax credit &middot; §45Q</div>
-          </div>
-          <div class="hero-card-divider"></div>
-          <div class="hero-card-row">
-            <span class="hero-card-row-lbl">Client pays $5M in tax</span>
-            <span class="hero-card-row-val green">saves $750K</span>
-          </div>
-          <div class="hero-card-row">
-            <span class="hero-card-row-lbl">Client pays $10M in tax</span>
-            <span class="hero-card-row-val green">saves $1.5M</span>
-          </div>
-          <div class="hero-card-row">
-            <span class="hero-card-row-lbl">Passive activity limits</span>
-            <span class="hero-card-row-val green">None</span>
-          </div>
-          <div class="hero-card-divider"></div>
-          <div class="hero-card-stat" style="margin-bottom:0;">
-            <div class="hero-card-val green">5:1</div>
-            <div class="hero-card-label">Charitable deduction ratio &middot; $50K min &middot; IRC §170</div>
-          </div>
+        <div class="hero-globe-wrap">
+          <canvas id="hero-globe-canvas"></canvas>
         </div>
       </div>
     </div>
@@ -1615,6 +1606,295 @@ const secIO = new IntersectionObserver((entries) => {
 }, {threshold: 0.4});
 sections.forEach(s => secIO.observe(s));
 
+})();
+</script>
+
+<script>
+/* ═══ ROI CFO HOMEPAGE HERO GLOBE — Pure Canvas 2D ═══ */
+(function(){
+  const cv = document.getElementById('hero-globe-canvas');
+  if(!cv) return;
+  const ctx = cv.getContext('2d');
+  const TAU = Math.PI * 2;
+  const startT = Date.now();
+  const rng = s => { let x = Math.sin(s) * 43758; return x - (x|0); };
+
+  // Size the canvas square to its CSS-rendered size
+  function resize(){
+    const size = cv.offsetWidth;
+    cv.width  = size * (window.devicePixelRatio || 1);
+    cv.height = size * (window.devicePixelRatio || 1);
+    ctx.scale(window.devicePixelRatio || 1, window.devicePixelRatio || 1);
+  }
+  window.addEventListener('resize', () => { ctx.setTransform(1,0,0,1,0,0); resize(); });
+  resize();
+
+  const S = () => cv.offsetWidth; // logical size
+
+  // Stars
+  const stars = Array.from({length:180}, (_,i) => ({
+    x: rng(i*3+0.1),
+    y: rng(i*3+1.1),
+    r: 0.3 + rng(i*3+2.1)*1.3,
+    a: 0.25 + rng(i*7)*0.5,
+    tw: rng(i*11)
+  }));
+
+  // Cloud puffs (5 layers)
+  const clouds = Array.from({length:5}, (_,li) => ({
+    puffs: Array.from({length:14}, (_,p) => ({
+      ox: rng(li*23+p*7),       // fractional offset
+      oy: 0.62 + li*0.07 + (rng(li*23+p*7+1)-0.5)*0.06,
+      rx: (0.07 + rng(li*23+p*7+2)*0.13),
+      ry: (0.022 + rng(li*23+p*7+3)*0.028),
+      a:  0.15 + rng(li*23+p*7+4)*0.22,
+    })),
+    spd: 0.000055 + li*0.000028,
+    dx: 0,
+    dir: li%2===0 ? 1 : -1,
+  }));
+
+  // Land blobs (lat/lon in radians)
+  const lands = [
+    {lat:0.70, lon:-1.6,  rl:0.32, rn:0.48},
+    {lat:-0.3, lon:-1.1,  rl:0.28, rn:0.26},
+    {lat:0.80, lon:0.22,  rl:0.20, rn:0.30},
+    {lat:0.05, lon:0.25,  rl:0.36, rn:0.28},
+    {lat:0.55, lon:1.35,  rl:0.36, rn:0.65},
+    {lat:-0.3, lon:2.4,   rl:0.20, rn:0.26},
+  ];
+
+  function proj(lon, lat, r, rot){
+    const l = lon + rot;
+    return {
+      x: r * Math.cos(lat) * Math.sin(l),
+      y: -r * Math.sin(lat),
+      z: Math.cos(lat) * Math.cos(l)
+    };
+  }
+
+  function draw(){
+    const t   = (Date.now() - startT) * 0.001;
+    const rot = t * 0.09;
+    const sz  = S();
+    const cx  = sz * 0.5;
+    const cy  = sz * 0.5;
+    const R   = sz * 0.42;
+    const rise = Math.min(1, t / 1.6);
+    const bob  = Math.sin(t * 0.55) * R * 0.025;
+    const offY = (1 - rise) * R * 0.8 + bob;
+
+    ctx.clearRect(0, 0, sz, sz);
+
+    /* ── Sky ── */
+    const sky = ctx.createRadialGradient(cx, cy, R*0.2, cx, cy, R*1.55);
+    sky.addColorStop(0,   '#0d2244');
+    sky.addColorStop(0.55,'#060f22');
+    sky.addColorStop(1,   '#020810');
+    ctx.beginPath(); ctx.arc(cx, cy, R*1.55, 0, TAU);
+    ctx.fillStyle = sky; ctx.fill();
+
+    /* ── Stars ── */
+    stars.forEach(s => {
+      const tw = 0.7 + 0.3 * Math.sin(t*2.8 + s.tw*TAU);
+      ctx.beginPath();
+      ctx.arc(cx + (s.x-0.5)*sz*1.8, cy + (s.y-0.5)*sz*1.8, s.r, 0, TAU);
+      ctx.fillStyle = `rgba(255,255,255,${s.a * tw})`;
+      ctx.fill();
+    });
+
+    ctx.save();
+    ctx.translate(0, offY);
+
+    /* ── Atmosphere outer glow ── */
+    const atm = ctx.createRadialGradient(cx, cy, R*0.88, cx, cy, R*1.38);
+    atm.addColorStop(0,   'rgba(50,120,255,0.50)');
+    atm.addColorStop(0.5, 'rgba(20,70,210,0.18)');
+    atm.addColorStop(1,   'transparent');
+    ctx.beginPath(); ctx.arc(cx, cy, R*1.38, 0, TAU);
+    ctx.fillStyle = atm; ctx.fill();
+
+    /* ── Globe body — lit from upper-left ── */
+    const globe = ctx.createRadialGradient(cx - R*0.28, cy - R*0.32, R*0.08, cx, cy, R);
+    globe.addColorStop(0,   '#2860cc');
+    globe.addColorStop(0.38,'#0f2e6a');
+    globe.addColorStop(0.72,'#071d45');
+    globe.addColorStop(1,   '#030e25');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU);
+    ctx.fillStyle = globe; ctx.fill();
+
+    /* ── Specular highlight ── */
+    const spec = ctx.createRadialGradient(cx - R*0.28, cy - R*0.30, 0, cx - R*0.28, cy - R*0.30, R*0.52);
+    spec.addColorStop(0,   'rgba(160,205,255,0.30)');
+    spec.addColorStop(0.5, 'rgba(100,160,255,0.10)');
+    spec.addColorStop(1,   'transparent');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU);
+    ctx.fillStyle = spec; ctx.fill();
+
+    /* ── Land masses (clipped to globe) ── */
+    ctx.save();
+    ctx.beginPath(); ctx.arc(cx, cy, R*0.998, 0, TAU); ctx.clip();
+    lands.forEach(b => {
+      const p = proj(b.lon, b.lat, R, rot);
+      if(p.z < 0) return;
+      const fade = Math.max(0, p.z);
+      const rx = b.rn * R * Math.max(0.05, Math.abs(Math.cos(b.lat)));
+      const ry = b.rl * R;
+      if(rx < 3) return;
+      ctx.save();
+      ctx.translate(cx + p.x, cy + p.y);
+      ctx.scale(1, ry / rx);
+      const g = ctx.createRadialGradient(0, 0, 0, 0, 0, rx);
+      g.addColorStop(0,   `rgba(20,107,58,${fade * 0.82})`);
+      g.addColorStop(0.6, `rgba(14,75,40,${fade * 0.50})`);
+      g.addColorStop(1,   'transparent');
+      ctx.beginPath(); ctx.arc(0, 0, rx, 0, TAU);
+      ctx.fillStyle = g; ctx.fill();
+      ctx.restore();
+    });
+    ctx.restore();
+
+    /* ── Latitude lines ── */
+    for(let lat = -72; lat <= 72; lat += 18){
+      const lr = lat * Math.PI / 180;
+      const ry = cy - R * Math.sin(lr);
+      const rx = R * Math.cos(lr);
+      if(rx < 2) continue;
+      ctx.beginPath();
+      ctx.ellipse(cx, ry, rx, rx * 0.11, 0, 0, TAU);
+      ctx.strokeStyle = `rgba(184,138,34,${0.20 + 0.06*Math.abs(Math.sin(lr))})`;
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+    }
+
+    /* ── Longitude lines ── */
+    for(let i = 0; i < 12; i++){
+      const lon = (i/12)*TAU + rot;
+      const z = Math.cos(lon);
+      if(z < -0.06) continue;
+      const a = Math.max(0, z) * 0.30 + 0.07;
+      const lrx = R * Math.abs(Math.sin(lon - rot));
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, lrx, R, 0, 0, TAU);
+      ctx.strokeStyle = `rgba(184,138,34,${a})`;
+      ctx.lineWidth = 1.0;
+      ctx.stroke();
+    }
+
+    /* ── Globe rim — blue atmosphere edge ── */
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, TAU);
+    ctx.strokeStyle = 'rgba(80,160,255,0.65)';
+    ctx.lineWidth = 2.5; ctx.stroke();
+
+    /* ── Clouds ── */
+    clouds.forEach((cl, li) => {
+      cl.dx += cl.spd * cl.dir;
+      if(cl.dx >  1) cl.dx -= 1;
+      if(cl.dx < -1) cl.dx += 1;
+      cl.puffs.forEach(p => {
+        const px = ((p.ox + cl.dx) % 1) * sz;
+        const py = p.oy * sz + offY;
+        const rx = p.rx * sz;
+        const ry = p.ry * sz;
+        if(ry < 2) return;
+        ctx.save();
+        ctx.translate(px, py);
+        ctx.scale(1, ry/rx);
+        const g = ctx.createRadialGradient(0, 0, 0, 0, 0, rx);
+        g.addColorStop(0,   `rgba(210,230,255,${p.a})`);
+        g.addColorStop(0.45,`rgba(185,215,255,${p.a*0.5})`);
+        g.addColorStop(1,   'transparent');
+        ctx.beginPath(); ctx.arc(0, 0, rx, 0, TAU);
+        ctx.fillStyle = g; ctx.fill();
+        ctx.restore();
+        // wrap right edge
+        if(px < rx*2){
+          ctx.save();
+          ctx.translate(px + sz, py);
+          ctx.scale(1, ry/rx);
+          const g2 = ctx.createRadialGradient(0,0,0,0,0,rx);
+          g2.addColorStop(0, `rgba(210,230,255,${p.a})`);
+          g2.addColorStop(1, 'transparent');
+          ctx.beginPath(); ctx.arc(0, 0, rx, 0, TAU);
+          ctx.fillStyle = g2; ctx.fill();
+          ctx.restore();
+        }
+      });
+    });
+
+    ctx.restore(); // un-translate offY
+
+    /* ════ ROI CFO LOGO DISC ════ */
+    const LR  = R * 0.70;
+    const lcx = cx;
+    const lcy = cy + offY;
+
+    // Outer gold ring
+    ctx.beginPath(); ctx.arc(lcx, lcy, LR, 0, TAU);
+    const ring = ctx.createLinearGradient(lcx-LR, lcy-LR, lcx+LR, lcy+LR);
+    ring.addColorStop(0,   '#f5d060');
+    ring.addColorStop(0.45,'#d4a030');
+    ring.addColorStop(1,   '#b38020');
+    ctx.strokeStyle = ring;
+    ctx.lineWidth = LR * 0.10;
+    ctx.stroke();
+
+    // Inner fill — dark navy radial
+    const IR = LR - LR*0.10*0.5;
+    ctx.beginPath(); ctx.arc(lcx, lcy, IR, 0, TAU);
+    const inner = ctx.createRadialGradient(lcx - LR*0.22, lcy - LR*0.25, 0, lcx, lcy, IR);
+    inner.addColorStop(0,   'rgba(28,60,135,0.98)');
+    inner.addColorStop(0.55,'rgba(11,22,60,0.98)');
+    inner.addColorStop(1,   'rgba(4,10,30,0.98)');
+    ctx.fillStyle = inner; ctx.fill();
+
+    // Tick marks (36 total, every 10°, majors at 0/90/180/270)
+    ctx.save(); ctx.translate(lcx, lcy);
+    for(let i=0; i<36; i++){
+      const a  = (i/36)*TAU;
+      const r0 = LR - 1;
+      const isMajor = i%9===0;
+      const r1 = isMajor ? LR - LR*0.10 + 6 : LR - LR*0.10 + 3;
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a)*r0, Math.sin(a)*r0);
+      ctx.lineTo(Math.cos(a)*r1, Math.sin(a)*r1);
+      ctx.strokeStyle = isMajor ? 'rgba(245,208,96,0.9)' : 'rgba(245,208,96,0.38)';
+      ctx.lineWidth   = isMajor ? 2 : 0.9;
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // "ROI" — gold serif
+    const fsROI = Math.round(LR * 0.44);
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = `700 ${fsROI}px 'EB Garamond', 'Playfair Display', Georgia, serif`;
+    ctx.shadowColor = 'rgba(212,160,48,0.65)';
+    ctx.shadowBlur  = 10;
+    ctx.fillStyle   = '#f5d060';
+    ctx.fillText('ROI', lcx, lcy - LR*0.16);
+
+    // Divider
+    ctx.shadowBlur = 0;
+    ctx.strokeStyle = 'rgba(245,208,96,0.55)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(lcx - LR*0.48, lcy + LR*0.01);
+    ctx.lineTo(lcx + LR*0.48, lcy + LR*0.01);
+    ctx.stroke();
+
+    // "CFO" — white
+    const fsCFO = Math.round(LR * 0.40);
+    ctx.font = `600 ${fsCFO}px 'EB Garamond', 'Playfair Display', Georgia, serif`;
+    ctx.shadowColor = 'rgba(200,220,255,0.25)';
+    ctx.shadowBlur  = 5;
+    ctx.fillStyle   = '#ffffff';
+    ctx.fillText('CFO', lcx, lcy + LR*0.28);
+    ctx.shadowBlur = 0;
+
+    requestAnimationFrame(draw);
+  }
+  draw();
 })();
 </script>
 </body>
