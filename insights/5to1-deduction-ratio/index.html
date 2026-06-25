@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 5:1 Deduction Ratio: How Forward-Thinking Advisors Deliver Outsized Value — ROI CFO</title>
+<meta name="description" content="IRC §170 allows a charitable deduction at full appraised FMV — not cost basis. Inside the qualified partnership mineral interest donation that turns a $50K investment into a $250K deduction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:   #0B2545;
+  --green:  #146B3A;
+  --gold:   #B88A22;
+  --stone:  #F7F5F0;
+  --stone2: #EDE8E0;
+  --slate:  #334155;
+  --black:  #1E2428;
+  --serif:  'EB Garamond', Georgia, serif;
+  --sans:   'Inter', system-ui, sans-serif;
+  --mono:   'IBM Plex Mono', monospace;
+  --max:    740px;
+  --pad:    80px;
+  --r:      6px;
+  --border: rgba(11,37,69,0.10);
+  --gold-dim: rgba(184,138,34,0.12);
+  --gold-line: rgba(184,138,34,0.28);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); background: var(--stone); color: var(--black); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+.site-header {
+  position: sticky; top: 0; z-index: 900;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px var(--pad);
+  background: rgba(247,245,240,0.97);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 16px rgba(11,37,69,0.06);
+  backdrop-filter: blur(12px);
+}
+.logo { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; letter-spacing: 0.5px; color: var(--navy); }
+.logo img { height: 32px; width: auto; }
+.nav-back { font-size: 13px; font-weight: 500; color: var(--slate); display: flex; align-items: center; gap: 6px; }
+.nav-back:hover { color: var(--navy); }
+.nav-cta {
+  font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--stone); background: var(--navy); padding: 9px 20px; border-radius: var(--r);
+}
+.nav-cta:hover { background: #0F3060; }
+
+/* HERO */
+.article-hero {
+  background: linear-gradient(160deg, #070F1A 0%, var(--navy) 50%, #070F1A 100%);
+  padding: 80px var(--pad) 72px;
+  position: relative; overflow: hidden;
+}
+.article-hero::after {
+  content: ''; position: absolute; bottom: 0; left: var(--pad); right: var(--pad); height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+}
+.article-hero-inner { max-width: var(--max); margin: 0 auto; }
+.article-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+  color: #2DCF7A; margin-bottom: 20px;
+}
+.article-tag::before { content: ''; display: block; width: 24px; height: 1px; background: #2DCF7A; }
+.article-h1 {
+  font-family: var(--serif); font-size: clamp(30px, 4vw, 48px);
+  font-weight: 700; line-height: 1.12; letter-spacing: -0.01em;
+  color: var(--stone); margin-bottom: 20px;
+}
+.article-deck {
+  font-size: 17px; line-height: 1.8; color: rgba(247,245,240,0.65);
+  max-width: 600px; margin-bottom: 32px;
+}
+.article-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.article-meta-item { font-size: 12px; font-weight: 500; letter-spacing: 0.5px; color: rgba(247,245,240,0.40); }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: rgba(247,245,240,0.25); }
+
+/* BODY */
+.article-wrap { max-width: var(--max); margin: 0 auto; padding: 64px var(--pad) 100px; }
+
+.article-body { font-size: 17px; line-height: 1.85; color: var(--black); }
+.article-body h2 {
+  font-family: var(--serif); font-size: 28px; font-weight: 700;
+  color: var(--navy); margin: 52px 0 16px; line-height: 1.2;
+}
+.article-body h3 {
+  font-family: var(--serif); font-size: 20px; font-weight: 600;
+  color: var(--navy); margin: 36px 0 12px;
+}
+.article-body p { margin-bottom: 22px; color: var(--slate); }
+.article-body strong { color: var(--black); font-weight: 600; }
+.article-body em { font-style: italic; }
+.article-body ul, .article-body ol { margin: 0 0 22px 0; padding-left: 24px; }
+.article-body li { margin-bottom: 10px; color: var(--slate); }
+
+/* CALLOUTS */
+.callout {
+  background: var(--gold-dim); border-left: 3px solid var(--gold);
+  border-radius: 0 var(--r) var(--r) 0;
+  padding: 20px 24px; margin: 32px 0;
+}
+.callout p { margin: 0; color: var(--black); font-size: 16px; line-height: 1.7; }
+.callout-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+
+/* DATA TABLE */
+.data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 15px; }
+.data-table th {
+  font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(11,37,69,0.45); padding: 10px 16px; text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.data-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--slate); vertical-align: top; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td strong { color: var(--black); }
+.data-table td.mono { font-family: var(--mono); font-size: 13px; color: var(--navy); font-weight: 600; }
+.data-table td.green { color: #146B3A; font-weight: 600; }
+
+/* DIVIDER */
+.gold-rule { width: 40px; height: 2px; background: var(--gold); margin: 48px 0; border-radius: 1px; }
+
+/* CTA BLOCK */
+.article-cta {
+  background: var(--navy); border-radius: 12px;
+  padding: 48px 44px; margin-top: 64px;
+  position: relative; overflow: hidden;
+}
+.article-cta::before {
+  content: ''; position: absolute; top: -60px; right: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.article-cta-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(247,245,240,0.4); margin-bottom: 14px; }
+.article-cta h3 { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--stone); margin-bottom: 12px; line-height: 1.2; }
+.article-cta p { font-size: 15px; line-height: 1.7; color: rgba(247,245,240,0.6); margin-bottom: 28px; }
+.btn-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--navy); background: #D4A830;
+  padding: 14px 28px; border-radius: var(--r);
+  transition: background 0.2s;
+}
+.btn-cta:hover { background: #c49a28; }
+
+/* FOOTER */
+footer {
+  background: var(--navy); padding: 40px var(--pad);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-size: 13px; font-weight: 700; color: rgba(247,245,240,0.5); letter-spacing: 0.5px; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 12px; color: rgba(247,245,240,0.35); transition: color 0.2s; }
+.footer-links a:hover { color: rgba(247,245,240,0.7); }
+.footer-copy { font-size: 11px; color: rgba(247,245,240,0.25); width: 100%; }
+
+@media (max-width: 680px) {
+  :root { --pad: 24px; }
+  .article-hero { padding: 56px var(--pad) 52px; }
+  .nav-cta { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-header">
+  <a href="/" class="logo">ROI CFO</a>
+  <a href="/insights/" class="nav-back">← Insights</a>
+  <a href="/#cta" class="nav-cta">Get the Advisor Packet</a>
+</header>
+
+<!-- HERO -->
+<section class="article-hero">
+  <div class="article-hero-inner">
+    <div class="article-tag">Charitable Strategy</div>
+    <h1 class="article-h1">The 5:1 Deduction Ratio: How Forward-Thinking Advisors Deliver Outsized Value</h1>
+    <p class="article-deck">IRC §170 allows a charitable deduction at full appraised fair market value — not cost basis. Here's how the qualified partnership mineral interest donation turns a $50K investment into $250K of federal deduction.</p>
+    <div class="article-meta">
+      <span class="article-meta-item">ROI CFO Research</span>
+      <span class="article-meta-dot"></span>
+      <span class="article-meta-item">IRC §170</span>
+      <span class="article-meta-dot"></span>
+      <span class="article-meta-item">June 2025</span>
+      <span class="article-meta-dot"></span>
+      <span class="article-meta-item">14 min read</span>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE BODY PART 1 -->
+<main class="article-wrap">
+<article class="article-body">
+
+<h2>How IRC §170 Creates the Ratio</h2>
+
+<p>The foundation of this strategy is a provision most advisors know but rarely deploy at scale: under IRC §170, when a taxpayer donates appreciated property to a qualified 501(c)(3) organization, the deduction is measured at the property's <strong>fair market value at the time of the contribution</strong> — not the donor's cost basis. That single rule is what makes the 5:1 ratio possible.</p>
+
+<p>Here's the mechanics in plain terms. A qualified partnership is formed to acquire allocated mineral interests — subsurface royalty and working interests in producing or prospective oil and gas acreage. The partnership acquires these interests at a negotiated price that reflects a fraction of their independently appraised fair market value. Investors contribute capital to the partnership at the acquisition cost. The partnership then donates the mineral interests, in their entirety, to a qualified 501(c)(3) organization at full appraised FMV.</p>
+
+<p>Because the partnership holds appreciated property — interests whose FMV exceeds acquisition cost by design — and because §170 measures the deduction at FMV rather than cost basis, the deduction passed through to each partner on Schedule K-1 is a multiple of what was invested. At a 5:1 ratio, a $50,000 investment produces a $250,000 charitable deduction.</p>
+
+<div class="callout">
+  <div class="callout-label">Key Provision</div>
+  <p>IRC §170(e)(1) governs the reduction rules for contributed property. For a contribution of <em>ordinary income property</em>, the deduction is reduced to basis. But mineral interests held in qualifying partnership structures and donated to charity are treated as capital gain property — and capital gain property contributed to a public charity is deductible at full FMV under §170(b)(1)(C). The structure specifically preserves capital gain property treatment at the partnership level before the donation.</p>
+</div>
+
+<h3>The structural flow, step by step</h3>
+
+<ol>
+  <li><strong>Investor capital is contributed</strong> to the partnership at formation. Minimum investment $50,000; no upper limit.</li>
+  <li><strong>The partnership acquires mineral interests</strong> — allocated royalty or working interests — at a price representing approximately 20 cents on the appraised dollar (hence the 5:1 ratio).</li>
+  <li><strong>A qualified independent appraiser</strong> values the mineral interests at full FMV using a methodology consistent with IRS Revenue Ruling 59-60 and applicable oil and gas valuation standards.</li>
+  <li><strong>The partnership donates the interests</strong> to a qualified 501(c)(3) organization — typically one engaged in land stewardship, energy transition, or natural resource conservation.</li>
+  <li><strong>Each partner receives a Schedule K-1</strong> showing their allocable share of the charitable contribution deduction on Line 13, Code E.</li>
+  <li><strong>The partner claims the deduction</strong> on their individual return (Form 1040, Schedule A) supported by Form 8283 and the qualified appraisal.</li>
+</ol>
+
+<p>The result is a deduction-to-investment ratio of 5:1. At a 37% marginal federal rate, every dollar invested returns $1.85 in tax savings — a 185% first-year return on the invested capital purely from tax reduction, before any residual value of the partnership interests.</p>
+
+<div class="gold-rule"></div>
+
+<h2>Why This Is Not a Conservation Easement</h2>
+
+<p>This is the first question every CPA asks, and it is exactly the right question. Syndicated conservation easements are currently on the IRS's <strong>Listed Transactions</strong> list under Notice 2017-10. Listed transaction status triggers mandatory disclosure under §6011, affects material advisor reporting under §6111, and creates substantial penalty exposure for both participants and promoters. If this were a conservation easement, the analysis would stop here.</p>
+
+<p><strong>It is not a conservation easement.</strong> The distinction is structural, legal, and factual:</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Syndicated Conservation Easement</th>
+      <th>Mineral Interest Donation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>IRC provision</strong></td>
+      <td>§170(h) — qualified conservation contribution</td>
+      <td>§170(b)(1)(C) — capital gain property donation</td>
+    </tr>
+    <tr>
+      <td><strong>What is donated</strong></td>
+      <td>A restriction on land use (a negative easement)</td>
+      <td>Fee ownership of mineral interests (a property right)</td>
+    </tr>
+    <tr>
+      <td><strong>Listed transaction?</strong></td>
+      <td class="mono" style="color:#9B1C1C;">Yes — Notice 2017-10</td>
+      <td class="mono green">No</td>
+    </tr>
+    <tr>
+      <td><strong>Real property transferred?</strong></td>
+      <td>No — only rights are restricted</td>
+      <td>Yes — mineral interests convey by deed to charity</td>
+    </tr>
+    <tr>
+      <td><strong>Charity receives</strong></td>
+      <td>Perpetual deed restriction on donor's land</td>
+      <td>Titled ownership of mineral interests</td>
+    </tr>
+    <tr>
+      <td><strong>IRS scrutiny level</strong></td>
+      <td>Extremely high; active enforcement</td>
+      <td>Standard §170 compliance review</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The mineral interest donation does not involve any restriction on land the donor owns. The partnership acquires mineral interests outright, in fee, and conveys them to the charity by deed. The charity takes title. The donation is complete and irrevocable. There is no retained interest, no deed restriction, and no element of the transaction that resembles a conservation easement under §170(h).</p>
+
+<div class="callout">
+  <div class="callout-label">For CPAs</div>
+  <p>The critical statutory boundary is §170(h)(1), which defines a "qualified conservation contribution" as a contribution of a "qualified real property interest." A conservation easement is a restriction on use — it is not a transfer of the underlying mineral property. The mineral interest donation transfers <em>ownership</em> of a separate legal estate (the mineral estate) in fee. These are categorically different transactions under both tax law and property law.</p>
+</div>
+
+</article>
+</main>
+
+<!-- ARTICLE BODY PART 2 -->
+<main class="article-wrap" style="padding-top:0;">
+<article class="article-body">
+
+<h2>The Math at Multiple Investment Levels</h2>
+
+<p>The economics scale linearly. There is no upper limit on participation — a client investing $1M generates $5M of charitable deduction under the same mechanics as a client investing $50K. At the 37% federal bracket, the tax savings are substantial at every scale:</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Investment</th>
+      <th>Charitable Deduction (5:1)</th>
+      <th>Tax Savings @ 37%</th>
+      <th>Net Cost After Tax Savings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>$50,000</strong></td>
+      <td class="mono">$250,000</td>
+      <td class="green">$92,500</td>
+      <td class="mono">($42,500 net)</td>
+    </tr>
+    <tr>
+      <td><strong>$100,000</strong></td>
+      <td class="mono">$500,000</td>
+      <td class="green">$185,000</td>
+      <td class="mono">($85,000 net)</td>
+    </tr>
+    <tr>
+      <td><strong>$250,000</strong></td>
+      <td class="mono">$1,250,000</td>
+      <td class="green">$462,500</td>
+      <td class="mono">($212,500 net)</td>
+    </tr>
+    <tr>
+      <td><strong>$500,000</strong></td>
+      <td class="mono">$2,500,000</td>
+      <td class="green">$925,000</td>
+      <td class="mono">($425,000 net)</td>
+    </tr>
+    <tr>
+      <td><strong>$1,000,000</strong></td>
+      <td class="mono">$5,000,000</td>
+      <td class="green">$1,850,000</td>
+      <td class="mono">($850,000 net)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Net cost after tax savings</em> represents the effective out-of-pocket cost assuming the full deduction is absorbed in the year of contribution at a 37% combined federal rate. State income tax deductibility — where applicable — further reduces the effective cost. California (13.3%), New York (10.9%), and other high-tax states provide additional savings not reflected in the table above.</p>
+
+<p>The AGI limitation under §170(b)(1)(B) caps cash contributions at 60% of AGI and non-cash capital gain property contributions at 30% of AGI in the contribution year, with a five-year carryforward for excess deductions. For clients with AGI of $500K, the 30% cap limits the first-year deduction to $150,000 — but the remaining deduction carries forward and is fully utilized over subsequent years. Clients should model the carryforward carefully against projected future AGI.</p>
+
+<div class="callout">
+  <div class="callout-label">Planning Note</div>
+  <p>For clients in income acceleration years — business sale, large bonus, capital gain recognition — the §170 carryforward rules work in their favor. A $1M investment in the year of a $5M business sale generates a $5M deduction that offsets the sale gain over six years. The investment is sized to the income event, not to annual AGI alone.</p>
+</div>
+
+<div class="gold-rule"></div>
+
+<h2>The Documentation Stack</h2>
+
+<p>This is where tax partnerships live or die at audit. The documentation requirements for a §170 non-cash charitable contribution of property valued over $500,000 are specific, and non-compliance — even technical non-compliance — can result in full disallowance of the deduction irrespective of the transaction's economic substance. Advisors should confirm each element is in place before the return is filed.</p>
+
+<h3>Schedule K-1 — Line 13, Code E</h3>
+
+<p>The partnership reports each partner's allocable share of the charitable contribution deduction on Schedule K-1, Line 13, using Code E (Charitable Contributions). The K-1 must specify the type of property contributed, the date of contribution, and the partner's allocable share of the FMV reported on Form 8283. Partners use this information to complete their own Form 8283 at the individual return level.</p>
+
+<h3>Form 8283 — Noncash Charitable Contributions</h3>
+
+<p>Form 8283, Section B must be completed for any non-cash contribution where the claimed value exceeds $5,000. For property valued over $500,000, the form must be <strong>signed by both the independent qualified appraiser and an authorized officer of the donee organization</strong>. The donee signature confirms receipt and acknowledges that the charity is aware of the appraisal value. Missing or defective donee acknowledgments have been the basis for disallowance in multiple Tax Court cases; this signature must be obtained and retained.</p>
+
+<h3>Qualified Appraisal</h3>
+
+<p>Under Treas. Reg. §1.170A-17, the appraisal must be conducted by a "qualified appraiser" — meaning an individual with verifiable education and experience in valuing the type of property at issue, and who holds themselves out to the public as an appraiser. The appraisal must be completed no earlier than 60 days before the contribution and no later than the due date of the tax return (including extensions) for the year of contribution. For mineral interests, the appraiser must use recognized oil and gas valuation methodology and document their assumptions, comparable transactions, and discount rates.</p>
+
+<h3>80% Deduction-to-Cost Ratio — The DTC Test</h3>
+
+<p>The IRS uses the ratio of the claimed deduction to the investor's cost basis as a screen for potentially abusive transactions. Transactions with a deduction-to-cost ratio exceeding 2.5:1 are subject to heightened scrutiny under the CHIPS framework and related IRS guidance. A 5:1 ratio falls into the range that requires robust substantiation — a compliant appraisal, clean donee acknowledgment, and a well-documented partnership operating agreement are non-negotiable.</p>
+
+<ul>
+  <li><strong>Partnership Operating Agreement</strong> — Establishes the allocation of the charitable contribution deduction among partners and confirms the partnership's authority to make charitable donations on behalf of partners.</li>
+  <li><strong>Mineral Interest Deed</strong> — The recorded deed conveying the mineral interests from the partnership to the 501(c)(3), confirming the donation is complete.</li>
+  <li><strong>IRS Contemporaneous Written Acknowledgment</strong> — Required for all charitable contributions of $250 or more; must state whether any goods or services were provided in exchange (they should not be, in this structure).</li>
+  <li><strong>Qualified Appraisal Summary</strong> — Attached to Form 8283; must include the appraiser's signature, TIN, qualifications, and a description of the valuation method used.</li>
+</ul>
+
+<div class="gold-rule"></div>
+
+<h2>Client Profile: Who Qualifies</h2>
+
+<p>The strategy is appropriate for a specific slice of the advisor's client base. Not every high-income client is the right fit — the charitable component must be genuine, the client must be able to absorb the investment commitment, and the deduction must be usable against actual tax liability within the carryforward period.</p>
+
+<h3>Primary profiles</h3>
+
+<ul>
+  <li><strong>High-W2 earners — AGI $500K+.</strong> Physicians, attorneys, executives, and senior employees with large recurring W-2 income and consistent 37% federal exposure. These clients generate the same tax liability year over year, making the carryforward highly predictable.</li>
+  <li><strong>Business owners with pass-through income.</strong> S-corp owners, LLC members, and partnership owners reporting significant ordinary income on Schedule E. The deduction directly offsets this income, reducing QBI and self-employment tax exposure simultaneously.</li>
+  <li><strong>Real estate investors with passive income.</strong> Clients with significant rental income, oil and gas royalties, or passive business income have a natural offset target. The charitable deduction is not limited by passive activity rules — it reduces AGI directly at the individual level.</li>
+  <li><strong>Clients in income acceleration years.</strong> Business sale proceeds, large capital gains, deferred compensation payouts, or stock option exercises create one-time spikes in taxable income. A mineral interest donation sized to the income event can offset the entire gain, subject to the 30% AGI limitation and five-year carryforward.</li>
+</ul>
+
+<h3>Who is not a good fit</h3>
+
+<ul>
+  <li>Clients with AGI below $300K — the deduction economics are less favourable and the 30% cap limits first-year absorption.</li>
+  <li>Clients with significant AMT exposure — the charitable deduction is not itself an AMT preference item, but clients should model AMT carefully in high-deduction years.</li>
+  <li>Clients who cannot substantiate the charitable intent — the IRS expects the donation to a qualified 501(c)(3) to be genuinely motivated, at least in part, by charitable purpose. Advisors should not position this purely as a tax play.</li>
+</ul>
+
+</article>
+</main>
+
+<!-- ARTICLE BODY PART 3 -->
+<main class="article-wrap" style="padding-top:0;">
+<article class="article-body">
+
+<h2>Common Objections</h2>
+
+<h3>Is this aggressive? Will the IRS challenge it?</h3>
+
+<p>The honest answer: yes, it is a high-scrutiny area of tax law, and yes, the IRS actively audits high-ratio charitable contribution transactions. That is not the same as saying the position is wrong or indefensible. IRC §170 explicitly allows deductions at FMV for contributed capital gain property. The question at audit is always whether the appraisal is correct and the documentation is complete — not whether the structure itself is illegal.</p>
+
+<p>Clients who participate in compliant structures — with a defensible qualified appraisal, properly executed Form 8283, complete donee acknowledgment, and clean K-1 — have a strong litigation posture. The Tax Court has sustained §170 deductions in similar structures where the appraisal methodology was credible and the documentation complete. It has also disallowed deductions where the appraisal was inflated or the paperwork was defective. The difference is compliance quality, not structural legality.</p>
+
+<h3>Is this a listed transaction?</h3>
+
+<p>No. Listed transactions under §6011 and §6112 require disclosure and advisor registration. The mineral interest donation via qualified partnership is not identified as a listed transaction, a transaction of interest, or a reportable transaction in any current IRS Notice or Revenue Ruling. The strategy is distinguishable from syndicated conservation easements (Notice 2017-10) at every legal and structural level, as described above.</p>
+
+<p>Advisors should confirm, at the time of engagement, that the specific partnership structure they are recommending to clients has not been identified as a reportable transaction in any subsequent IRS guidance. Regulatory posture in this area evolves, and advisors have an independent obligation under Circular 230 to assess the current landscape before recommending any tax strategy.</p>
+
+<h3>What is the IRS's current enforcement posture on mineral interest donations?</h3>
+
+<p>The IRS has increased review of non-cash charitable contribution deductions broadly — including scrutiny of partnership-level donations. The primary enforcement vectors are: (1) inflated appraisals, (2) deficient Form 8283 execution, and (3) lack of genuine charitable purpose. A well-structured transaction with a credible appraisal from a qualified appraiser, complete documentation, and a reputable 501(c)(3) donee does not carry the same risk profile as the promoter-driven conservation easement transactions that drew Notice 2017-10. Advisors should evaluate each structure on its specific merits and documentation quality — not by analogy to the conservation easement enforcement environment.</p>
+
+<div class="callout">
+  <div class="callout-label">Bottom Line</div>
+  <p>The question is not whether the IRS might look at this. It will. The question is whether the client's position is defensible when it does. Defensibility is a function of documentation quality and appraisal integrity — both of which are within the advisor's control to verify before the return is filed.</p>
+</div>
+
+<div class="gold-rule"></div>
+
+<h2>How Advisors Are Compensated</h2>
+
+<p>Advisors who refer qualifying clients to ROI CFO's mineral interest donation program are compensated via a referral fee paid by the program operator — not by the client. The structure preserves the advisor's fiduciary independence: clients pay no additional fee beyond the partnership investment, and the advisor's compensation does not reduce the client's economic outcome.</p>
+
+<h3>Fee structure</h3>
+
+<ul>
+  <li><strong>Referral fee: 10–20% of the client's investment</strong> — paid by the program operator at closing, typically 30–45 days after partnership formation and contribution completion.</li>
+  <li><strong>No licensing required.</strong> The referral fee is compensation for introducing a qualifying client; it does not constitute the sale of a security or investment advisory service. CPAs, tax attorneys, RIAs, and financial advisors are all eligible to receive referral compensation under standard engagement agreements.</li>
+  <li><strong>Scalable economics.</strong> A single $250K client placement generates $25,000–$50,000 in advisor compensation. A $1M placement generates $100,000–$200,000. Advisors with multiple qualifying clients in high-income years can generate significant incremental revenue from clients they are already serving.</li>
+  <li><strong>No ongoing management obligation.</strong> The referral fee is a one-time payment at closing. The advisor has no ongoing responsibility for fund administration, appraisal defense, or IRS correspondence — those obligations remain with the program operator.</li>
+</ul>
+
+<p>Advisors should review the referral agreement carefully and confirm it aligns with their state-specific professional licensing requirements. CPAs and attorneys in some states may have restrictions on referral fee arrangements; the Advisor Packet includes a state-by-state summary of common requirements.</p>
+
+<h3>What the Advisor Packet includes</h3>
+
+<ul>
+  <li>Full program term sheet and partnership operating agreement summary</li>
+  <li>Sample Schedule K-1 and Form 8283 (redacted) from prior-year placements</li>
+  <li>Qualified appraiser credentials and methodology summary</li>
+  <li>List of participating 501(c)(3) donee organizations</li>
+  <li>Client-facing one-pager (white-labeled available)</li>
+  <li>Referral agreement and compensation schedule</li>
+  <li>IRS citation memo prepared by outside tax counsel</li>
+</ul>
+
+</article>
+
+<!-- CTA -->
+<div class="article-cta">
+  <div class="article-cta-label">Ready to Bring This to Your Clients</div>
+  <h3>Get the Full Advisor Packet</h3>
+  <p>We provide the complete documentation package — partnership term sheet, sample K-1 and Form 8283, appraiser credentials, donee organization list, and the referral agreement — to advisors in our network before any conversation begins. No commitment required to review the materials.</p>
+  <a href="/#cta" class="btn-cta">Get the Advisor Packet →</a>
+</div>
+
+</main>
+
+<footer>
+  <div class="footer-logo">ROI CFO</div>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/carbon-credits/">§45Q Carbon Credits</a>
+    <a href="/leveraged-donation/">Leveraged Donation</a>
+    <a href="/#cta">For Advisors</a>
+  </div>
+  <div class="footer-copy">© 2025 ROI CFO, LLC. This brief is for informational purposes only and does not constitute tax or legal advice. Consult a qualified tax professional regarding your specific situation.</div>
+</footer>
+
+</body>
+</html>
