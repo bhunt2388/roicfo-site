@@ -207,6 +207,37 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
   .layer-numeral{font-size:38px;}
   .layer-body{padding-left:20px;}
 }
+
+/* INLINE CALCULATOR */
+.calc-wrap{background:var(--navy);border-radius:14px;padding:36px 40px 40px;margin-top:40px;max-width:820px;}
+.calc-eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.calc-headline{font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);font-weight:700;color:#fff;margin-bottom:28px;line-height:1.2;}
+.calc-input-row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:32px;}
+.calc-input-group{flex:1;min-width:200px;}
+.calc-label{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:8px;display:block;}
+.calc-input-wrap{position:relative;display:flex;align-items:center;}
+.calc-prefix{position:absolute;left:14px;font-family:var(--mono);font-size:16px;font-weight:600;color:rgba(255,255,255,0.55);pointer-events:none;z-index:1;}
+.calc-field{width:100%;padding:14px 14px 14px 32px;font-family:var(--mono);font-size:20px;font-weight:700;color:#fff;background:rgba(255,255,255,0.08);border:1.5px solid rgba(255,255,255,0.15);border-radius:10px;outline:none;-webkit-appearance:none;appearance:none;-moz-appearance:textfield;transition:border-color 0.2s,background 0.2s;}
+.calc-field::-webkit-outer-spin-button,.calc-field::-webkit-inner-spin-button{-webkit-appearance:none;}
+.calc-field:focus{border-color:var(--gold);background:rgba(255,255,255,0.12);}
+.calc-rate-note{font-size:11px;color:rgba(255,255,255,0.38);margin-top:7px;}
+.calc-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;}
+.calc-result-item{background:rgba(255,255,255,0.06);border-radius:10px;padding:16px 18px;border:1px solid rgba(255,255,255,0.08);}
+.calc-result-item.featured{background:var(--green);border-color:var(--green);}
+.calc-result-label{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.50);margin-bottom:6px;}
+.calc-result-item.featured .calc-result-label{color:rgba(255,255,255,0.75);}
+.calc-result-value{font-family:var(--mono);font-size:22px;font-weight:700;color:#fff;white-space:nowrap;}
+.calc-result-item.featured .calc-result-value{color:#fff;}
+.calc-result-delta{font-size:11px;color:rgba(255,255,255,0.40);margin-top:3px;}
+.calc-result-item.featured .calc-result-delta{color:rgba(255,255,255,0.70);}
+.calc-divider{height:1px;background:rgba(255,255,255,0.10);margin:28px 0;}
+.calc-cta-note{font-size:12px;color:rgba(255,255,255,0.38);line-height:1.6;font-style:italic;}
+@media(max-width:640px){
+  .calc-wrap{padding:24px 20px 28px;}
+  .calc-result-value{font-size:18px;}
+  .calc-results{grid-template-columns:1fr 1fr;}
+}
+
 </style>
 </head>
 <body>
@@ -386,6 +417,69 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
   <p class="savings-note">
     <strong>Instant Savings</strong> = net savings as a percentage of all-in cost, realized immediately upon filing. This is not an investment return &mdash; it is a permanent reduction in 2025 federal tax liability at the moment of transfer. Confirm &sect;38(c) utilization capacity with your CPA before closing.
   </p>
+
+  <!-- INLINE CALCULATOR -->
+  <div class="calc-wrap">
+    <div class="calc-eyebrow">Interactive Calculator</div>
+    <div class="calc-headline">Enter Your Tax Liability — See Your Exact Numbers</div>
+    <div class="calc-input-row">
+      <div class="calc-input-group">
+        <label class="calc-label" for="calcLiability">Your Federal Tax Liability</label>
+        <div class="calc-input-wrap">
+          <span class="calc-prefix">$</span>
+          <input id="calcLiability" class="calc-field" type="number" inputmode="numeric" value="5000000" min="0" placeholder="5,000,000">
+        </div>
+        <div class="calc-rate-note">Fixed at $0.85 per dollar of credit — this transaction's rate</div>
+      </div>
+    </div>
+    <div class="calc-results">
+      <div class="calc-result-item">
+        <div class="calc-result-label">Credits Purchased</div>
+        <div class="calc-result-value" id="cCredits">$5,000,000</div>
+        <div class="calc-result-delta">Dollar-for-dollar tax offset</div>
+      </div>
+      <div class="calc-result-item">
+        <div class="calc-result-label">All-In Cost</div>
+        <div class="calc-result-value" id="cCost">$4,250,000</div>
+        <div class="calc-result-delta">$0.85 per dollar</div>
+      </div>
+      <div class="calc-result-item">
+        <div class="calc-result-label">Tax Offset</div>
+        <div class="calc-result-value" id="cOffset">$5,000,000</div>
+        <div class="calc-result-delta">Federal liability eliminated</div>
+      </div>
+      <div class="calc-result-item featured">
+        <div class="calc-result-label">Instant Savings</div>
+        <div class="calc-result-value" id="cSavings">$750,000</div>
+        <div class="calc-result-delta" id="cRate">17.6% of all-in cost</div>
+      </div>
+    </div>
+    <div class="calc-divider"></div>
+    <div class="calc-cta-note">
+      Not an investment return — a permanent reduction in 2025 federal tax liability at the moment of transfer. Confirm &sect;38(c) utilization with your CPA before closing.
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var field = document.getElementById('calcLiability');
+    function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+    function calc(){
+      var l = parseFloat(field.value)||0;
+      var cost = l * 0.85;
+      var savings = l - cost;
+      var rate = l > 0 ? (savings/cost*100) : 0;
+      document.getElementById('cCredits').textContent = fmt(l);
+      document.getElementById('cCost').textContent = fmt(cost);
+      document.getElementById('cOffset').textContent = fmt(l);
+      document.getElementById('cSavings').textContent = fmt(savings);
+      document.getElementById('cRate').textContent = rate.toFixed(1)+'% of all-in cost';
+    }
+    field.addEventListener('input', calc);
+    calc();
+  })();
+  </script>
+
 </section>
 
 <!-- PROTECTIONS -->
