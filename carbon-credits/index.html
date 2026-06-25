@@ -238,6 +238,28 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
   .calc-results{grid-template-columns:1fr 1fr;}
 }
 
+
+/* DEAL PROFIT SECTION */
+.calc-divider-label{display:flex;align-items:center;gap:12px;margin:28px 0 20px;}
+.calc-divider-label span{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);white-space:nowrap;}
+.calc-divider-label::before,.calc-divider-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,0.12);}
+.calc-profit-inputs{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px;}
+.calc-profit-inputs .calc-input-group{flex:1;min-width:160px;}
+.calc-profit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;}
+.calc-profit-item{background:rgba(255,255,255,0.05);border-radius:10px;padding:14px 16px;border:1px solid rgba(255,255,255,0.07);}
+.calc-profit-item.gold{background:rgba(184,138,34,0.15);border-color:rgba(184,138,34,0.30);}
+.calc-profit-label{font-size:10px;letter-spacing:0.10em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:5px;}
+.calc-profit-item.gold .calc-profit-label{color:rgba(212,168,50,0.80);}
+.calc-profit-value{font-family:var(--mono);font-size:20px;font-weight:700;color:#fff;white-space:nowrap;}
+.calc-profit-item.gold .calc-profit-value{color:var(--gold-l);}
+.calc-profit-delta{font-size:11px;color:rgba(255,255,255,0.35);margin-top:3px;}
+.calc-profit-item.gold .calc-profit-delta{color:rgba(212,168,50,0.60);}
+@media(max-width:640px){
+  .calc-profit-inputs{flex-direction:column;}
+  .calc-profit-grid{grid-template-columns:1fr 1fr;}
+  .calc-profit-value{font-size:17px;}
+}
+
 </style>
 </head>
 <body>
@@ -454,28 +476,100 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
         <div class="calc-result-delta" id="cRate">17.6% of all-in cost</div>
       </div>
     </div>
+
+    <!-- DEAL PROFIT DIVIDER -->
+    <div class="calc-divider-label"><span>ROI CFO Deal Profit</span></div>
+
+    <!-- PROFIT INPUTS -->
+    <div class="calc-profit-inputs">
+      <div class="calc-input-group">
+        <label class="calc-label" for="calcAcquire">Acquisition Cost per Dollar</label>
+        <div class="calc-input-wrap">
+          <span class="calc-prefix" style="font-size:14px;color:rgba(255,255,255,0.55);">$</span>
+          <input id="calcAcquire" class="calc-field" type="number" inputmode="decimal" value="0.70" min="0.01" max="0.99" step="0.01" style="font-size:18px;">
+        </div>
+        <div class="calc-rate-note">What we pay per $1 of credit (default $0.70)</div>
+      </div>
+      <div class="calc-input-group">
+        <label class="calc-label" for="calcSell">Sell Price per Dollar</label>
+        <div class="calc-input-wrap">
+          <span class="calc-prefix" style="font-size:14px;color:rgba(255,255,255,0.55);">$</span>
+          <input id="calcSell" class="calc-field" type="number" inputmode="decimal" value="0.85" min="0.01" max="0.99" step="0.01" style="font-size:18px;">
+        </div>
+        <div class="calc-rate-note">What buyer pays per $1 of credit (default $0.85)</div>
+      </div>
+    </div>
+
+    <!-- PROFIT RESULTS -->
+    <div class="calc-profit-grid">
+      <div class="calc-profit-item">
+        <div class="calc-profit-label">Revenue from Buyer</div>
+        <div class="calc-profit-value" id="pRevenue">$4,250,000</div>
+        <div class="calc-profit-delta">What buyer pays us</div>
+      </div>
+      <div class="calc-profit-item">
+        <div class="calc-profit-label">Cost of Credits</div>
+        <div class="calc-profit-value" id="pCreditCost">$3,500,000</div>
+        <div class="calc-profit-delta">Our acquisition cost</div>
+      </div>
+      <div class="calc-profit-item">
+        <div class="calc-profit-label">Spread per Dollar</div>
+        <div class="calc-profit-value" id="pSpread">$0.15</div>
+        <div class="calc-profit-delta" id="pSpreadPct">17.6% margin</div>
+      </div>
+      <div class="calc-profit-item gold">
+        <div class="calc-profit-label">Gross Profit</div>
+        <div class="calc-profit-value" id="pProfit">$750,000</div>
+        <div class="calc-profit-delta" id="pMargin">on $4.25M revenue</div>
+      </div>
+    </div>
+
     <div class="calc-divider"></div>
     <div class="calc-cta-note">
-      Not an investment return — a permanent reduction in 2025 federal tax liability at the moment of transfer. Confirm &sect;38(c) utilization with your CPA before closing.
+      Buyer savings and deal profit shown simultaneously. Adjust acquisition cost and sell price to model different deal structures. Buyer receives dollar-for-dollar federal tax offset.
     </div>
   </div>
 
   <script>
   (function(){
-    var field = document.getElementById('calcLiability');
+    var fLiability = document.getElementById('calcLiability');
+    var fAcquire   = document.getElementById('calcAcquire');
+    var fSell      = document.getElementById('calcSell');
     function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+    function fmtD(n){return '$'+n.toFixed(2);}
     function calc(){
-      var l = parseFloat(field.value)||0;
-      var cost = l * 0.85;
-      var savings = l - cost;
-      var rate = l > 0 ? (savings/cost*100) : 0;
+      var l    = parseFloat(fLiability.value)||0;
+      var acq  = parseFloat(fAcquire.value)||0.70;
+      var sell = parseFloat(fSell.value)||0.85;
+
+      // Buyer side
+      var buyerCost  = l * sell;
+      var buyerSave  = l - buyerCost;
+      var buyerRate  = buyerCost > 0 ? (buyerSave/buyerCost*100) : 0;
+
+      // ROI CFO side
+      var revenue    = buyerCost;               // what buyer pays us
+      var creditCost = l * acq;                 // what we pay for credits
+      var spread     = sell - acq;
+      var profit     = l * spread;
+      var margin     = revenue > 0 ? (profit/revenue*100) : 0;
+
+      // Update buyer tiles
       document.getElementById('cCredits').textContent = fmt(l);
-      document.getElementById('cCost').textContent = fmt(cost);
-      document.getElementById('cOffset').textContent = fmt(l);
-      document.getElementById('cSavings').textContent = fmt(savings);
-      document.getElementById('cRate').textContent = rate.toFixed(1)+'% of all-in cost';
+      document.getElementById('cCost').textContent    = fmt(buyerCost);
+      document.getElementById('cOffset').textContent  = fmt(l);
+      document.getElementById('cSavings').textContent = fmt(buyerSave);
+      document.getElementById('cRate').textContent    = buyerRate.toFixed(1)+'% of all-in cost';
+
+      // Update profit tiles
+      document.getElementById('pRevenue').textContent   = fmt(revenue);
+      document.getElementById('pCreditCost').textContent= fmt(creditCost);
+      document.getElementById('pSpread').textContent    = fmtD(spread);
+      document.getElementById('pSpreadPct').textContent = margin.toFixed(1)+'% margin';
+      document.getElementById('pProfit').textContent    = fmt(profit);
+      document.getElementById('pMargin').textContent    = 'on '+fmt(revenue)+' revenue';
     }
-    field.addEventListener('input', calc);
+    [fLiability, fAcquire, fSell].forEach(function(f){f.addEventListener('input',calc);});
     calc();
   })();
   </script>
