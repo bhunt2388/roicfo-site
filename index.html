@@ -767,6 +767,24 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
 .cta-urgency{display:flex;align-items:flex-start;gap:12px;background:rgba(45,207,122,0.07);border:1px solid rgba(45,207,122,0.2);border-radius:6px;padding:14px 18px;margin-bottom:24px;font-size:13px;color:rgba(247,245,240,0.72);line-height:1.6;}
 .cta-urgency-dot{width:8px;height:8px;min-width:8px;background:#2DCF7A;border-radius:50%;margin-top:5px;box-shadow:0 0 0 3px rgba(45,207,122,0.2);animation:pulsedot 2s ease-in-out infinite;}
 @keyframes pulsedot{0%,100%{box-shadow:0 0 0 3px rgba(45,207,122,0.2);}50%{box-shadow:0 0 0 7px rgba(45,207,122,0.07);}}
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--navy,#0B2545);border-top:2px solid var(--gold,#B88A22);padding:14px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 -4px 24px rgba(11,37,69,0.35);transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.22,1,0.36,1);}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta-text{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.4;}
+.sticky-cta-text strong{color:#fff;font-weight:600;}
+.sticky-cta-btns{display:flex;gap:12px;flex-shrink:0;}
+.sticky-btn-cal{background:var(--gold,#B88A22);color:#fff;font-size:13px;font-weight:700;padding:11px 22px;border:none;border-radius:2px;cursor:pointer;white-space:nowrap;transition:background 0.2s;letter-spacing:0.04em;text-decoration:none;display:inline-block;}
+.sticky-btn-cal:hover{background:#d4a832;}
+.sticky-btn-form{background:transparent;color:rgba(255,255,255,0.65);font-size:13px;padding:11px 18px;border:1px solid rgba(255,255,255,0.20);border-radius:2px;white-space:nowrap;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.sticky-btn-form:hover{color:#fff;border-color:rgba(255,255,255,0.45);}
+.sticky-cta-close{background:none;border:none;color:rgba(255,255,255,0.35);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1;flex-shrink:0;}
+@media(max-width:640px){.sticky-cta{flex-wrap:wrap;padding:12px 20px;}.sticky-cta-text{width:100%;font-size:12px;}.sticky-cta-btns{width:100%;}.sticky-btn-cal,.sticky-btn-form{flex:1;text-align:center;font-size:12px;padding:10px 12px;}}
+.cta-or-divider{display:flex;align-items:center;gap:16px;margin:24px 0;}
+.cta-or-divider::before,.cta-or-divider::after{content:"";flex:1;height:1px;background:rgba(255,255,255,0.12);}
+.cta-or-divider span{font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.30);}
+.cta-book-btn{display:block;width:100%;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.18);border-radius:3px;color:#fff;font-size:14px;font-weight:600;padding:14px 24px;text-align:center;text-decoration:none;transition:background 0.2s,border-color 0.2s;letter-spacing:0.02em;}
+.cta-book-btn:hover{background:rgba(255,255,255,0.13);border-color:rgba(255,255,255,0.35);}
+.cta-book-sub{font-size:11px;color:rgba(255,255,255,0.35);text-align:center;margin-top:8px;}
 </style>
 </head>
 <body>
@@ -1651,5 +1669,14 @@ sections.forEach(s => secIO.observe(s));
 
 })();
 </script>
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text"><strong>ROI CFO &mdash; Advisor Network.</strong> &sect;45Q credits &amp; leveraged donations. Talk to Ben in 20 minutes.</div>
+  <div class="sticky-cta-btns">
+    <a href="https://calendly.com/carbon-credits-ben" target="_blank" class="sticky-btn-cal">Book a Call with Ben</a>
+    <a href="#cta" class="sticky-btn-form">Request Packet</a>
+  </div>
+  <button class="sticky-cta-close" id="stickyClose" aria-label="Dismiss">&times;</button>
+</div>
+<script>(function(){var bar=document.getElementById("stickyCta");var cb=document.getElementById("stickyClose");var d=false,s=false;window.addEventListener("scroll",function(){if(d)return;var p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);if(p>0.20&&!s){bar.classList.add("show");s=true;}},{passive:true});cb.addEventListener("click",function(){bar.classList.remove("show");d=true;});})();</script>
 </body>
 </html>

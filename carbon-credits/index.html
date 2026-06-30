@@ -260,6 +260,29 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
   .calc-profit-value{font-size:17px;}
 }
 
+
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--navy);border-top:1px solid rgba(255,255,255,0.10);padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 -4px 24px rgba(11,37,69,0.35);transform:translateY(100%);transition:transform 0.4s cubic-bezier(0.22,1,0.36,1);}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta-text{font-size:14px;color:rgba(255,255,255,0.75);line-height:1.4;}
+.sticky-cta-text strong{color:#fff;font-weight:600;}
+.sticky-cta-btns{display:flex;gap:12px;flex-shrink:0;}
+.sticky-btn-primary{background:var(--gold-l);color:var(--navy);font-size:13px;font-weight:700;padding:11px 22px;border:none;border-radius:3px;cursor:pointer;white-space:nowrap;transition:background 0.2s;letter-spacing:0.04em;text-decoration:none;display:inline-block;}
+.sticky-btn-primary:hover{background:#e8be52;}
+.sticky-btn-secondary{background:transparent;color:rgba(255,255,255,0.65);font-size:13px;padding:11px 18px;border:1px solid rgba(255,255,255,0.20);border-radius:3px;white-space:nowrap;transition:all 0.2s;text-decoration:none;display:inline-block;}
+.sticky-btn-secondary:hover{color:#fff;border-color:rgba(255,255,255,0.45);}
+.sticky-cta-close{background:none;border:none;color:rgba(255,255,255,0.35);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1;flex-shrink:0;}
+@media(max-width:640px){.sticky-cta{flex-wrap:wrap;padding:12px 16px;}.sticky-cta-text{width:100%;font-size:13px;}.sticky-cta-btns{width:100%;}.sticky-btn-primary,.sticky-btn-secondary{flex:1;text-align:center;font-size:12px;padding:10px 12px;}}
+.book-cta-block{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:4px;padding:44px 52px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid rgba(255,255,255,0.08);}
+.book-cta-tag{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.book-cta-h2{font-family:var(--serif);font-size:clamp(20px,2.8vw,30px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;}
+.book-cta-sub{font-size:15px;color:rgba(255,255,255,0.62);line-height:1.65;}
+.book-cta-actions{display:flex;flex-direction:column;gap:12px;min-width:200px;align-items:stretch;}
+.book-btn-main{background:var(--gold-l);color:var(--navy);font-size:14px;font-weight:700;padding:15px 28px;border:none;border-radius:3px;text-align:center;text-decoration:none;transition:background 0.2s;letter-spacing:0.03em;display:block;}
+.book-btn-main:hover{background:#e8be52;}
+.book-btn-alt{background:transparent;color:rgba(255,255,255,0.65);font-size:13px;padding:12px 28px;border:1px solid rgba(255,255,255,0.20);border-radius:3px;text-align:center;text-decoration:none;transition:all 0.2s;display:block;}
+.book-btn-alt:hover{color:#fff;border-color:rgba(255,255,255,0.45);}
+.book-avail{font-size:10px;color:rgba(255,255,255,0.35);text-align:center;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
+@media(max-width:760px){.book-cta-block{grid-template-columns:1fr;padding:32px 28px;}.book-cta-actions{flex-direction:row;}}
 </style>
 </head>
 <body>
@@ -576,6 +599,21 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 </section>
 
+<!-- MID-PAGE BOOK A CALL -->
+<section class="section" style="border-top:none;padding-top:0;">
+  <div class="book-cta-block reveal">
+    <div>
+      <div class="book-cta-tag">Limited Availability &mdash; 2025 Tax Year Window Still Open</div>
+      <div class="book-cta-h2">Ready to Run the Numbers on Your Client&rsquo;s Liability?</div>
+      <div class="book-cta-sub">20 minutes with Ben. Confirm eligibility, walk the mechanics, get the full CPA packet same day. No obligation.</div>
+    </div>
+    <div class="book-cta-actions">
+      <a href="https://calendly.com/carbon-credits-ben" target="_blank" class="book-btn-main">Book a 20-Min Call &rarr;</a>
+      <a href="#lead-form" class="book-btn-alt">Request Packet Instead</a>
+      <div class="book-avail">Ben Thrasher &mdash; ROI CFO</div>
+    </div>
+  </div>
+</section>
 <!-- PROTECTIONS -->
 <section class="section">
   <div class="section-eyebrow reveal">Risk Mitigation</div>
@@ -764,7 +802,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 </section>
 
 <!-- LEAD FORM -->
-<section class="section">
+<section class="section" id="lead-form">
   <div class="section-eyebrow reveal">Get Started</div>
   <div class="section-title reveal">Request the CPA Advisor Packet</div>
   <div class="lead-form-wrap">
@@ -942,5 +980,14 @@ window.addEventListener('scroll', () => {
 
 })();
 </script>
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text"><strong>2025 tax year window is open.</strong> &sect;45Q credits at $0.85 &mdash; run your client&rsquo;s numbers in 20 minutes.</div>
+  <div class="sticky-cta-btns">
+    <a href="https://calendly.com/carbon-credits-ben" target="_blank" class="sticky-btn-primary">Book a Call with Ben</a>
+    <a href="#lead-form" class="sticky-btn-secondary" id="stickyPacket">Request Packet</a>
+  </div>
+  <button class="sticky-cta-close" id="stickyClose" aria-label="Dismiss">&times;</button>
+</div>
+<script>(function(){var bar=document.getElementById("stickyCta");var cb=document.getElementById("stickyClose");var d=false,s=false;window.addEventListener("scroll",function(){if(d)return;var p=window.scrollY/(document.documentElement.scrollHeight-window.innerHeight);if(p>0.18&&!s){bar.classList.add("show");s=true;}},{passive:true});cb.addEventListener("click",function(){bar.classList.remove("show");d=true;});document.querySelectorAll("a[href='#lead-form']").forEach(function(a){a.addEventListener("click",function(e){e.preventDefault();var el=document.getElementById("lead-form");if(el)el.scrollIntoView({behavior:"smooth",block:"start"});});});})();</script>
 </body>
 </html>
