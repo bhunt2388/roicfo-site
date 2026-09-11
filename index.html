@@ -253,54 +253,117 @@ nav.main-nav a:hover { color: var(--navy); }
 .comp-chip-dot { width: 5px; height: 5px; background: var(--green); border-radius: 50%; flex-shrink: 0;
   box-shadow: 0 0 0 2.5px rgba(20,107,58,0.14); }
 
-/* Hero right — globe */
-.hero-right {}
-/* ── Hero coin animations ── */
-@keyframes roicfo-bob        { from { transform: translateY(8px);        } to { transform: translateY(-16px);       } }
-@keyframes roicfo-coinspin   { from { transform: rotateY(0deg);          } to { transform: rotateY(360deg);         } }
-@keyframes roicfo-shadowpulse{ from { transform: translateX(-50%) scale(1.05); opacity:.5; } to { transform: translateX(-50%) scale(.82); opacity:.3; } }
+/* ══════ HERO RIGHT — DUAL STRATEGY MATH CARD ══════ */
+.hero-right { display: flex; align-items: center; justify-content: center; }
 
-.hero-globe-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 480px;
-  margin: 0 auto;
-  perspective: 1500px;
-  animation: roicfo-bob 7s ease-in-out infinite alternate;
+/* Double-bezel shell */
+.mathcard {
+  position: relative; width: 100%; max-width: 452px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(11,37,69,0.09);
+  border-radius: 26px; padding: 9px;
+  box-shadow: 0 1px 2px rgba(11,37,69,0.04), 0 30px 70px -30px rgba(11,37,69,0.30);
+  transition: transform 0.7s cubic-bezier(0.32,0.72,0,1), box-shadow 0.7s cubic-bezier(0.32,0.72,0,1);
 }
-/* cast shadow */
-.hero-globe-wrap::before {
-  content: '';
-  position: absolute; left: 50%; bottom: -4%;
-  width: 55%; height: 7%;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(11,37,69,.26), rgba(11,37,69,0));
-  filter: blur(13px);
-  animation: roicfo-shadowpulse 7s ease-in-out infinite alternate;
+.mathcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(11,37,69,0.05), 0 44px 90px -34px rgba(11,37,69,0.36);
 }
-/* coin spin wrapper */
-.hero-coin-spin {
-  position: absolute; inset: 0;
-  transform-style: preserve-3d;
-  animation: roicfo-coinspin 16s linear infinite;
+.mc-core {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FDFBF7 100%);
+  border: 1px solid rgba(11,37,69,0.07);
+  border-radius: 18px; padding: 26px 28px 24px;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.9);
 }
-/* front + back faces */
-.hero-coin-face {
-  position: absolute; inset: 4%;
-  background: url('/assets/hero-logo-coin.png') center / contain no-repeat;
-  filter: drop-shadow(-2px -2px 0 rgba(255,250,224,.7))
-          drop-shadow(2px 2px 0 rgba(40,26,4,.5))
-          drop-shadow(4px 6px 6px rgba(40,26,4,.5))
-          drop-shadow(0 12px 22px rgba(6,15,30,.45))
-          brightness(1.05) contrast(1.1) saturate(1.12);
+
+/* Segmented strategy toggle */
+.mc-seg {
+  position: relative; display: grid; grid-template-columns: 1fr 1fr;
+  background: rgba(11,37,69,0.05); border: 1px solid rgba(11,37,69,0.08);
+  border-radius: 11px; padding: 3px; margin-bottom: 22px;
 }
-.hero-coin-face.back {
-  transform: rotateY(180deg);
-  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+.mc-seg-pill {
+  position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px);
+  border-radius: 8px; background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(11,37,69,0.10), 0 4px 12px -4px rgba(11,37,69,0.18);
+  transition: transform 0.55s cubic-bezier(0.32,0.72,0,1);
 }
-.hero-coin-face.front {
-  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+.mc-seg[data-on="b"] .mc-seg-pill { transform: translateX(100%); }
+.mc-seg button {
+  position: relative; z-index: 1; border: 0; background: none; cursor: pointer;
+  padding: 9px 4px; font-family: var(--sans);
+  font-size: 11px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase;
+  color: rgba(11,37,69,0.70); transition: color 0.4s cubic-bezier(0.32,0.72,0,1);
+  border-radius: 8px;
+}
+.mc-seg button:hover { color: var(--navy); }
+.mc-seg button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.mc-seg button.on { color: var(--navy); }
+.mc-seg-sub {
+  display: block; font-size: 9px; font-weight: 600; letter-spacing: 0.6px;
+  text-transform: none; color: rgba(11,37,69,0.64); margin-top: 2px;
+  transition: color 0.4s cubic-bezier(0.32,0.72,0,1);
+}
+.mc-seg button.on .mc-seg-sub { color: var(--green); }
+
+/* Panels */
+.mc-panel { display: none; }
+.mc-panel.on { display: block; animation: mcFade 0.5s cubic-bezier(0.32,0.72,0,1); }
+@keyframes mcFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.mc-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.mc-label { font-size: 9.5px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(11,37,69,0.46); }
+.mc-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 9.5px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase;
+  color: var(--green); background: rgba(20,107,58,0.07);
+  border: 1px solid rgba(20,107,58,0.20); border-radius: 20px; padding: 4px 10px;
+}
+.mc-badge i { width: 4px; height: 4px; border-radius: 50%; background: var(--green); }
+
+.mc-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  padding: 11px 0; border-bottom: 1px solid rgba(11,37,69,0.07);
+}
+.mc-row-l { font-size: 12.5px; font-weight: 500; color: var(--text-mid); }
+.mc-row-r { font-family: var(--mono); font-size: 14px; font-weight: 600; color: var(--navy); }
+.mc-row-r.strike { color: rgba(11,37,69,0.38); text-decoration: line-through; }
+.mc-row-r.acc { color: var(--green); }
+
+.mc-total {
+  margin-top: 18px; padding: 20px 22px; border-radius: 14px;
+  position: relative; overflow: hidden;
+  background: linear-gradient(150deg, #0B2545 0%, #0F3060 100%);
+  box-shadow: 0 12px 30px -12px rgba(11,37,69,0.55);
+}
+.mc-total::before {
+  content: ''; position: absolute; top: -70px; right: -70px;
+  width: 200px; height: 200px; border-radius: 50%;
+  border: 1px solid rgba(184,138,34,0.28);
+}
+.mc-total::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(184,138,34,0.75), transparent);
+}
+.mc-total-lbl {
+  font-size: 9.5px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(247,245,240,0.50); margin-bottom: 8px; position: relative;
+}
+.mc-total-val {
+  font-family: var(--serif); font-size: 44px; font-weight: 700; line-height: 1;
+  color: #D4A830; margin-bottom: 7px; position: relative;
+}
+.mc-total-sub { font-size: 11.5px; font-weight: 500; color: rgba(247,245,240,0.62); position: relative; }
+
+.mc-foot {
+  display: flex; align-items: flex-start; gap: 8px; margin-top: 16px;
+  font-size: 10.5px; font-weight: 500; color: rgba(11,37,69,0.52); line-height: 1.6;
+}
+.mc-foot svg { flex-shrink: 0; margin-top: 1px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mc-seg-pill, .mathcard { transition: none; }
+  .mc-panel.on { animation: none; }
 }
 
 .hero-card {
@@ -760,7 +823,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
 @media (max-width: 1024px) {
   :root { --pad: 40px; }
   .hero-inner-grid { grid-template-columns: 1fr; gap: 48px; }
-  .hero-right { display: none; }
+  .hero-right { display: flex; }
   .stats-grid { grid-template-columns: repeat(2,1fr); }
   .phil-grid { grid-template-columns: 1fr 1fr; }
   .strat-card { grid-template-columns: 1fr; }
@@ -908,12 +971,53 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
         </div>
       </div>
       <div class="hero-right fade-in">
-        <div class="hero-globe-wrap">
-          <div class="hero-coin-spin">
-            <div class="hero-coin-face front"></div>
-            <div class="hero-coin-face back"></div>
+        <div class="mathcard"><div class="mc-core">
+
+          <div class="mc-seg" id="mcSeg" data-on="a" role="tablist" aria-label="Tax strategy">
+            <div class="mc-seg-pill" aria-hidden="true"></div>
+            <button type="button" class="on" data-p="a" role="tab" aria-selected="true" aria-controls="mcPanelA" id="mcTabA">&sect;45Q<span class="mc-seg-sub">Carbon Credits</span></button>
+            <button type="button" data-p="b" role="tab" aria-selected="false" aria-controls="mcPanelB" id="mcTabB">&sect;170<span class="mc-seg-sub">Charitable</span></button>
           </div>
-        </div>
+
+          <div class="mc-panel on" data-panel="a" id="mcPanelA" role="tabpanel" aria-labelledby="mcTabA">
+            <div class="mc-head">
+              <div class="mc-label">Illustrative &middot; Per $1M</div>
+              <div class="mc-badge"><i></i>Files Clean</div>
+            </div>
+            <div class="mc-row"><span class="mc-row-l">Federal credit, face value</span><span class="mc-row-r">$1,000,000</span></div>
+            <div class="mc-row"><span class="mc-row-l">Client pays at $0.85</span><span class="mc-row-r">$850,000</span></div>
+            <div class="mc-row"><span class="mc-row-l">Applied against liability</span><span class="mc-row-r strike">$1,000,000</span></div>
+            <div class="mc-total">
+              <div class="mc-total-lbl">Net Tax Savings</div>
+              <div class="mc-total-val">$150,000</div>
+              <div class="mc-total-sub">15% return on dollars already owed to the IRS</div>
+            </div>
+            <div class="mc-foot">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#146B3A" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span>Transfer election under &sect;6418. IRS pre-filing registered.</span>
+            </div>
+          </div>
+
+          <div class="mc-panel" data-panel="b" id="mcPanelB" role="tabpanel" aria-labelledby="mcTabB">
+            <div class="mc-head">
+              <div class="mc-label">Illustrative &middot; Per $1M Income</div>
+              <div class="mc-badge"><i></i>Not Listed</div>
+            </div>
+            <div class="mc-row"><span class="mc-row-l">Deduction ratio</span><span class="mc-row-r acc">5 : 1</span></div>
+            <div class="mc-row"><span class="mc-row-l">Minimum investment</span><span class="mc-row-r">$50,000</span></div>
+            <div class="mc-row"><span class="mc-row-l">Carryforward period</span><span class="mc-row-r">5 Years</span></div>
+            <div class="mc-total">
+              <div class="mc-total-lbl">Net Benefit</div>
+              <div class="mc-total-val">~$91,000</div>
+              <div class="mc-total-sub">Per $1M of client income, at full deduction</div>
+            </div>
+            <div class="mc-foot">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#146B3A" stroke-width="1.6" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.7-7 9-4-1.3-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              <span>Qualified appraisal. Form 8283 delivered before filing.</span>
+            </div>
+          </div>
+
+        </div></div>
       </div>
     </div>
   </div>
@@ -1731,6 +1835,36 @@ const secIO = new IntersectionObserver((entries) => {
   });
 }, {threshold: 0.4});
 sections.forEach(s => secIO.observe(s));
+
+/* ── Hero math card: strategy toggle ── */
+(function(){
+  var seg = document.getElementById('mcSeg');
+  if (!seg) return;
+  var btns = seg.querySelectorAll('button');
+  var panels = document.querySelectorAll('.mc-panel');
+  function select(p){
+    seg.dataset.on = p;
+    btns.forEach(function(b){
+      var on = b.dataset.p === p;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panels.forEach(function(pl){
+      pl.classList.toggle('on', pl.dataset.panel === p);
+    });
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){ select(b.dataset.p); });
+    b.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        var next = seg.dataset.on === 'a' ? 'b' : 'a';
+        select(next);
+        seg.querySelector('button[data-p="' + next + '"]').focus();
+      }
+    });
+  });
+})();
 
 })();
 </script>
