@@ -1,11 +1,27 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>J.C. Majors signature - Mobile</title>
-<style>body{font-family:Arial,sans-serif;background:#fff;margin:0;padding:24px;color:#222}
-.bar{max-width:760px;margin:0 auto 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-button{background:#0A1220;color:#C9A961;border:1px solid #C9A961;padding:12px 22px;font-size:15px;cursor:pointer;border-radius:3px}
-#ok{color:#1a7f37;font-weight:bold;display:none} .n{max-width:760px;margin:0 auto 18px;font-size:13px;color:#555;line-height:1.5}
-.box{max-width:760px;margin:0 auto;border:1px dashed #bbb;padding:16px}</style></head><body>
-<div class="bar"><button onclick="cp()">Copy signature</button><span id="ok">Copied. Now paste into Gmail.</span></div>
-<div class="n">Tap Copy, then paste into the Gmail app signature.</div>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>J.C. Majors signature - Phone</title>
+<style>
+body{font-family:-apple-system,Arial,sans-serif;background:#fff;margin:0;padding:16px;color:#222}
+.w{max-width:420px;margin:0 auto}
+h2{font-size:17px;margin:18px 0 6px} p,li{font-size:14px;line-height:1.5;color:#444}
+button{display:block;width:100%;background:#0A1220;color:#C9A961;border:1px solid #C9A961;padding:16px;font-size:16px;border-radius:6px;margin:8px 0}
+button.alt{background:#fff;color:#0A1220;border:1px solid #0A1220}
+#msg{color:#1a7f37;font-weight:bold;font-size:14px;min-height:20px}
+.box{border:1px dashed #bbb;padding:10px;margin:12px 0;overflow-x:auto}
+ol{padding-left:20px;margin:6px 0}
+</style></head><body><div class="w">
+<h2>Option 1: Picture signature (links on every logo)</h2>
+<p>Use in a new email body. Tap Copy, open Gmail, start a new email, tap the body and Paste.</p>
+<button onclick="cpHtml()">Copy signature with logos</button>
+<h2>Option 2: Text signature (works in Gmail app settings)</h2>
+<p>The Gmail app only accepts plain text in its signature setting. This one has the website links.</p>
+<button class="alt" onclick="cpText()">Copy text signature</button>
+<div id="msg"></div>
+<ol>
+<li>Gmail app: tap the menu, Settings, your account, Mobile Signature.</li>
+<li>Turn it on, clear what is there, paste, tap OK.</li>
+</ol>
+<h2>Preview</h2>
 <div class="box" id="sig"><!-- J.C. Majors | Majors Hunter Group | MOBILE signature (single column, max 340px) -->
 <table cellpadding="0" cellspacing="0" border="0" width="340" style="width:340px; max-width:100%; font-family:Arial, Helvetica, sans-serif; border-collapse:collapse; background:#F5F2EA;">
   <tr>
@@ -37,13 +53,19 @@ button{background:#0A1220;color:#C9A961;border:1px solid #C9A961;padding:12px 22
   </tr>
 </table>
 </div>
+</div>
 <script>
-function cp(){var e=document.getElementById('sig');
- var html=e.innerHTML;
- function done(){document.getElementById('ok').style.display='inline';}
+var TXT="J.C. Majors\nFounder, Co-CEO & CSO | Majors Hunter Group\nJC@majorshuntergroup.com | 979-220-2230\n\n\"Purpose will always demand more than comfort is willing to give.\"\n\nmajorshuntergroup.com\nroicfo.com\ncarbonlegacytrees.com\naxischems.com\nmidtownvegas.com\nnovavia.com\nalternativetomeds.com";
+function say(t){document.getElementById('msg').textContent=t;}
+function selFallback(el){var r=document.createRange();r.selectNode(el);var s=getSelection();s.removeAllRanges();s.addRange(r);var ok=document.execCommand('copy');s.removeAllRanges();return ok;}
+function cpHtml(){
+ var e=document.getElementById('sig');
  if(navigator.clipboard&&window.ClipboardItem){
-  navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([html],{type:'text/html'}),'text/plain':new Blob(['J.C. Majors'],{type:'text/plain'})})]).then(done).catch(fallback);
- } else fallback();
- function fallback(){var r=document.createRange();r.selectNode(e);var s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');done();}
+  navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([e.innerHTML],{type:'text/html'}),'text/plain':new Blob([TXT],{type:'text/plain'})})]).then(function(){say('Copied with logos. Paste into a new email.');}).catch(function(){say(selFallback(e)?'Copied. Paste into a new email.':'Press and hold the preview, Select All, Copy.');});
+ } else {say(selFallback(e)?'Copied. Paste into a new email.':'Press and hold the preview, Select All, Copy.');}
+}
+function cpText(){
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(TXT).then(function(){say('Text signature copied. Paste in Mobile Signature.');}).catch(function(){say('Could not copy.');});}
+ else{var t=document.createElement('textarea');t.value=TXT;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();say('Text signature copied.');}
 }
 </script></body></html>
