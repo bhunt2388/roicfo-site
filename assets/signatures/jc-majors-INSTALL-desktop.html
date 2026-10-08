@@ -1,4 +1,12 @@
-<!-- J.C. Majors | Majors Hunter Group | DESKTOP signature -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>J.C. Majors signature - Desktop</title>
+<style>body{font-family:Arial,sans-serif;background:#fff;margin:0;padding:24px;color:#222}
+.bar{max-width:760px;margin:0 auto 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+button{background:#0A1220;color:#C9A961;border:1px solid #C9A961;padding:12px 22px;font-size:15px;cursor:pointer;border-radius:3px}
+#ok{color:#1a7f37;font-weight:bold;display:none} .n{max-width:760px;margin:0 auto 18px;font-size:13px;color:#555;line-height:1.5}
+.box{max-width:760px;margin:0 auto;border:1px dashed #bbb;padding:16px}</style></head><body>
+<div class="bar"><button onclick="cp()">Copy signature</button><span id="ok">Copied. Now paste into Gmail.</span></div>
+<div class="n">Click Copy, then in Gmail go to Settings, See all settings, Signature, create new, paste, and Save Changes at the bottom.</div>
+<div class="box" id="sig"><!-- J.C. Majors | Majors Hunter Group | DESKTOP signature -->
 <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial, Helvetica, sans-serif; border-collapse:collapse; background:#F5F2EA;">
   <tr>
     <td style="padding:20px 22px;">
@@ -31,3 +39,6 @@
     <td style="padding:14px 22px 20px;"><div style="font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#6B7283;">This message and any attachments are confidential and intended solely for the addressee.</div></td>
   </tr>
 </table>
+</div>
+<script>function cp(){var e=document.getElementById('sig'),r=document.createRange();r.selectNode(e);var s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy');s.removeAllRanges();var o=document.getElementById('ok');o.style.display='inline';}</script>
+</body></html>
