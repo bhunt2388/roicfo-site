@@ -958,14 +958,14 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
           Your Clients Owe Less.<br>
           <em>Here's the Math.</em>
         </h1>
-        <p class="hero-sub fade-up">ROI CFO delivers two IRS-compliant tax strategies — Section 45Q carbon credits at $0.85 on the dollar, and a federally documented 5:1 charitable deduction — exclusively through the CPAs, RIAs, and family offices their clients already trust. Full documentation package delivered before filing.</p>
+        <p class="hero-sub fade-up" id="heroSubText">ROI CFO delivers an IRS-compliant leveraged mineral donation strategy — a federally documented 5:1 charitable deduction — exclusively through the CPAs, RIAs, and family offices their clients already trust. Full documentation package delivered before filing.</p>
         <div class="hero-actions fade-up">
           <a href="#cta" class="btn-navy">Get the Advisor Packet &rarr;</a>
           <a href="#strategies" class="btn-outline">See How It Works</a>
         </div>
         <div class="hero-compliance fade-up">
-          <span class="comp-chip"><span class="comp-chip-dot"></span>IRC §45Q Compliant</span>
-          <span class="comp-chip"><span class="comp-chip-dot"></span>IRC §6418 Transfer Election</span>
+          <span class="comp-chip" id="chip45QA"><span class="comp-chip-dot"></span>IRC §45Q Compliant</span>
+          <span class="comp-chip" id="chip45QB"><span class="comp-chip-dot"></span>IRC §6418 Transfer Election</span>
           <span class="comp-chip"><span class="comp-chip-dot"></span>IRC §170 Charitable Strategy</span>
           <span class="comp-chip"><span class="comp-chip-dot"></span>Advisor-Only Access</span>
           <span class="comp-chip"><span class="comp-chip-dot"></span>IRS Pre-Filing Registered</span>
@@ -1027,7 +1027,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
 <!-- ══ STATS ══ -->
 <div id="stats">
   <div class="stats-grid">
-    <div class="stat-block stagger">
+    <div class="stat-block stagger" id="stat45QCredits">
       <div class="stat-gold-rule"></div>
       <div class="stat-val">$<span class="acc">30M</span></div>
       <div class="stat-label">Tax Credits<br>Available — 2025</div>
@@ -1037,7 +1037,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
       <div class="stat-val"><span class="acc">5</span><span style="font-size:28px;color:rgba(247,245,240,0.3);">:1</span></div>
       <div class="stat-label">Charitable Deduction<br>Leverage Ratio</div>
     </div>
-    <div class="stat-block stagger">
+    <div class="stat-block stagger" id="stat45QDollar">
       <div class="stat-gold-rule"></div>
       <div class="stat-val">$<span class="gr">0.85</span></div>
       <div class="stat-label">Per Dollar of Federal<br>Tax Credit Purchased</div>
@@ -1141,7 +1141,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
     </div>
     <div class="strat-grid">
       <!-- 45Q -->
-      <div class="strat-card fade-up">
+      <div class="strat-card fade-up" id="strat45Q">
         <div class="strat-left">
           <div>
             <div class="strat-code">IRC §45Q &middot; §6418</div>
@@ -1172,7 +1172,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
         </div>
       </div>
       <!-- Leveraged Donation -->
-      <div class="strat-card fade-up">
+      <div class="strat-card fade-up" id="stratDonation">
         <div class="strat-left">
           <div>
             <div class="strat-code">IRC §170 &middot; Qualified Appraisal Required</div>
@@ -1516,7 +1516,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
       <a href="#cta" class="btn-navy fade-up">Subscribe to Insights</a>
     </div>
     <div class="insights-grid">
-      <div class="insight-card stagger">
+      <div class="insight-card stagger" id="insight45Q">
         <div class="insight-img insight-img-1">
           <span class="insight-badge">
             <svg viewBox="0 0 12 12" fill="none"><path d="M2 9 C2 6 3.5 4.5 6 4.5 C8.5 4.5 10 6 10 9" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/><circle cx="6" cy="2.5" r="1.3" fill="currentColor"/><line x1="4" y1="9" x2="8" y2="9" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.5"/></svg>
@@ -1706,7 +1706,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
       <div>
         <div class="footer-col-head">Strategies</div>
         <div class="footer-links">
-          <a href="/carbon-credits/" target="_blank">Section 45Q Carbon Credits</a>
+          <a href="/carbon-credits/" target="_blank" id="footer45QLink">Section 45Q Carbon Credits</a>
           <a href="/leveraged-donation">Leveraged Donation Strategy</a>
           <a href="#strategies">Qualified Opportunity Zones</a>
           <a href="#strategies">Cost Segregation</a>
@@ -1869,10 +1869,63 @@ sections.forEach(s => secIO.observe(s));
 
 })();
 </script>
+<!-- ══ MINERAL-STRATEGY-ONLY GATE ══
+     Deprioritizes §45Q promotion sitewide on the homepage through Dec 31, 2026.
+     Auto-reverts (shows 45Q again) starting Jan 1, 2027. No manual follow-up needed. -->
+<script>
+(function(){
+  var CUTOFF = new Date('2027-01-01T00:00:00');
+  if (new Date() >= CUTOFF) return; // past cutoff — leave 45Q content as authored
+
+  // 1. Force hero math-card default to the mineral donation (§170) panel.
+  var seg = document.getElementById('mcSeg');
+  if (seg) {
+    var tabA = document.getElementById('mcTabA');
+    var tabB = document.getElementById('mcTabB');
+    var panelA = document.getElementById('mcPanelA');
+    var panelB = document.getElementById('mcPanelB');
+    if (tabA && tabB && panelA && panelB) {
+      seg.dataset.on = 'b';
+      tabA.classList.remove('on'); tabA.setAttribute('aria-selected', 'false');
+      tabB.classList.add('on'); tabB.setAttribute('aria-selected', 'true');
+      panelA.classList.remove('on'); panelB.classList.add('on');
+    }
+  }
+
+  // 2. Hero subhead already reads mineral-only (edited at authoring time).
+  // 3. Hide 45Q compliance chips in the hero.
+  ['chip45QA', 'chip45QB'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+
+  // 4. Hide the §45Q stat tiles.
+  ['stat45QCredits', 'stat45QDollar'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.style.display = 'none';
+  });
+
+  // 5. Hide the §45Q strategy card in the Strategies section, move donation card first.
+  var strat45Q = document.getElementById('strat45Q');
+  var stratDonation = document.getElementById('stratDonation');
+  if (strat45Q) strat45Q.style.display = 'none';
+  if (stratDonation && stratDonation.parentNode) {
+    stratDonation.parentNode.insertBefore(stratDonation, stratDonation.parentNode.firstChild);
+  }
+
+  // 6. Hide the §45Q insight card.
+  var insight45Q = document.getElementById('insight45Q');
+  if (insight45Q) insight45Q.style.display = 'none';
+
+  // 7. Hide the footer link to the §45Q deck page (the page itself stays live for direct links).
+  var footerLink = document.getElementById('footer45QLink');
+  if (footerLink) footerLink.style.display = 'none';
+})();
+</script>
 <div class="sticky-cta" id="stickyCta">
-  <div class="sticky-cta-text"><strong>ROI CFO &mdash; Advisor Network.</strong> &sect;45Q credits &amp; leveraged donations. Talk to Ben in 20 minutes.</div>
+  <div class="sticky-cta-text"><strong>ROI CFO &mdash; Advisor Network.</strong> Leveraged mineral donation strategy. Schedule a Zoom with one of our advisors.</div>
   <div class="sticky-cta-btns">
-    <a href="https://calendly.com/carbon-credits-ben" target="_blank" class="sticky-btn-cal">Book a Call with Ben</a>
+    <a href="https://calendly.com/bryson-roicfo/30-min-strategy-explanation" target="_blank" class="sticky-btn-cal">Schedule a Zoom</a>
     <a href="#cta" class="sticky-btn-form">Request Packet</a>
   </div>
   <button class="sticky-cta-close" id="stickyClose" aria-label="Dismiss">&times;</button>
