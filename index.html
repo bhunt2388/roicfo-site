@@ -1050,7 +1050,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
   </div>
 </div>
 
-<!-- ══ PAIN / AGITATION ══ -->
+<!-- ══ PAIN / AGITATION (45Q-specific — date-gated via #pain, see gate script) ══ -->
 <section class="section bg-stone2" id="pain">
   <div class="section-inner">
     <div style="max-width:720px;margin:0 auto;text-align:center;">
@@ -1058,7 +1058,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
       <h2 class="sec-title fade-up" style="text-align:center;">Your Clients Are Overpaying the IRS.<br><em style="font-style:italic;color:var(--green);">Significantly.</em></h2>
       <p class="sec-body fade-up" style="max-width:600px;margin:0 auto 48px;text-align:center;">These strategies have been codified in the IRC since 2022. They are used every year by institutional family offices. Most advisors don't know how to access them. That is not a compliance problem. It is an access problem.</p>
     </div>
-    <div class="pain-grid fade-up">
+    <div class="pain-grid fade-up" id="painGrid">
       <div class="pain-card">
         <div class="pain-num" style="color:var(--gold);">$750K</div>
         <div class="pain-label">Left on the table by a client paying $5M in federal tax — had they purchased §45Q credits this year at $0.85 on the dollar.</div>
@@ -1317,7 +1317,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
         <div class="serve-title">High-Net-Worth Individuals</div>
         <p class="serve-body">ROI CFO does not engage directly with individuals outside of a credentialed advisor relationship. If you are a qualified taxpayer, we ask that you begin the conversation through your existing RIA, CPA, or family office — or request we introduce one from our network.</p>
         <div class="serve-list">
-          <div class="serve-item">Minimum for carbon credit strategy: $3M+ federal income tax liability</div>
+          <div class="serve-item" id="hnwi45QLine">Minimum for carbon credit strategy: $3M+ federal income tax liability</div>
           <div class="serve-item">Minimum for leveraged donation strategy: $50,000 investment</div>
           <div class="serve-item">All engagements require a credentialed advisor on the transaction</div>
           <div class="serve-item">Request an advisor introduction through our contact form</div>
@@ -1606,7 +1606,7 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
     <div class="cta-eyebrow fade-up">Get the Advisor Packet</div>
     <h2 class="cta-title fade-up">See the Numbers.<br>Decide from There.</h2>
     <p class="cta-sub fade-up">We send you the full documentation package — credit pricing, deduction mechanics, K-1 structure, appraisal summary — before any conversation. <em>No pitch. Just the math.</em></p>
-    <div class="cta-urgency fade-up">
+    <div class="cta-urgency fade-up" id="ctaUrgency45Q">
       <div class="cta-urgency-dot"></div>
       <span>$30M in 2025-vintage §45Q credits available now. Our last two vintage pools cleared in under 60 days. Advisors on the list get first allocation notice when new credits are registered.</span>
     </div>
@@ -1699,7 +1699,6 @@ footer { background: var(--black); padding: 70px var(--pad) 40px; border-top: 1p
         <div class="footer-contact">
           <div style="margin-bottom:6px;">3300 Triumph Blvd, Lehi, UT 84043</div>
           <div style="margin-bottom:6px;"><a href="mailto:bryson@roicfo.com">bryson@roicfo.com</a></div>
-          <div style="margin-bottom:6px;"><a href="tel:+17607029106">+1 (760) 702-9106</a></div>
           <div><a href="https://roicfo.com">roicfo.com</a></div>
         </div>
       </div>
@@ -1877,6 +1876,26 @@ sections.forEach(s => secIO.observe(s));
   var CUTOFF = new Date('2027-01-01T00:00:00');
   if (new Date() >= CUTOFF) return; // past cutoff — leave 45Q content as authored
 
+  // Hides an element AND recomputes its parent grid's column count so no
+  // blank/dead grid tracks are left behind (the bug that caused empty
+  // whitespace when §45Q tiles/cards were simply display:none'd).
+  function hideAndRegrid(id) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var parent = el.parentElement;
+    el.style.display = 'none';
+    if (parent) fixGridCols(parent);
+  }
+  function fixGridCols(parent) {
+    var visibleCount = 0;
+    for (var i = 0; i < parent.children.length; i++) {
+      if (parent.children[i].style.display !== 'none') visibleCount++;
+    }
+    if (visibleCount > 0 && getComputedStyle(parent).display.indexOf('grid') !== -1) {
+      parent.style.gridTemplateColumns = 'repeat(' + visibleCount + ', 1fr)';
+    }
+  }
+
   // 1. Force hero math-card default to the mineral donation (§170) panel.
   var seg = document.getElementById('mcSeg');
   if (seg) {
@@ -1893,19 +1912,18 @@ sections.forEach(s => secIO.observe(s));
   }
 
   // 2. Hero subhead already reads mineral-only (edited at authoring time).
-  // 3. Hide 45Q compliance chips in the hero.
+  // 3. Hide 45Q compliance chips in the hero (flex-wrap row, no grid fix needed).
   ['chip45QA', 'chip45QB'].forEach(function(id){
     var el = document.getElementById(id);
     if (el) el.style.display = 'none';
   });
 
-  // 4. Hide the §45Q stat tiles.
-  ['stat45QCredits', 'stat45QDollar'].forEach(function(id){
-    var el = document.getElementById(id);
-    if (el) el.style.display = 'none';
-  });
+  // 4. Hide the §45Q stat tiles and collapse the stats grid to the remaining columns.
+  hideAndRegrid('stat45QCredits');
+  hideAndRegrid('stat45QDollar');
 
   // 5. Hide the §45Q strategy card in the Strategies section, move donation card first.
+  //    (.strat-grid is flex-column, not grid, so no track collapse needed — just reorder.)
   var strat45Q = document.getElementById('strat45Q');
   var stratDonation = document.getElementById('stratDonation');
   if (strat45Q) strat45Q.style.display = 'none';
@@ -1913,13 +1931,24 @@ sections.forEach(s => secIO.observe(s));
     stratDonation.parentNode.insertBefore(stratDonation, stratDonation.parentNode.firstChild);
   }
 
-  // 6. Hide the §45Q insight card.
-  var insight45Q = document.getElementById('insight45Q');
-  if (insight45Q) insight45Q.style.display = 'none';
+  // 6. Hide the §45Q insight card and collapse the insights grid to 2 columns.
+  hideAndRegrid('insight45Q');
 
   // 7. Hide the footer link to the §45Q deck page (the page itself stays live for direct links).
   var footerLink = document.getElementById('footer45QLink');
   if (footerLink) footerLink.style.display = 'none';
+
+  // 8. Hide the entire "Pain / Agitation" section — it's 45Q-vintage-specific messaging.
+  var painSection = document.getElementById('pain');
+  if (painSection) painSection.style.display = 'none';
+
+  // 9. Hide the 45Q urgency line in the bottom CTA band.
+  var ctaUrgency = document.getElementById('ctaUrgency45Q');
+  if (ctaUrgency) ctaUrgency.style.display = 'none';
+
+  // 10. Hide the 45Q minimum-liability line in the HNWI card.
+  var hnwiLine = document.getElementById('hnwi45QLine');
+  if (hnwiLine) hnwiLine.style.display = 'none';
 })();
 </script>
 <div class="sticky-cta" id="stickyCta">
