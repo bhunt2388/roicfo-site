@@ -1084,7 +1084,7 @@ img,svg{max-width:100%}
   function resize(){ W=cv.width=container.offsetWidth; H=cv.height=container.offsetHeight; cx=W*.5; cy=H*.48; R=Math.min(W,H)*.32; }
   window.addEventListener('resize',resize); resize();
   const TAU=Math.PI*2; let rot=0; const startT=Date.now();
-  const rng=s=>{let x=Math.sin(s)*43758;return x-(x|0);};
+  const rng=s=>{let x=Math.sin(s)*43758;return Math.abs(x-(x|0));};
   const stars=[]; for(let i=0;i<180;i++) stars.push({x:rng(i*3)*1920,y:rng(i*3+1)*1080,r:.4+rng(i*3+2)*1.2,a:.2+rng(i*7)*.45,tw:rng(i*11)});
   function project(lon,lat,r,ry){ const ll=lon+ry,x3=Math.cos(lat)*Math.sin(ll),y3=Math.sin(lat),z3=Math.cos(lat)*Math.cos(ll); return{x:cx+r*x3,y:cy-r*y3,z:z3}; }
   const land=[{lat:.7,lon:-1.6,rlat:.35,rlon:.5},{lat:-.35,lon:-1.1,rlat:.3,rlon:.28},{lat:.85,lon:.25,rlat:.22,rlon:.32},{lat:.05,lon:.25,rlat:.38,rlon:.3},{lat:.6,lon:1.4,rlat:.38,rlon:.7},{lat:-.35,lon:2.4,rlat:.22,rlon:.28}];
