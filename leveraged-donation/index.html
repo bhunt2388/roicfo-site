@@ -108,12 +108,12 @@ body { font-family: var(--sans); background: var(--stone); color: var(--slate); 
 }
 #hero-three { position: absolute; inset: 0; width: 100%; height: 100%; }
 
-.hero-eyebrow {
+.hero-kicker {
   display: flex; align-items: center; gap: 10px; margin-bottom: 28px;
   font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
   text-transform: uppercase; color: var(--gold-light);
 }
-.hero-eyebrow-line { width: 28px; height: 1px; background: var(--gold); opacity: 0.6; }
+.hero-kicker-line { width: 28px; height: 1px; background: var(--gold); opacity: 0.6; }
 .hero-title {
   font-family: var(--serif); font-size: clamp(36px, 4.2vw, 60px);
   font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
@@ -138,10 +138,10 @@ body { font-family: var(--sans); background: var(--stone); color: var(--slate); 
   font-variant-numeric: tabular-nums;
 }
 .hero-stat .lbl { font-size: 8.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-top: 6px; font-family: var(--mono); }
-.hero-pills { display: flex; gap: 7px; flex-wrap: wrap; max-width: 520px; margin-bottom: 40px; }
-.pill { padding: 5px 13px; border-radius: 20px; font-size: 10px; font-weight: 500; letter-spacing: 0.4px; font-family: var(--sans); }
-.pill-gold { background: rgba(184,138,34,0.14); color: var(--gold-light); border: 1px solid rgba(184,138,34,0.32); }
-.pill-outline { background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.14); }
+.hero-terms { display: flex; gap: 7px; flex-wrap: wrap; max-width: 520px; margin-bottom: 40px; }
+.term { padding: 5px 13px; border-radius: 20px; font-size: 10px; font-weight: 500; letter-spacing: 0.4px; font-family: var(--sans); }
+.term-gold { background: rgba(184,138,34,0.14); color: var(--gold-light); border: 1px solid rgba(184,138,34,0.32); }
+.term-plain { background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.14); }
 .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
 .btn-primary {
   display: inline-block; background: var(--green); color: #fff;
@@ -185,8 +185,8 @@ section { padding: 88px 6vw; position: relative; overflow: hidden; }
 .s-divider-navy { height: 1px; background: rgba(255,255,255,0.08); }
 
 /* ── SECTION HEADERS ── */
-.sec-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-.sec-eyebrow.on-dark { color: var(--gold-light); }
+.sec-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
+.sec-kicker.on-dark { color: var(--gold-light); }
 .sec-title { font-family: var(--serif); font-size: clamp(26px, 2.8vw, 40px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--navy); margin-bottom: 14px; }
 .sec-title.on-dark { color: #fff; }
 .sec-body { font-size: 15px; font-weight: 400; color: var(--slate-light); line-height: 1.8; max-width: 580px; margin-bottom: 48px; }
@@ -232,7 +232,7 @@ section { padding: 88px 6vw; position: relative; overflow: hidden; }
 .bullet-text strong { color: var(--navy); font-weight: 700; }
 
 /* ── TABLE BADGE ── */
-.table-badge { display: inline-block; background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); border-radius: 20px; padding: 4px 14px; font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; font-family: var(--mono); }
+.table-note { display: inline-block; background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); border-radius: 20px; padding: 4px 14px; font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; font-family: var(--mono); }
 
 /* ── SAVINGS TABLE ── */
 .savings-table-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(11,37,69,0.06); }
@@ -316,11 +316,11 @@ section { padding: 88px 6vw; position: relative; overflow: hidden; }
 .tier-track-bar { height: 4px; background: var(--stone-section); border-radius: 3px; margin: 8px 0 6px; overflow: hidden; }
 .tier-track-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--green)); border-radius: 3px; transition: width 0.5s ease; }
 .tier-labels { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8.5px; color: var(--slate-dim); }
-.tier-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-bottom: 10px; font-family: var(--sans); }
-.tier-badge.t1 { background: var(--stone-panel); color: var(--slate); border: 1px solid var(--border); }
-.tier-badge.t2 { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); }
-.tier-badge.t3 { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
-.tier-badge.tbulk { background: rgba(184,138,34,0.15); color: var(--gold); border: 1px solid var(--gold-border); }
+.tier-label { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-bottom: 10px; font-family: var(--sans); }
+.tier-label.t1 { background: var(--stone-panel); color: var(--slate); border: 1px solid var(--border); }
+.tier-label.t2 { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); }
+.tier-label.t3 { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+.tier-label.tbulk { background: rgba(184,138,34,0.15); color: var(--gold); border: 1px solid var(--gold-border); }
 .tier-next { font-size: 11px; color: var(--slate-dim); margin-top: 7px; line-height: 1.5; }
 
 /* ── ASSET SECTION ── */
@@ -328,7 +328,7 @@ section { padding: 88px 6vw; position: relative; overflow: hidden; }
 .asset-card { background: var(--stone-card); border: 1px solid var(--border); border-radius: var(--r); padding: 26px 22px; transition: border-color 0.2s, box-shadow 0.2s; }
 .asset-card:hover { border-color: var(--navy); box-shadow: 0 4px 16px rgba(11,37,69,0.08); }
 .asset-card.accent { border-top: 3px solid var(--gold); }
-.asset-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 11px; }
+.asset-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 11px; }
 .asset-head { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 9px; }
 .asset-body { font-size: 13px; line-height: 1.7; color: var(--slate-light); }
 .asset-body strong { color: var(--navy); font-weight: 600; }
@@ -340,9 +340,9 @@ section { padding: 88px 6vw; position: relative; overflow: hidden; }
 .stout-num { font-family: var(--mono); font-size: 34px; font-weight: 600; color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums; }
 .stout-num-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--slate-dim); margin-top: 6px; }
 .product-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
-.product-pill { background: var(--stone); border-radius: var(--r); padding: 12px 15px; display: flex; align-items: center; gap: 11px; border: 1px solid var(--border); transition: border-color 0.2s; }
-.product-pill:hover { border-color: var(--green); }
-.product-pill-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.product-item { background: var(--stone); border-radius: var(--r); padding: 12px 15px; display: flex; align-items: center; gap: 11px; border: 1px solid var(--border); transition: border-color 0.2s; }
+.product-item:hover { border-color: var(--green); }
+.product-item-icon { width: 18px; height: 18px; flex-shrink: 0; }
 .product-name { font-size: 12.5px; font-weight: 700; color: var(--navy); }
 .product-sub { font-size: 10px; color: var(--slate-dim); }
 .charity-banner { background: var(--green-dim); border: 1px solid var(--green-border); border-radius: var(--r); padding: 26px 30px; margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
@@ -495,6 +495,29 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
   .footer-links-wrap { gap: 28px; }
   #compliance .p-steps::before { display: none; }
 }
+
+/* ===== ROI CFO redesign pass: no pill/chip labels, refined type + motion ===== */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+:focus-visible{outline:2px solid #B88A22;outline-offset:3px}
+img,svg{max-width:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .fade-up,.stagger,.reveal{opacity:1!important;transform:none!important}
+}
+
+.hero-kicker,.sec-kicker{font-size:12px;letter-spacing:.18em;font-weight:600}
+.hero-terms{display:flex;flex-wrap:wrap;gap:0;max-width:760px;margin-bottom:40px;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
+.term{background:none!important;border:0!important;border-radius:0;padding:3px 16px 3px 0;margin-right:16px;font-size:12px;font-weight:500;letter-spacing:.2px;border-right:1px solid rgba(184,138,34,.5)!important;margin-bottom:6px}
+.term:last-child{border-right:0!important}
+.term-gold{color:#D4A93E}.term-plain{color:rgba(255,255,255,.78)}
+.table-note{background:none;border:0;border-radius:0;padding:0 0 0 12px;border-left:2px solid #B88A22;font-size:11px;letter-spacing:.16em;color:#146B3A}
+.tier-label{background:none!important;border:0!important;border-radius:0;padding:0 0 0 10px;font-size:12px;font-weight:700;border-left:2px solid #B88A22!important}
+.tier-label.t3{color:#146B3A}
+.asset-label{font-size:11px;letter-spacing:.16em}
+.asset-card,.doc-card,.track-card,.comp-card,.sum-card{transition:transform .3s ease,box-shadow .3s ease}
+.asset-card:hover,.doc-card:hover,.track-card:hover,.comp-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(11,37,69,.35)}
+@media(max-width:640px){.term{border-right:0!important;flex:1 1 100%;margin-right:0}}
 </style>
 </head>
 <body>
@@ -519,10 +542,10 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── HERO ── -->
 <section id="hero">
   <div id="hero-content">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-line"></span>
+    <div class="hero-kicker">
+      <span class="hero-kicker-line"></span>
       ROI CFO &middot; 2025 Advisor Offering
-      <span class="hero-eyebrow-line"></span>
+      <span class="hero-kicker-line"></span>
     </div>
     <h1 class="hero-title">Turn Tax Liability Into<br><em>Real Cash Return</em></h1>
     <p class="hero-sub">A federally compliant 5:1 leveraged donation strategy for high-income taxpayers. Verified appraisal, K-1 documentation, and zero listed-transaction risk &mdash; delivered exclusively through advisors, CPAs, and family offices.</p>
@@ -532,12 +555,12 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
       <div class="hero-stat"><div class="val" data-count="50" data-prefix="$" data-suffix="K">$50K</div><div class="lbl">Min. Investment</div></div>
       <div class="hero-stat"><div class="val" data-count="5" data-suffix=" Yr">5 Yr</div><div class="lbl">Carryforward</div></div>
     </div>
-    <div class="hero-pills">
-      <span class="pill pill-gold">Not a Listed Transaction</span>
-      <span class="pill pill-gold">5-Year Carryforward</span>
-      <span class="pill pill-outline">K-1 + Form 8283</span>
-      <span class="pill pill-outline">Qualified Appraisal</span>
-      <span class="pill pill-outline">Related-Use Charitable Donation</span>
+    <div class="hero-terms">
+      <span class="term term-gold">Not a Listed Transaction</span>
+      <span class="term term-gold">5-Year Carryforward</span>
+      <span class="term term-plain">K-1 + Form 8283</span>
+      <span class="term term-plain">Qualified Appraisal</span>
+      <span class="term term-plain">Related-Use Charitable Donation</span>
     </div>
     <div class="hero-btns">
       <a href="#cta" class="btn-primary">Request Advisor Package &rarr;</a>
@@ -556,7 +579,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── HOW IT WORKS ── -->
 <section class="s-white" id="how">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">The Strategy</div>
+    <div class="sec-kicker">The Strategy</div>
     <h2 class="sec-title">3 Steps. One Clean Structure.</h2>
     <p class="sec-body">U.S. tax law allows contributors to deduct the fair market value of donated assets &mdash; not just their cost basis. ROI CFO structures a bulk mineral acquisition at a fraction of appraised FMV, then allows taxpayer-partners to donate their allocated portion at full FMV.</p>
   </div>
@@ -590,7 +613,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── THE LEVERAGE ── -->
 <section class="s-stone" id="leverage">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">The Leverage</div>
+    <div class="sec-kicker">The Leverage</div>
     <h2 class="sec-title">Why 5:1 Changes the Math</h2>
   </div>
   <div class="leverage-layout fade-up">
@@ -613,7 +636,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── TAX SAVINGS TABLE ── -->
 <section class="s-white" id="math">
   <div class="sec-head-wrap fade-up">
-    <div class="table-badge">Real Dollar Savings</div>
+    <div class="table-note">Real Dollar Savings</div>
     <h2 class="sec-title">The Numbers at $1M Income</h2>
     <p class="sec-body">Side-by-side comparison. $60,000 investment generating a $300,000 charitable deduction. Federal + California rates shown.</p>
   </div>
@@ -648,7 +671,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── INCOME TIER TABLE ── -->
 <section class="s-stone" id="tiers">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">Every Income Level</div>
+    <div class="sec-kicker">Every Income Level</div>
     <h2 class="sec-title">Savings Across Income Tiers</h2>
     <p class="sec-body">The strategy scales with income. State rates shown at CA 13.3% &mdash; adjust for your client&rsquo;s state.</p>
   </div>
@@ -676,7 +699,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── LIVE CALCULATOR ── -->
 <section class="s-white" id="calculator">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">Interactive Calculator</div>
+    <div class="sec-kicker">Interactive Calculator</div>
     <h2 class="sec-title">Run the Numbers Live</h2>
     <p class="sec-body">Enter your client&rsquo;s income and state rate. The right panel shows your referral earnings at your current volume tier.</p>
   </div>
@@ -721,7 +744,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
         </div>
         <div style="margin-top:14px">
           <div class="calc-label" style="margin-bottom:9px">Your Current Tier</div>
-          <span class="tier-badge t1" id="a-tier-badge">Standard &mdash; 10%</span>
+          <span class="tier-label t1" id="a-tier-label">Standard &mdash; 10%</span>
           <div class="tier-track">
             <div class="tier-track-bar"><div class="tier-track-fill" id="a-progress-fill" style="width:8%"></div></div>
             <div class="tier-labels"><span>$0</span><span>$5M &rarr; 15%</span><span>$10M &rarr; 20%</span></div>
@@ -742,7 +765,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── THE ASSET ── -->
 <section class="s-stone" id="asset">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">The Underlying Asset</div>
+    <div class="sec-kicker">The Underlying Asset</div>
     <h2 class="sec-title">The Asset Is Real &mdash; and Independently Documented</h2>
     <p class="sec-body">Unlike conservation easements, this deduction is backed by a tangible mineral deposit with independent geologist reports, lab assays, an active BLM/SITLA claims record, and a qualified third-party appraisal &mdash; not a hypothetical development restriction.</p>
   </div>
@@ -759,27 +782,27 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
   </div>
   <div class="asset-grid">
     <div class="asset-card accent">
-      <div class="asset-tag">The Mineral</div>
+      <div class="asset-label">The Mineral</div>
       <div class="asset-head">Lake Bonneville Lacustrine Clay &amp; Marl &mdash; Sevier Desert</div>
       <div class="asset-body">300,000 tons of documented calcium- and magnesium-rich surface deposit (not a deep hard-rock mine), sampled and reported on BLM placer claims and an adjacent SITLA limestone lease in Millard County, Utah. Long-term holding period inherited by taxpayer-partner via IRC tacking rules on day one &mdash; completing the long-term capital asset requirement before donation.</div>
     </div>
     <div class="asset-card">
-      <div class="asset-tag">Field Documentation</div>
+      <div class="asset-label">Field Documentation</div>
       <div class="asset-head">Geologist Reports &amp; Lab Assays in the Data Room</div>
       <div class="asset-body">Kohler (2023) and Beard (2025) auger-hole sampling reports, Stukenholtz manure/compost-method lab averages (calcium, magnesium, sulfur, K2O, P2O5, iron), and a separate Midwest Labs total-soil suite support the Stout Risk appraisal and are available to advisors and counsel in the password-protected data room at utahseabed.com.</div>
       <div class="product-row">
-        <div class="product-pill">
-          <svg class="product-pill-icon" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><path d="M12 22V8M5 3l7 5 7-5M5 3v14l7 5 7-5V3"/></svg>
+        <div class="product-item">
+          <svg class="product-item-icon" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><path d="M12 22V8M5 3l7 5 7-5M5 3v14l7 5 7-5V3"/></svg>
           <div><div class="product-name">Soil Amendment</div><div class="product-sub">Calcareous Sediment &middot; Amendment Use</div></div>
         </div>
-        <div class="product-pill">
-          <svg class="product-pill-icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+        <div class="product-item">
+          <svg class="product-item-icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
           <div><div class="product-name">Handling &amp; Bagging</div><div class="product-sub">Nephi, Utah Ranch Facility</div></div>
         </div>
       </div>
     </div>
     <div class="asset-card">
-      <div class="asset-tag">Related-Use Application</div>
+      <div class="asset-label">Related-Use Application</div>
       <div class="asset-head">Applied on Tribal &amp; Working Farmland</div>
       <div class="asset-body">Donated material is applied by alliance partners on market garden plots and Tribal farmland (e.g. Oklahoma, Wind River, Lower Brule) as a soil amendment for agricultural and land-restoration use, demonstrating a real, active related-use program.</div>
     </div>
@@ -806,7 +829,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── DOCUMENTATION ── -->
 <section class="s-white" id="documentation">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">The Tax Documentation Package</div>
+    <div class="sec-kicker">The Tax Documentation Package</div>
     <h2 class="sec-title">Every Document the IRS Expects &mdash; Delivered</h2>
     <p class="sec-body">Each investor receives a complete documentation package prepared to IRS standards. The client&rsquo;s CPA gets everything needed to file confidently &mdash; no gaps, no missing signatures, no ambiguity.</p>
   </div>
@@ -849,7 +872,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── COMPLIANCE — navy section ── -->
 <section id="compliance">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow on-dark">Risk &amp; Compliance</div>
+    <div class="sec-kicker on-dark">Risk &amp; Compliance</div>
     <h2 class="sec-title on-dark">Why This Stands Up</h2>
     <p class="sec-body on-dark">Specifically designed to avoid the pitfalls that plagued listed transactions like conservation easements. Four structural differences protect clients.</p>
   </div>
@@ -894,7 +917,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── PROCESS ── -->
 <section class="s-stone" id="process">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">For Advisors</div>
+    <div class="sec-kicker">For Advisors</div>
     <h2 class="sec-title">5-Step Turnkey Process</h2>
     <p class="sec-body">Designed to be completely turnkey for CPAs and financial planners. Your only job is the referral &mdash; we handle all documentation, escrow, entity setup, and tax forms.</p>
   </div>
@@ -912,7 +935,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── COMPENSATION ── -->
 <section class="s-white" id="compensation">
   <div class="sec-head-wrap fade-up">
-    <div class="sec-eyebrow">Referral Compensation</div>
+    <div class="sec-kicker">Referral Compensation</div>
     <h2 class="sec-title">There Is Room to Be Paid for Referrals</h2>
     <p class="sec-body" style="max-width:640px">How you&rsquo;re compensated depends on your professional designation. Both tracks are clean &mdash; structure is different, not the outcome.</p>
   </div>
@@ -967,7 +990,7 @@ footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px s
 <!-- ── CTA ── -->
 <section id="cta">
   <div class="cta-inner">
-    <div class="sec-eyebrow on-dark" style="text-align:center">Ready to Learn More?</div>
+    <div class="sec-kicker on-dark" style="text-align:center">Ready to Learn More?</div>
     <h2 class="sec-title on-dark" style="text-align:center;margin-bottom:6px">Start Referring Clients Today</h2>
     <p class="sec-body on-dark" style="margin:0 auto;text-align:center;max-width:500px">Request your unique advisor referral link. We&rsquo;ll walk you through the structure, answer compliance questions, and deliver a customizable client-ready summary.</p>
     <div class="cta-box">
@@ -1172,7 +1195,7 @@ function calcAdvisor(){
   document.getElementById('a-avg-inv').textContent=money(av);
   document.getElementById('a-total-inv').textContent=money(ti);
   document.getElementById('a-total-ded').textContent=money(td);
-  const b=document.getElementById('a-tier-badge'); b.textContent=label; b.className='tier-badge '+cls;
+  const b=document.getElementById('a-tier-label'); b.textContent=label; b.className='tier-label '+cls;
   document.getElementById('a-fee').textContent=money(fee);
   document.getElementById('a-progress-fill').style.width=Math.min(prog,100)+'%';
   document.getElementById('a-next-tier').textContent=msg;

@@ -40,13 +40,13 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 /* PAGE */
 .page{padding-top:60px;}
 .section{padding:70px 64px;border-top:1px solid var(--rule);}
-.section-eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.section-kicker{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
 .section-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,42px);font-weight:700;line-height:1.12;letter-spacing:-0.01em;margin-bottom:40px;color:var(--navy);}
 
 /* HERO */
 .hero{padding:80px 64px 60px;background:var(--navy);color:#fff;}
-.hero-eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
-.hero-eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold);}
+.hero-kicker{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;display:flex;align-items:center;gap:12px;}
+.hero-kicker::before{content:'';display:block;width:28px;height:1px;background:var(--gold);}
 .hero h1{font-family:var(--serif);font-size:clamp(38px,5.5vw,66px);font-weight:700;line-height:1.06;letter-spacing:-0.02em;margin-bottom:28px;color:#fff;}
 .hero h1 em{font-style:italic;color:var(--gold);}
 .hero-lead{font-size:17px;line-height:1.72;color:rgba(255,255,255,0.72);max-width:700px;margin-bottom:52px;}
@@ -69,9 +69,9 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 .vintage-title{font-family:var(--serif);font-size:21px;font-weight:700;color:#0e4a28;margin-bottom:10px;}
 .vintage-body{font-size:15px;line-height:1.72;color:rgba(30,36,40,0.78);}
 .vintage-body strong{color:var(--navy);}
-.vintage-badge{background:rgba(20,107,58,0.12);border:1px solid rgba(20,107,58,0.32);border-radius:3px;padding:22px 30px;text-align:center;min-width:140px;}
+.vintage-seal{background:rgba(20,107,58,0.12);border:1px solid rgba(20,107,58,0.32);border-radius:3px;padding:22px 30px;text-align:center;min-width:140px;}
 .vintage-year{font-family:var(--serif);font-size:44px;font-weight:700;color:#0e4a28;line-height:1;}
-.vintage-badge-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--c45);margin-top:6px;}
+.vintage-seal-label{font-size:9px;letter-spacing:0.18em;text-transform:uppercase;color:var(--c45);margin-top:6px;}
 
 /* STEPS */
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:3px;overflow:hidden;}
@@ -82,7 +82,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 /* IRS CHIPS */
 .irs-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px;}
-.irs-chip{display:flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(20,107,58,0.30);border-radius:2px;font-size:11px;color:var(--green);letter-spacing:0.04em;}
+.irs-item{display:flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(20,107,58,0.30);border-radius:2px;font-size:11px;color:var(--green);letter-spacing:0.04em;}
 .irs-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0;}
 
 /* FLOW */
@@ -122,7 +122,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 .savings-table td:first-child{text-align:left;font-family:var(--sans);font-weight:600;color:var(--navy);font-size:15px;}
 .savings-table td.pos{color:var(--green);font-weight:700;}
 .savings-table td.hi{color:var(--navy);font-weight:700;}
-.s-chip{display:block;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;background:rgba(20,107,58,0.10);border:1px solid rgba(20,107,58,0.28);border-radius:2px;color:var(--green);margin-top:4px;font-family:var(--sans);width:fit-content;}
+.s-note{display:block;font-size:9px;letter-spacing:0.12em;text-transform:uppercase;padding:2px 7px;background:rgba(20,107,58,0.10);border:1px solid rgba(20,107,58,0.28);border-radius:2px;color:var(--green);margin-top:4px;font-family:var(--sans);width:fit-content;}
 .savings-note{font-size:12px;line-height:1.65;color:var(--c45);max-width:820px;}
 .savings-note strong{color:var(--c70);}
 
@@ -156,7 +156,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 .layers-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bdr);border:1px solid var(--bdr);border-radius:3px;overflow:hidden;}
 .ls-cell{background:var(--card);padding:30px 28px;border-top:2px solid transparent;}
 .ls-cell.accent{border-top-color:var(--gold);}
-.ls-tag{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.ls-label{font-size:9.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
 .ls-title{font-family:var(--serif);font-size:16px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:10px;}
 .ls-body{font-size:13.5px;line-height:1.68;color:var(--c70);}
 
@@ -211,7 +211,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 /* INLINE CALCULATOR */
 .calc-wrap{background:var(--navy);border-radius:14px;padding:36px 40px 40px;margin-top:40px;max-width:820px;}
-.calc-eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+.calc-kicker{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
 .calc-headline{font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);font-weight:700;color:#fff;margin-bottom:28px;line-height:1.2;}
 .calc-input-row{display:flex;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:32px;}
 .calc-input-group{flex:1;min-width:200px;}
@@ -252,7 +252,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 .sticky-cta-close{background:none;border:none;color:rgba(255,255,255,0.35);font-size:20px;cursor:pointer;padding:4px 8px;line-height:1;flex-shrink:0;}
 @media(max-width:640px){.sticky-cta{flex-wrap:wrap;padding:12px 16px;}.sticky-cta-text{width:100%;font-size:13px;}.sticky-cta-btns{width:100%;}.sticky-btn-primary,.sticky-btn-secondary{flex:1;text-align:center;font-size:12px;padding:10px 12px;}}
 .book-cta-block{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:4px;padding:44px 52px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;border:1px solid rgba(255,255,255,0.08);}
-.book-cta-tag{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.book-cta-label{font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
 .book-cta-h2{font-family:var(--serif);font-size:clamp(20px,2.8vw,30px);font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;}
 .book-cta-sub{font-size:15px;color:rgba(255,255,255,0.62);line-height:1.65;}
 .book-cta-actions{display:flex;flex-direction:column;gap:12px;min-width:200px;align-items:stretch;}
@@ -262,6 +262,30 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 .book-btn-alt:hover{color:#fff;border-color:rgba(255,255,255,0.45);}
 .book-avail{font-size:10px;color:rgba(255,255,255,0.35);text-align:center;letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;}
 @media(max-width:760px){.book-cta-block{grid-template-columns:1fr;padding:32px 28px;}.book-cta-actions{flex-direction:row;}}
+
+/* ===== ROI CFO redesign pass: no pill/chip labels, refined type + motion ===== */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+:focus-visible{outline:2px solid #B88A22;outline-offset:3px}
+img,svg{max-width:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .fade-up,.stagger,.reveal{opacity:1!important;transform:none!important}
+}
+
+.hero-kicker,.section-kicker,.calc-kicker,.book-cta-label,.ls-label{font-size:12px;letter-spacing:.18em;font-weight:600}
+.irs-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:1px solid rgba(11,37,69,.14);border-bottom:1px solid rgba(11,37,69,.14);margin-bottom:36px}
+.irs-item{border:0;border-radius:0;padding:16px 20px 16px 0;margin-right:20px;font-size:13px;font-weight:600;color:#0B2545;letter-spacing:0;border-left:2px solid #B88A22;padding-left:14px;margin-right:0;margin:12px 0}
+.irs-dot{display:none}
+.s-note{display:block;background:none;border:0;border-radius:0;padding:0;font-size:10px;letter-spacing:.14em;color:#146B3A;font-weight:700}
+.vintage-seal{background:#fff;border-color:rgba(184,138,34,.5)}
+.legal-card,.protection-card,.step-card{transition:transform .3s ease,box-shadow .3s ease}
+.legal-card:hover,.protection-card:hover,.step-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(11,37,69,.35)}
+.section-title{text-wrap:balance}
+@media(max-width:640px){.vintage-banner{margin-left:20px;margin-right:20px;padding:28px 22px}}
+
+body{overflow-x:clip}
+@media(max-width:700px){.savings-table,.data-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}}
 </style>
 </head>
 <body>
@@ -275,7 +299,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">Section 45Q &mdash; Carbon Oxide Sequestration Credits</div>
+  <div class="hero-kicker">Section 45Q &mdash; Carbon Oxide Sequestration Credits</div>
   <h1>A dollar of federal tax credit<br>acquired for <em>eighty-five cents.</em></h1>
   <p class="hero-lead">
     Welcome 123 1 LLC holds the exclusive contractual right to purchase
@@ -329,21 +353,21 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
       the Credit Holder&rsquo;s IRS pre-filing registration number.
     </div>
   </div>
-  <div class="vintage-badge">
+  <div class="vintage-seal">
     <div class="vintage-year">2025</div>
-    <div class="vintage-badge-label">Tax Year<br>Applicable</div>
+    <div class="vintage-seal-label">Tax Year<br>Applicable</div>
   </div>
 </div>
 
 <!-- HOW IT WORKS -->
 <section class="section">
-  <div class="section-eyebrow reveal">Mechanics</div>
+  <div class="section-kicker reveal">Mechanics</div>
   <div class="section-title reveal">How Section 45Q Credit Transfers Work</div>
   <div class="irs-row">
-    <div class="irs-chip"><span class="irs-dot"></span> IRS Pre-Filing Registration Required</div>
-    <div class="irs-chip"><span class="irs-dot"></span> IRC &sect;6418 Transfer Election</div>
-    <div class="irs-chip"><span class="irs-dot"></span> Active Credit &mdash; &sect;38 General Business Credit</div>
-    <div class="irs-chip"><span class="irs-dot"></span> No Passive Activity Limits (&sect;469 Does Not Apply)</div>
+    <div class="irs-item"><span class="irs-dot"></span> IRS Pre-Filing Registration Required</div>
+    <div class="irs-item"><span class="irs-dot"></span> IRC &sect;6418 Transfer Election</div>
+    <div class="irs-item"><span class="irs-dot"></span> Active Credit &mdash; &sect;38 General Business Credit</div>
+    <div class="irs-item"><span class="irs-dot"></span> No Passive Activity Limits (&sect;469 Does Not Apply)</div>
   </div>
   <div class="steps-grid">
     <div class="step-card">
@@ -366,7 +390,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- TRANSACTION FLOW -->
 <section class="section">
-  <div class="section-eyebrow reveal">This Transaction</div>
+  <div class="section-kicker reveal">This Transaction</div>
   <div class="section-title reveal">How the Purchase Right Assignment Works</div>
   <div class="flow-steps">
     <div class="flow-step">
@@ -391,7 +415,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- ECONOMICS -->
 <section class="section">
-  <div class="section-eyebrow reveal">Transaction Economics</div>
+  <div class="section-kicker reveal">Transaction Economics</div>
   <div class="section-title reveal">Cost &amp; Benefit Summary</div>
   <table class="econ-table">
     <thead><tr><th>Line Item</th><th>Amount</th></tr></thead>
@@ -410,7 +434,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- TAX SAVINGS -->
 <section class="section">
-  <div class="section-eyebrow reveal">Tax Savings Scenarios</div>
+  <div class="section-kicker reveal">Tax Savings Scenarios</div>
   <div class="section-title reveal">What This Credit Is Worth at Your Tax Liability</div>
   <p class="savings-intro">
     These credits offset federal income tax <strong>dollar-for-dollar</strong> under IRC &sect;38.
@@ -435,7 +459,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
       <tr><td>$10,000,000</td><td>$10,000,000</td><td>$8,500,000</td><td>$10,000,000</td><td class="pos">+$1,500,000</td><td class="pos">17.6%</td></tr>
       <tr><td>$15,000,000</td><td>$15,000,000</td><td>$12,750,000</td><td>$15,000,000</td><td class="pos">+$2,250,000</td><td class="pos">17.6%</td></tr>
       <tr><td>$20,000,000</td><td>$20,000,000</td><td>$17,000,000</td><td>$20,000,000</td><td class="pos">+$3,000,000</td><td class="pos">17.6%</td></tr>
-      <tr class="hl-row"><td>$35,000,000 <span class="s-chip">This Transaction</span></td><td class="hi">$35,000,000</td><td class="hi">$29,750,000</td><td class="hi">$35,000,000</td><td class="pos">+$5,250,000</td><td class="pos">17.6%</td></tr>
+      <tr class="hl-row"><td>$35,000,000 <span class="s-note">This Transaction</span></td><td class="hi">$35,000,000</td><td class="hi">$29,750,000</td><td class="hi">$35,000,000</td><td class="pos">+$5,250,000</td><td class="pos">17.6%</td></tr>
     </tbody>
   </table>
   <p class="savings-note">
@@ -444,7 +468,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
   <!-- INLINE CALCULATOR -->
   <div class="calc-wrap">
-    <div class="calc-eyebrow">Interactive Calculator</div>
+    <div class="calc-kicker">Interactive Calculator</div>
     <div class="calc-headline">Enter Your Tax Liability — See Your Exact Numbers</div>
     <div class="calc-input-row">
       <div class="calc-input-group">
@@ -516,7 +540,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 <section class="section" style="border-top:none;padding-top:0;">
   <div class="book-cta-block reveal">
     <div>
-      <div class="book-cta-tag">Limited Availability &mdash; 2025 Tax Year Window Still Open</div>
+      <div class="book-cta-label">Limited Availability &mdash; 2025 Tax Year Window Still Open</div>
       <div class="book-cta-h2">Ready to Run the Numbers on Your Client&rsquo;s Liability?</div>
       <div class="book-cta-sub">20 minutes with one of our advisors. Confirm eligibility, walk the mechanics, get the full CPA packet same day. No obligation.</div>
     </div>
@@ -529,7 +553,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 </section>
 <!-- PROTECTIONS -->
 <section class="section">
-  <div class="section-eyebrow reveal">Risk Mitigation</div>
+  <div class="section-kicker reveal">Risk Mitigation</div>
   <div class="section-title reveal">Buyer Protections &amp; Contractual Safeguards</div>
   <div class="protections-grid">
     <div class="protection-card">
@@ -561,7 +585,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- LEGAL FRAMEWORK -->
 <section class="section">
-  <div class="section-eyebrow reveal">Legal &amp; Tax Framework</div>
+  <div class="section-kicker reveal">Legal &amp; Tax Framework</div>
   <div class="section-title reveal">Statutory &amp; Structural Basis</div>
   <div class="legal-grid">
     <div class="legal-card">
@@ -599,7 +623,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- SEVEN LAYERS -->
 <section class="section">
-  <div class="section-eyebrow reveal">IRS Compliance &amp; Credit Integrity</div>
+  <div class="section-kicker reveal">IRS Compliance &amp; Credit Integrity</div>
   <div class="section-title reveal">Seven Layers of Protection Against IRS Scrutiny</div>
   <p class="layers-lede reveal">
     The Credit Holder has constructed a <strong>multi-layered compliance architecture</strong>
@@ -674,17 +698,17 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
   </div>
   <div class="layers-summary">
     <div class="ls-cell accent">
-      <div class="ls-tag">IRS Position</div>
+      <div class="ls-label">IRS Position</div>
       <div class="ls-title">Not a Listed Transaction or Tax Shelter</div>
       <div class="ls-body">&sect;45Q credits transferred via &sect;6418 are a direct federal tax credit transfer expressly authorized by Congress. They are not listed transactions, not abusive tax shelters, and not subject to the economic substance doctrine. The IRS has acknowledged &sect;6418 transfers as valid in Treasury guidance.</div>
     </div>
     <div class="ls-cell">
-      <div class="ls-tag">CPA Reporting</div>
+      <div class="ls-label">CPA Reporting</div>
       <div class="ls-title">Fully Transparent &mdash; Form 3800, No Opinion Required</div>
       <div class="ls-body">The buyer&rsquo;s CPA reports the &sect;6418 transfer election on the federal income tax return using Form 3800 (General Business Credit). The IRS pre-filing registration number is disclosed directly on the return. No opinion letter. No basis disclosure statement. Fully transparent by design.</div>
     </div>
     <div class="ls-cell">
-      <div class="ls-tag">Audit Cooperation</div>
+      <div class="ls-label">Audit Cooperation</div>
       <div class="ls-title">Credit Holder Cooperates Fully With Any IRS Examination</div>
       <div class="ls-body">If the IRS examines the buyer&rsquo;s return and inquires about the &sect;45Q credits, the Credit Holder provides full cooperation: MRV reports, audit results, IRS registration records, physical sampling data, expert declarations, and any other documentation required.</div>
     </div>
@@ -693,7 +717,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- PROCESS -->
 <section class="section">
-  <div class="section-eyebrow reveal">Process</div>
+  <div class="section-kicker reveal">Process</div>
   <div class="section-title reveal">Steps for Qualified Buyers</div>
   <div class="steps-grid">
     <div class="step-card">
@@ -716,7 +740,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--sans);-webkit-
 
 <!-- LEAD FORM -->
 <section class="section" id="lead-form">
-  <div class="section-eyebrow reveal">Get Started</div>
+  <div class="section-kicker reveal">Get Started</div>
   <div class="section-title reveal">Request the CPA Advisor Packet</div>
   <div class="lead-form-wrap">
     <div class="lead-form-title">Fill out your information &mdash; we&rsquo;ll reply within 24 hours with the full package</div>

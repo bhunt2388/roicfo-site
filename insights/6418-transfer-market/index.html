@@ -64,12 +64,12 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
 }
 .article-hero-inner { max-width: var(--max); margin: 0 auto; }
-.article-tag {
+.article-kicker {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
   color: #2DCF7A; margin-bottom: 20px;
 }
-.article-tag::before { content: ''; display: block; width: 24px; height: 1px; background: #2DCF7A; }
+.article-kicker::before { content: ''; display: block; width: 24px; height: 1px; background: #2DCF7A; }
 .article-h1 {
   font-family: var(--serif); font-size: clamp(30px, 4vw, 48px);
   font-weight: 700; line-height: 1.12; letter-spacing: -0.01em;
@@ -169,6 +169,22 @@ footer {
   .article-hero { padding: 56px var(--pad) 52px; }
   .nav-cta { display: none; }
 }
+
+/* ===== ROI CFO redesign pass: no pill/chip labels, refined type + motion ===== */
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+:focus-visible{outline:2px solid #B88A22;outline-offset:3px}
+img,svg{max-width:100%}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .fade-up,.stagger,.reveal{opacity:1!important;transform:none!important}
+}
+
+.article-kicker{font-size:12px;letter-spacing:.18em}
+.article-note{border:0;border-radius:0;padding:0 0 0 12px;margin-left:14px;border-left:1px solid rgba(184,138,34,.6);color:#D4A93E}
+
+body{overflow-x:clip}
+@media(max-width:700px){.savings-table,.data-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}}
 </style>
 </head>
 <body>
@@ -183,7 +199,7 @@ footer {
 <!-- HERO -->
 <section class="article-hero">
   <div class="article-hero-inner">
-    <div class="article-tag">Tax Credits</div>
+    <div class="article-kicker">Tax Credits</div>
     <h1 class="article-h1">The §6418 Transfer Market: What Every Advisor Needs to Know in 2025</h1>
     <p class="article-deck">The Inflation Reduction Act created a legal marketplace for federal tax credits. Here's how it works, why the discount exists, and how to evaluate a transfer for your clients.</p>
     <div class="article-meta">
