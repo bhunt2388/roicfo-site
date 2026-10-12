@@ -220,7 +220,7 @@ sc=L.select_one('#stickyCta')
 out+=f'''<div class="sticky-cta" id="stickyCta"><div class="tx">{txt('.sticky-cta-text')}</div><div class="bt">{btn('Schedule a Zoom','https://calendly.com/d/dv9z-zgv-63g/roi-cfo-tax-strategy-explainer','sm','target="_blank"')}{btn('Request Packet','#cta','sm ghost')}<button class="x" id="stickyClose" aria-label="Dismiss">&times;</button></div></div>
 </div>
 '''
-out+='''<script src="/assets/js/fx.js?v=2"></script>
+out+='''<script src="/assets/js/fx.js?v=3"></script>
 <script>
 (function(){
   var seg=document.getElementById('mcSeg');

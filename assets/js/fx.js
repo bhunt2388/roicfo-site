@@ -69,3 +69,22 @@ if(!reduce&&window.matchMedia('(hover:hover)').matches){
 window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);
 onScroll();setTimeout(onScroll,300);
 })();
+
+/* Lead forms: send to /api/lead (Command intake) instead of a plain Formspree post */
+(function(){
+  document.querySelectorAll('form[action*="formspree.io"],form[data-lead]').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var b=f.querySelector('button[type=submit]'),o=b?b.innerHTML:'';
+      if(b){b.textContent='Sending...';b.disabled=true}
+      var d=Object.fromEntries(new FormData(f)); d.source=location.pathname;
+      fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+        .then(function(r){return r.json().then(function(j){return r.ok&&j.ok})})
+        .then(function(ok){
+          if(ok){f.innerHTML='<p style="font-size:20px;line-height:1.6;font-family:var(--serif,serif)">Received. We will be in touch within 24 hours.</p>'}
+          else{if(b){b.innerHTML=o;b.disabled=false}alert('Something went wrong. Please email bryson@roicfo.com directly.')}
+        })
+        .catch(function(){if(b){b.innerHTML=o;b.disabled=false}alert('Network error. Please email bryson@roicfo.com directly.')});
+    });
+  });
+})();

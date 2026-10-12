@@ -197,7 +197,7 @@ out+=f'''<footer>{amb(1)}<div class="wrap wide"><div class="cols"><div>
 <a class="logoplate" href="https://roicfo.com" aria-label="ROI CFO"><img src="/assets/brand/roicfo-logo.png" width="545" height="180" alt="ROI CFO"></a>
 <div class="tagline">{I('.footer-tagline',fo)}</div></div>{fcols}</div>
 <div class="fine">{I('.footer-copy',fo)}</div></div></footer>
-<script src="/assets/js/fx.js?v=2"></script>
+<script src="/assets/js/fx.js?v=3"></script>
 <script>
 {globe}
 {countup}

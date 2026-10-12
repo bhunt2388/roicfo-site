@@ -147,7 +147,7 @@ out+=f'''<footer>{amb(1)}<div class="wrap wide"><div class="cols" style="grid-te
 <div><h5>Navigate</h5><a href="https://roicfo.com">Back to ROI CFO</a><a href="https://roicfo.com#strategies">All Strategies</a></div></div>
 <div class="fine">{I('.footer-disc',ft)}</div></div></footer>
 <div class="sticky-cta" id="stickyCta"><div class="tx">{I('.sticky-cta-text',L)}</div><div class="bt">{btn('Schedule a Zoom','https://calendly.com/d/dv9z-zgv-63g/roi-cfo-tax-strategy-explainer','sm','target="_blank" rel="noopener"')}{btn('Request Packet','#lead-form','sm ghost','id="stickyPacket"')}<button class="x" id="stickyClose" aria-label="Dismiss">&times;</button></div></div>
-<script src="/assets/js/fx.js?v=2"></script>
+<script src="/assets/js/fx.js?v=3"></script>
 <script>
 {calc_js}
 </script>
