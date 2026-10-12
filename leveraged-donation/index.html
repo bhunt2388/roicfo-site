@@ -1,1078 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="nojs">
 <head>
   <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="YnIS0TzjMHYSSJQg" data-version="062024"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="ROI CFO — A federally compliant 5:1 leveraged donation strategy for high-income taxpayers.">
 <title>Leveraged Donation Strategy — ROI CFO</title>
-<meta name="description" content="ROI CFO — A federally compliant 5:1 leveraged donation strategy for high-income taxpayers. Verified appraisal, K-1 documentation, and zero listed-transaction risk.">
+<link rel="canonical" href="https://www.roicfo.com/leveraged-donation/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ROI CFO">
+<meta property="og:title" content="Leveraged Donation Strategy — ROI CFO">
+<meta property="og:description" content="ROI CFO — A federally compliant 5:1 leveraged donation strategy for high-income taxpayers.">
+<meta property="og:url" content="https://www.roicfo.com/leveraged-donation/">
+<meta property="og:image" content="https://www.roicfo.com/assets/brand/roicfo-logo.png">
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#0B2545">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css?v=2">
 
-/* ── ROI CFO BRAND TOKENS ── */
-:root {
-  /* Palette */
-  --navy:        #0B2545;
-  --navy-mid:    #122e58;
-  --navy-light:  #1a3e72;
-  --green:       #146B3A;
-  --green-light: #1a8548;
-  --green-dim:   rgba(20,107,58,0.08);
-  --green-border:rgba(20,107,58,0.2);
-  --gold:        #B88A22;
-  --gold-light:  #D4A830;
-  --gold-dim:    rgba(184,138,34,0.1);
-  --gold-border: rgba(184,138,34,0.25);
-  --stone:       #F7F5F0;
-  --stone-card:  #FFFFFF;
-  --stone-panel: #F0EDE7;
-  --stone-section:#E8E5DF;
-  --slate:       #334155;
-  --slate-light: #4a5568;
-  --slate-dim:   #6b7280;
-  --boardroom:   #1E2428;
-  --border:      #DDD9D2;
-  --border-strong:#C8C3BA;
-  /* Typography */
-  --serif:  'Playfair Display', Georgia, serif;
-  --sans:   'Inter', system-ui, sans-serif;
-  --mono:   'JetBrains Mono', 'Courier New', monospace;
-  /* Radius */
-  --r:      6px;
-  --r-lg:   10px;
-}
-
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { font-family: var(--sans); background: var(--stone); color: var(--slate); overflow-x: hidden; }
-
-/* ── SCROLL BAR ── */
-#scroll-bar { position: fixed; top: 0; left: 0; height: 2px; background: var(--green); width: 0%; z-index: 9999; pointer-events: none; transition: width 0.05s linear; }
-
-/* ── NAV ── */
-#nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 22px 5vw; height: auto;
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, padding 0.3s ease;
-}
-#nav.scrolled {
-  background: rgba(247,245,240,0.97);
-  border-color: rgba(11,37,69,0.10);
-  box-shadow: 0 1px 24px rgba(11,37,69,0.09);
-  padding-top: 14px; padding-bottom: 14px;
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-}
-.logo { display: flex; align-items: center; text-decoration: none; }
-.logo img { height: 38px; width: auto; display: block; filter: brightness(0) invert(1); transition: filter 0.4s ease; }
-#nav.scrolled .logo img { filter: none; }
-.nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
-.nav-links a { font-size: 12px; font-weight: 500; letter-spacing: 0.4px; color: rgba(247,245,240,0.75); text-decoration: none; transition: color 0.2s; font-family: var(--sans); }
-.nav-links a:hover { color: #fff; }
-#nav.scrolled .nav-links a { color: var(--slate); }
-#nav.scrolled .nav-links a:hover { color: var(--navy); }
-.nav-cta {
-  font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
-  color: #fff !important; background: var(--navy); padding: 10px 22px;
-  border-radius: var(--r); transition: background 0.2s !important;
-}
-.nav-cta:hover { background: var(--navy-mid) !important; }
-#nav.scrolled .nav-cta { background: var(--navy) !important; color: #fff !important; }
-@media (max-width: 768px) { .nav-links { display: none; } }
-
-/* ── HERO — Navy split, text left / globe right ── */
-#hero {
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 100dvh; position: relative;
-  background: var(--navy);
-  padding-top: 64px;
-}
-#hero-content {
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 80px 7vw 80px 7vw;
-  position: relative; z-index: 2;
-}
-/* right column — globe */
-#hero-globe-col {
-  position: relative; overflow: hidden;
-}
-#hero-globe-col::before {
-  content: '';
-  position: absolute; top: 0; left: 0; bottom: 0; width: 80px;
-  background: linear-gradient(90deg, var(--navy), transparent);
-  z-index: 1; pointer-events: none;
-}
-#hero-three { position: absolute; inset: 0; width: 100%; height: 100%; }
-
-.hero-kicker {
-  display: flex; align-items: center; gap: 10px; margin-bottom: 28px;
-  font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--gold-light);
-}
-.hero-kicker-line { width: 28px; height: 1px; background: var(--gold); opacity: 0.6; }
-.hero-title {
-  font-family: var(--serif); font-size: clamp(36px, 4.2vw, 60px);
-  font-weight: 700; line-height: 1.1; letter-spacing: -0.025em;
-  color: #ffffff; margin-bottom: 22px;
-}
-.hero-title em { font-style: italic; color: var(--gold-light); }
-.hero-sub {
-  font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.68);
-  line-height: 1.8; max-width: 480px; margin-bottom: 40px;
-}
-.hero-stats {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r);
-  overflow: hidden; max-width: 520px; margin-bottom: 40px;
-  background: rgba(255,255,255,0.04);
-}
-.hero-stat { padding: 18px 14px; text-align: center; border-right: 1px solid rgba(255,255,255,0.08); }
-.hero-stat:last-child { border-right: none; }
-.hero-stat .val {
-  font-family: var(--serif); font-size: clamp(22px, 2.5vw, 34px);
-  font-weight: 600; color: #fff; line-height: 1;
-  font-variant-numeric: tabular-nums;
-}
-.hero-stat .lbl { font-size: 8.5px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-top: 6px; font-family: var(--mono); }
-.hero-terms { display: flex; gap: 7px; flex-wrap: wrap; max-width: 520px; margin-bottom: 40px; }
-.term { padding: 5px 13px; border-radius: 20px; font-size: 10px; font-weight: 500; letter-spacing: 0.4px; font-family: var(--sans); }
-.term-gold { background: rgba(184,138,34,0.14); color: var(--gold-light); border: 1px solid rgba(184,138,34,0.32); }
-.term-plain { background: transparent; color: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.14); }
-.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
-.btn-primary {
-  display: inline-block; background: var(--green); color: #fff;
-  font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase;
-  padding: 14px 30px; border-radius: var(--r); text-decoration: none;
-  transition: background 0.2s, transform 0.15s; border: none; cursor: pointer;
-  font-family: var(--sans);
-}
-.btn-primary:hover { background: var(--green-light); transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); }
-.btn-ghost {
-  display: inline-block; background: transparent;
-  color: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.2);
-  font-size: 12px; font-weight: 500; letter-spacing: 0.5px; padding: 14px 26px;
-  border-radius: var(--r); text-decoration: none; transition: border-color 0.2s, color 0.2s;
-  font-family: var(--sans);
-}
-.btn-ghost:hover { border-color: rgba(255,255,255,0.5); color: #fff; }
-.hero-legal { font-size: 10px; color: rgba(255,255,255,0.2); letter-spacing: 0.4px; max-width: 440px; line-height: 1.6; }
-.hero-scroll { position: absolute; bottom: 32px; left: 7vw; z-index: 3;
-  display: flex; align-items: center; gap: 10px;
-  font-family: var(--mono); font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.22); }
-.scroll-chev { width: 14px; height: 14px; border-right: 1px solid rgba(255,255,255,0.22); border-bottom: 1px solid rgba(255,255,255,0.22); transform: rotate(45deg); animation: bounce 2.2s ease-in-out infinite; }
-@keyframes bounce { 0%,100%{ transform:rotate(45deg) translateY(0); } 50%{ transform:rotate(45deg) translateY(5px); } }
-@media (max-width: 900px) {
-  #hero { grid-template-columns: 1fr; }
-  #hero-globe-col { height: 38vh; order: -1; }
-  #hero-content { padding: 40px 6vw 60px; }
-}
-
-/* ── SECTION BASE ── */
-section { padding: 88px 6vw; position: relative; overflow: hidden; }
-.s-stone  { background: var(--stone); }
-.s-white  { background: var(--stone-card); }
-.s-panel  { background: var(--stone-panel); }
-.s-navy   { background: var(--navy); }
-.s-dark   { background: var(--boardroom); }
-
-/* ── DIVIDER ── */
-.s-divider { height: 1px; background: var(--border); }
-.s-divider-navy { height: 1px; background: rgba(255,255,255,0.08); }
-
-/* ── SECTION HEADERS ── */
-.sec-kicker { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green); margin-bottom: 14px; }
-.sec-kicker.on-dark { color: var(--gold-light); }
-.sec-title { font-family: var(--serif); font-size: clamp(26px, 2.8vw, 40px); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: var(--navy); margin-bottom: 14px; }
-.sec-title.on-dark { color: #fff; }
-.sec-body { font-size: 15px; font-weight: 400; color: var(--slate-light); line-height: 1.8; max-width: 580px; margin-bottom: 48px; }
-.sec-body.on-dark { color: rgba(255,255,255,0.62); }
-.sec-head-wrap { max-width: 660px; }
-
-/* ── HOW IT WORKS — Vertical timeline ── */
-.steps-v { display: flex; flex-direction: column; max-width: 820px; }
-.step-v { display: grid; grid-template-columns: 72px 1fr; position: relative; }
-.step-v:not(:last-child) .step-v-track::after {
-  content: ''; position: absolute; top: 52px; left: 35px; bottom: 0; width: 1px;
-  background: linear-gradient(to bottom, var(--green), rgba(20,107,58,0.08));
-}
-.step-v-track { position: relative; display: flex; flex-direction: column; align-items: center; padding-top: 2px; }
-.step-v-num {
-  width: 46px; height: 46px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  background: var(--navy); color: #fff;
-  font-family: var(--mono); font-size: 12px; font-weight: 600;
-  position: relative; z-index: 1; flex-shrink: 0;
-}
-.step-v-content { padding: 2px 0 52px 28px; }
-.step-v-head { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 9px; }
-.step-v-body { font-size: 14px; color: var(--slate-light); line-height: 1.75; max-width: 520px; }
-
-/* ── LEVERAGE ── */
-.leverage-layout { display: grid; grid-template-columns: auto 1fr; gap: 52px; align-items: center; margin-bottom: 44px; }
-.ratio-box { background: var(--navy); border-radius: var(--r-lg); padding: 36px 44px; text-align: center; flex-shrink: 0; }
-.ratio-num { font-family: var(--serif); font-size: 76px; font-weight: 700; color: var(--gold-light); line-height: 1; }
-.ratio-lbl { font-family: var(--mono); font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-top: 7px; }
-.ratio-body { font-size: 15px; color: var(--slate); line-height: 1.85; }
-.ratio-body strong { color: var(--navy); font-weight: 600; }
-.two-col-bullets { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.bullet-item {
-  display: flex; gap: 14px; align-items: flex-start;
-  background: var(--stone-card); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 18px 20px;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.bullet-item:hover { border-color: var(--green); box-shadow: 0 2px 12px rgba(20,107,58,0.07); }
-.bullet-dot { width: 7px; height: 7px; min-width: 7px; background: var(--green); border-radius: 50%; margin-top: 7px; }
-.bullet-text { font-size: 13.5px; color: var(--slate); line-height: 1.65; }
-.bullet-text strong { color: var(--navy); font-weight: 700; }
-
-/* ── TABLE BADGE ── */
-.table-note { display: inline-block; background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); border-radius: 20px; padding: 4px 14px; font-size: 9.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 12px; font-family: var(--mono); }
-
-/* ── SAVINGS TABLE ── */
-.savings-table-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(11,37,69,0.06); }
-.savings-table { width: 100%; border-collapse: collapse; min-width: 600px; }
-.savings-table thead tr { background: var(--navy); }
-.savings-table thead th { padding: 14px 20px; text-align: left; font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
-.savings-table thead th:not(:first-child) { text-align: right; }
-.savings-table tbody tr { border-bottom: 1px solid var(--border); background: var(--stone-card); transition: background 0.12s; }
-.savings-table tbody tr:hover { background: #f5f8ff; }
-.savings-table tbody td { padding: 13px 20px; font-size: 13.5px; color: var(--slate); }
-.savings-table tbody td:not(:first-child) { text-align: right; font-family: var(--mono); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
-.savings-table .row-section td { background: #EDF0F7; font-family: var(--mono); font-size: 8.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate-dim); padding: 6px 20px; }
-.savings-table .row-total td { border-top: 2px solid var(--border-strong); background: #f0f3f9; font-weight: 700; color: var(--navy); }
-.savings-table .row-highlight td { background: rgba(20,107,58,0.05); border-top: 2px solid rgba(20,107,58,0.25); }
-.savings-table .row-highlight .gain { color: var(--green); font-weight: 700; font-size: 15px; }
-.savings-table .col-notx { color: #aab0bc !important; }
-.savings-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 20px; }
-.sum-card { border-radius: var(--r); padding: 22px 24px; border: 1px solid var(--border); background: var(--stone-card); }
-.sum-card.green { background: rgba(20,107,58,0.05); border-color: rgba(20,107,58,0.2); }
-.sum-card.gold  { background: rgba(184,138,34,0.05); border-color: rgba(184,138,34,0.2); }
-.sum-val { font-family: var(--mono); font-size: 24px; font-weight: 600; margin-bottom: 6px; font-variant-numeric: tabular-nums; }
-.sum-val.g { color: var(--green); }
-.sum-val.o { color: var(--gold); }
-.sum-val.n { color: var(--navy); }
-.sum-lbl { font-size: 12px; color: var(--slate-dim); line-height: 1.5; }
-
-/* ── INCOME TIER TABLE ── */
-.income-table-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--border); box-shadow: 0 1px 4px rgba(11,37,69,0.06); margin-top: 28px; }
-.income-table { width: 100%; border-collapse: collapse; min-width: 700px; }
-.income-table thead tr { background: var(--navy); }
-.income-table thead th { padding: 13px 18px; text-align: right; font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
-.income-table thead th:first-child { text-align: left; }
-.income-table tbody tr { background: var(--stone-card); border-bottom: 1px solid var(--border); }
-.income-table tbody td { padding: 12px 18px; font-size: 13px; text-align: right; font-family: var(--mono); font-weight: 500; font-variant-numeric: tabular-nums; }
-.income-table tbody td:first-child { text-align: left; color: var(--slate-dim); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; font-family: var(--sans); }
-.income-table .row-income td { color: var(--slate); }
-.income-table .row-tax td    { color: #c0392b; }
-.income-table .row-save td  { color: var(--green); font-weight: 600; }
-.income-table .row-net td   { color: var(--navy); font-weight: 700; }
-.income-table .row-invest td { color: var(--gold); }
-.income-table .row-head td  { background: #EDF0F7; font-family: var(--mono); font-size: 8.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate-dim); padding: 6px 18px; text-align: left !important; }
-
-/* ── CALCULATOR ── */
-.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
-.calc-panel { background: var(--stone-card); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 1px 4px rgba(11,37,69,0.06); }
-.calc-panel-head { padding: 16px 22px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; background: var(--navy); }
-.calc-icon-svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--gold-light); }
-.calc-panel-title { font-size: 14px; font-weight: 700; color: #fff; }
-.calc-panel-sub   { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
-.calc-panel-body { padding: 22px; }
-.calc-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate-dim); margin-bottom: 7px; }
-.calc-input-wrap { position: relative; display: flex; align-items: center; }
-.calc-input-prefix { position: absolute; left: 11px; font-size: 13px; color: var(--slate-dim); pointer-events: none; font-family: var(--mono); }
-.calc-input-suffix { position: absolute; right: 11px; font-size: 12px; color: var(--slate-dim); pointer-events: none; font-family: var(--mono); }
-.calc-input {
-  width: 100%; background: var(--stone); border: 1px solid var(--border);
-  border-radius: 5px; padding: 10px 11px 10px 27px;
-  font-size: 14px; font-weight: 600; color: var(--navy); outline: none;
-  font-family: var(--mono); transition: border-color 0.2s;
-  -moz-appearance: textfield;
-}
-.calc-input::-webkit-outer-spin-button,
-.calc-input::-webkit-inner-spin-button { -webkit-appearance: none; }
-.calc-input:focus { border-color: var(--green); }
-.calc-input.no-prefix { padding-left: 11px; }
-.calc-input.has-suffix { padding-right: 28px; }
-.calc-field { margin-bottom: 14px; }
-.calc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.calc-divider { height: 1px; background: var(--border); margin: 16px 0; }
-.calc-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-.calc-result { background: var(--stone); border: 1px solid var(--border); border-radius: 5px; padding: 11px 13px; }
-.calc-result.full { grid-column: 1 / -1; }
-.calc-result.highlight { background: rgba(20,107,58,0.05); border-color: rgba(20,107,58,0.22); }
-.calc-result.gold-hl { background: rgba(184,138,34,0.05); border-color: rgba(184,138,34,0.2); }
-.calc-result-lbl { font-family: var(--mono); font-size: 9px; color: var(--slate-dim); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 4px; }
-.calc-result-val { font-size: 16px; font-weight: 600; color: var(--navy); font-family: var(--mono); font-variant-numeric: tabular-nums; }
-.calc-result-val.green { color: var(--green); }
-.calc-result-val.gold  { color: var(--gold); }
-.calc-result-val.big   { font-size: 24px; }
-.tier-track { margin-top: 14px; }
-.tier-track-bar { height: 4px; background: var(--stone-section); border-radius: 3px; margin: 8px 0 6px; overflow: hidden; }
-.tier-track-fill { height: 100%; background: linear-gradient(90deg, var(--navy), var(--green)); border-radius: 3px; transition: width 0.5s ease; }
-.tier-labels { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 8.5px; color: var(--slate-dim); }
-.tier-label { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; margin-bottom: 10px; font-family: var(--sans); }
-.tier-label.t1 { background: var(--stone-panel); color: var(--slate); border: 1px solid var(--border); }
-.tier-label.t2 { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); }
-.tier-label.t3 { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
-.tier-label.tbulk { background: rgba(184,138,34,0.15); color: var(--gold); border: 1px solid var(--gold-border); }
-.tier-next { font-size: 11px; color: var(--slate-dim); margin-top: 7px; line-height: 1.5; }
-
-/* ── ASSET SECTION ── */
-.asset-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
-.asset-card { background: var(--stone-card); border: 1px solid var(--border); border-radius: var(--r); padding: 26px 22px; transition: border-color 0.2s, box-shadow 0.2s; }
-.asset-card:hover { border-color: var(--navy); box-shadow: 0 4px 16px rgba(11,37,69,0.08); }
-.asset-card.accent { border-top: 3px solid var(--gold); }
-.asset-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 11px; }
-.asset-head { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 9px; }
-.asset-body { font-size: 13px; line-height: 1.7; color: var(--slate-light); }
-.asset-body strong { color: var(--navy); font-weight: 600; }
-.stout-box { background: var(--stone-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 26px 30px; margin-bottom: 22px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; box-shadow: 0 1px 4px rgba(11,37,69,0.05); }
-.stout-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.stout-firm { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
-.stout-detail { font-size: 13px; color: var(--slate-light); line-height: 1.65; }
-.stout-val { text-align: center; }
-.stout-num { font-family: var(--mono); font-size: 34px; font-weight: 600; color: var(--navy); line-height: 1; font-variant-numeric: tabular-nums; }
-.stout-num-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--slate-dim); margin-top: 6px; }
-.product-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 14px; }
-.product-item { background: var(--stone); border-radius: var(--r); padding: 12px 15px; display: flex; align-items: center; gap: 11px; border: 1px solid var(--border); transition: border-color 0.2s; }
-.product-item:hover { border-color: var(--green); }
-.product-item-icon { width: 18px; height: 18px; flex-shrink: 0; }
-.product-name { font-size: 12.5px; font-weight: 700; color: var(--navy); }
-.product-sub { font-size: 10px; color: var(--slate-dim); }
-.charity-banner { background: var(--green-dim); border: 1px solid var(--green-border); border-radius: var(--r); padding: 26px 30px; margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.charity-title { font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
-.charity-body { font-size: 13px; color: var(--slate-light); line-height: 1.7; }
-.charity-body strong { color: var(--navy); font-weight: 600; }
-.charity-bullets { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.charity-bullets li { font-size: 13px; color: var(--slate-light); display: flex; gap: 10px; align-items: flex-start; }
-.charity-bullets li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-
-/* ── DOCUMENTATION ── */
-.doc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 22px; }
-.doc-card { background: var(--stone-card); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 22px; transition: border-color 0.2s, box-shadow 0.2s; }
-.doc-card:hover { border-color: var(--navy); box-shadow: 0 2px 12px rgba(11,37,69,0.07); }
-.doc-card.gold-border { border-top: 2px solid var(--gold); }
-.doc-num { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; color: var(--slate-dim); margin-bottom: 10px; }
-.doc-head { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-.doc-body { font-size: 13px; line-height: 1.7; color: var(--slate-light); }
-.doc-body strong { color: var(--navy); font-weight: 600; }
-.doc-highlight { background: var(--stone-panel); border: 1px solid var(--border); border-radius: 4px; padding: 9px 13px; margin-top: 10px; font-family: var(--mono); font-size: 11px; color: var(--slate); }
-.k1-example { background: var(--stone); border-radius: var(--r); padding: 16px 20px; margin-top: 16px; border: 1px solid var(--border); }
-.k1-label { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--slate-dim); margin-bottom: 12px; }
-.k1-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12px; color: var(--slate-light); }
-.k1-row:last-child { border-bottom: none; }
-.k1-row.highlight { color: var(--navy); font-weight: 600; background: var(--stone-panel); margin: 0 -6px; padding: 7px 6px; border-radius: 3px; border: none; }
-.k1-val { font-family: var(--mono); font-size: 12px; color: var(--green); font-weight: 500; font-variant-numeric: tabular-nums; }
-.k1-val.gold { color: var(--gold); }
-
-/* ── COMPLIANCE — navy section ── */
-#compliance { background: var(--navy); }
-.compliance-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
-.comp-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r); padding: 22px 20px; display: flex; gap: 15px; transition: border-color 0.2s; }
-.comp-card:hover { border-color: rgba(255,255,255,0.22); }
-.comp-icon { width: 38px; height: 38px; min-width: 38px; background: rgba(184,138,34,0.12); border: 1px solid rgba(184,138,34,0.22); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.comp-icon-svg { width: 17px; height: 17px; color: var(--gold-light); }
-.comp-head { font-size: 13.5px; font-weight: 700; color: #fff; margin-bottom: 5px; }
-.comp-body { font-size: 12.5px; color: rgba(255,255,255,0.58); line-height: 1.65; }
-.vs-bar { display: flex; gap: 14px; margin-top: 28px; }
-.vs-col { flex: 1; border-radius: var(--r); padding: 22px 20px; }
-.vs-col.bad  { background: rgba(192,57,43,0.06); border: 1px solid rgba(192,57,43,0.18); }
-.vs-col.good { background: rgba(20,107,58,0.08); border: 1px solid rgba(20,107,58,0.22); }
-.vs-head { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 14px; }
-.vs-head.red { color: #e07070; }
-.vs-head.grn { color: var(--gold-light); }
-.vs-item { display: flex; align-items: flex-start; gap: 9px; margin-bottom: 10px; font-size: 13px; color: rgba(255,255,255,0.72); line-height: 1.5; }
-.vs-icon { min-width: 15px; margin-top: 1px; color: rgba(255,255,255,0.35); }
-.vs-icon.grn { color: var(--gold-light); }
-
-/* ── PROCESS ── */
-.p-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 52px; }
-.p-steps::before { content: ''; position: absolute; top: 26px; left: 10%; right: 10%; height: 1px; background: var(--border-strong); }
-.p-step { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 0 8px; }
-.p-step-num { width: 52px; height: 52px; background: var(--navy); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; position: relative; z-index: 1; font-family: var(--sans); box-shadow: 0 0 0 4px var(--stone); }
-.p-step-head { font-size: 12.5px; font-weight: 700; color: var(--navy); line-height: 1.3; }
-.p-step-body { font-size: 11.5px; color: var(--slate-dim); line-height: 1.55; }
-
-/* ── COMPENSATION ── */
-.track-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
-.track-card { border-radius: 8px; border: 1px solid var(--border); overflow: hidden; background: var(--stone-card); box-shadow: 0 1px 4px rgba(11,37,69,0.05); transition: box-shadow 0.2s; }
-.track-card:hover { box-shadow: 0 4px 16px rgba(11,37,69,0.1); }
-.track-head { padding: 16px 20px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid var(--border); background: var(--navy); }
-.track-icon-svg { width: 19px; height: 19px; flex-shrink: 0; color: var(--gold-light); }
-.track-title { font-size: 14px; font-weight: 700; color: #fff; }
-.track-sub { font-size: 10.5px; color: rgba(255,255,255,0.48); margin-top: 2px; }
-.track-body { padding: 18px 20px; }
-.track-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-.track-row:last-child { border-bottom: none; padding-bottom: 0; }
-.track-row-lbl { color: var(--slate-dim); flex: 1; line-height: 1.4; }
-.track-row-val { color: var(--navy); font-weight: 600; text-align: right; max-width: 240px; }
-.track-row-val.gold  { color: var(--gold); }
-.track-row-val.green { color: var(--green); }
-.vol-tier-wrap { background: var(--stone-card); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 1px 4px rgba(11,37,69,0.05); }
-.vol-tier-head { background: var(--navy); padding: 12px 20px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.08); }
-.vol-tier-title { font-family: var(--mono); font-size: 9.5px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.75); }
-.vol-tier-sub { font-size: 12px; color: rgba(255,255,255,0.4); }
-.vol-tiers { display: flex; }
-.vol-tier { flex: 1; padding: 20px 16px; text-align: center; border-right: 1px solid var(--border); }
-.vol-tier:last-child { border-right: none; }
-.vol-tier-div { width: 1px; background: var(--border); }
-.vol-tier-threshold { font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--slate-dim); margin-bottom: 8px; }
-.vol-tier-pct { font-family: var(--serif); font-size: 34px; font-weight: 600; color: var(--navy); line-height: 1; margin-bottom: 6px; }
-.vol-tier.t2 .vol-tier-pct { color: var(--gold); }
-.vol-tier.t3 .vol-tier-pct { color: var(--green); }
-.vol-tier.tbulk .vol-tier-pct { color: var(--navy); font-size: 20px; }
-.vol-tier-lbl { font-size: 11px; color: var(--slate-dim); line-height: 1.45; }
-.comp-note { background: var(--stone-panel); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: var(--r); padding: 15px 18px; font-size: 13px; color: var(--slate-light); line-height: 1.7; margin-top: 14px; }
-.comp-note strong { color: var(--navy); font-weight: 600; }
-
-/* ── CTA — navy section ── */
-#cta { background: var(--navy); }
-#cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 110%, rgba(20,107,58,0.12) 0%, transparent 70%); pointer-events: none; }
-.cta-inner { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; text-align: center; }
-.cta-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-top: 3px solid var(--gold); border-radius: 12px; padding: 48px 52px; margin-top: 34px; text-align: left; }
-.cta-title { font-family: var(--serif); font-size: 27px; font-weight: 700; color: #fff; margin-bottom: 12px; }
-.cta-body { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 26px; }
-.cta-details { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin-bottom: 28px; }
-.cta-detail { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r); padding: 12px 15px; }
-.cta-detail-lbl { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-light); opacity: 0.8; margin-bottom: 5px; }
-.cta-detail-val { font-size: 14px; font-weight: 700; color: #fff; }
-.cta-divider { height: 1px; background: rgba(255,255,255,0.1); margin: 20px 0; }
-.lead-form-title { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
-.lead-form { display: flex; flex-direction: column; gap: 12px; }
-.lead-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.lead-form-group { display: flex; flex-direction: column; gap: 5px; }
-.lead-form-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-.lead-form-input { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.14); border-radius: 4px; padding: 11px 13px; font-size: 14px; color: #fff; outline: none; transition: border-color 0.2s; font-family: var(--sans); width: 100%; }
-.lead-form-input:focus { border-color: var(--green-light); }
-.lead-form-input::placeholder { color: rgba(255,255,255,0.2); }
-.lead-form-input option { background: var(--navy); color: #fff; }
-.lead-form-btn { background: var(--green); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; padding: 14px 24px; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s, transform 0.15s; width: 100%; font-family: var(--sans); margin-top: 4px; }
-.lead-form-btn:hover { background: var(--green-light); transform: translateY(-1px); }
-.lead-form-btn:active { transform: translateY(0); }
-.lead-form-note { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 4px; }
-.cta-legal { font-size: 10px; color: rgba(255,255,255,0.2); margin-top: 16px; line-height: 1.7; }
-
-/* ── FOOTER ── */
-footer { background: var(--boardroom); padding: 48px 6vw 28px; border-top: 1px solid rgba(255,255,255,0.07); }
-.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; margin-bottom: 28px; }
-.footer-brand-mark { width: 34px; height: 34px; background: var(--gold); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 15px; font-weight: 700; color: var(--navy); }
-.footer-brand-name { font-size: 12px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-top: 10px; }
-.footer-tagline { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 5px; max-width: 220px; line-height: 1.5; }
-.footer-links-wrap { display: flex; gap: 48px; }
-.footer-col-title { font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-light); opacity: 0.8; margin-bottom: 14px; }
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-.footer-links a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: rgba(255,255,255,0.85); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); }
-.footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
-
-/* ── ANIMATIONS ── */
-.fade-up { transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1), transform 0.65s cubic-bezier(0.22,1,0.36,1); }
-.fade-up.in { opacity: 1; transform: none; }
-
-/* ── RESPONSIVE ── */
-@media (max-width: 900px) {
-  .leverage-layout, .two-col-bullets, .compliance-grid, .track-grid,
-  .calc-grid, .asset-grid, .doc-grid, .product-row, .charity-banner,
-  .savings-summary, .cta-details, .footer-links-wrap { flex-direction: column; }
-  .two-col-bullets, .compliance-grid, .track-grid, .calc-grid,
-  .asset-grid, .doc-grid, .product-row, .charity-banner,
-  .savings-summary, .cta-details { grid-template-columns: 1fr; }
-  .p-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
-  .p-steps::before { display: none; }
-  .p-step-num { box-shadow: 0 0 0 4px var(--stone-card); }
-  .vs-bar, .vol-tiers { flex-direction: column; }
-  .cta-box { padding: 30px 22px; }
-  .lead-form-row { grid-template-columns: 1fr; }
-  .stout-box { grid-template-columns: 1fr; }
-  .footer-inner { flex-direction: column; }
-  .footer-links-wrap { gap: 28px; }
-  #compliance .p-steps::before { display: none; }
-}
-
-/* ===== ROI CFO redesign pass: no pill/chip labels, refined type + motion ===== */
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-:focus-visible{outline:2px solid #B88A22;outline-offset:3px}
-img,svg{max-width:100%}
-@media (prefers-reduced-motion: reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-  .fade-up,.stagger,.reveal{opacity:1!important;transform:none!important}
-}
-
-.hero-kicker,.sec-kicker{font-size:12px;letter-spacing:.18em;font-weight:600}
-.hero-terms{display:flex;flex-wrap:wrap;gap:0;max-width:760px;margin-bottom:40px;border-top:1px solid rgba(255,255,255,.16);padding-top:14px}
-.term{background:none!important;border:0!important;border-radius:0;padding:3px 16px 3px 0;margin-right:16px;font-size:12px;font-weight:500;letter-spacing:.2px;border-right:1px solid rgba(184,138,34,.5)!important;margin-bottom:6px}
-.term:last-child{border-right:0!important}
-.term-gold{color:#D4A93E}.term-plain{color:rgba(255,255,255,.78)}
-.table-note{background:none;border:0;border-radius:0;padding:0 0 0 12px;border-left:2px solid #B88A22;font-size:11px;letter-spacing:.16em;color:#146B3A}
-.tier-label{background:none!important;border:0!important;border-radius:0;padding:0 0 0 10px;font-size:12px;font-weight:700;border-left:2px solid #B88A22!important}
-.tier-label.t3{color:#146B3A}
-.asset-label{font-size:11px;letter-spacing:.16em}
-.asset-card,.doc-card,.track-card,.comp-card,.sum-card{transition:transform .3s ease,box-shadow .3s ease}
-.asset-card:hover,.doc-card:hover,.track-card:hover,.comp-card:hover{transform:translateY(-3px);box-shadow:0 18px 40px -22px rgba(11,37,69,.35)}
-@media(max-width:640px){.term{border-right:0!important;flex:1 1 100%;margin-right:0}}
-</style>
+<script>document.documentElement.className='js';</script>
 </head>
 <body>
-
-<div id="scroll-bar"></div>
-
-<!-- ── NAV ── -->
-<nav id="nav">
-  <a href="https://roicfo.com" class="logo" aria-label="ROI CFO Home">
-    <img src="data:image/png;base64,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" alt="ROI CFO" />
-  </a>
-  <ul class="nav-links">
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#math">The Math</a></li>
-    <li><a href="#asset">The Asset</a></li>
-    <li><a href="#compliance">Compliance</a></li>
-    <li><a href="#compensation">Compensation</a></li>
-    <li><a href="#cta" class="nav-cta">Get Started</a></li>
-  </ul>
-</nav>
-
-<!-- ── HERO ── -->
-<section id="hero">
-  <div id="hero-content">
-    <div class="hero-kicker">
-      <span class="hero-kicker-line"></span>
-      ROI CFO &middot; 2025 Advisor Offering
-      <span class="hero-kicker-line"></span>
-    </div>
-    <h1 class="hero-title">Turn Tax Liability Into<br><em>Real Cash Return</em></h1>
-    <p class="hero-sub">A federally compliant 5:1 leveraged donation strategy for high-income taxpayers. Verified appraisal, K-1 documentation, and zero listed-transaction risk &mdash; delivered exclusively through advisors, CPAs, and family offices.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="val" data-count="5" data-suffix="&times;">5&times;</div><div class="lbl">Deduction Ratio</div></div>
-      <div class="hero-stat"><div class="val" data-count="151.5" data-suffix="%" data-decimals="1">151.5%</div><div class="lbl">After-Tax ROI</div></div>
-      <div class="hero-stat"><div class="val" data-count="50" data-prefix="$" data-suffix="K">$50K</div><div class="lbl">Min. Investment</div></div>
-      <div class="hero-stat"><div class="val" data-count="5" data-suffix=" Yr">5 Yr</div><div class="lbl">Carryforward</div></div>
-    </div>
-    <div class="hero-terms">
-      <span class="term term-gold">Not a Listed Transaction</span>
-      <span class="term term-gold">5-Year Carryforward</span>
-      <span class="term term-plain">K-1 + Form 8283</span>
-      <span class="term term-plain">Qualified Appraisal</span>
-      <span class="term term-plain">Related-Use Charitable Donation</span>
-    </div>
-    <div class="hero-btns">
-      <a href="#cta" class="btn-primary">Request Advisor Package &rarr;</a>
-      <a href="#how" class="btn-ghost">See How It Works</a>
-    </div>
-    <p class="hero-legal">FOR ADVISOR USE ONLY &middot; Confidential. Not for distribution to end investors without review. Consult qualified tax counsel.</p>
-    <div class="hero-scroll"><span>Scroll</span><div class="scroll-chev"></div></div>
-  </div>
-  <div id="hero-globe-col">
-    <div id="hero-three"></div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── HOW IT WORKS ── -->
-<section class="s-white" id="how">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">The Strategy</div>
-    <h2 class="sec-title">3 Steps. One Clean Structure.</h2>
-    <p class="sec-body">U.S. tax law allows contributors to deduct the fair market value of donated assets &mdash; not just their cost basis. ROI CFO structures a bulk mineral acquisition at a fraction of appraised FMV, then allows taxpayer-partners to donate their allocated portion at full FMV.</p>
-  </div>
-  <div class="steps-v fade-up">
-    <div class="step-v">
-      <div class="step-v-track"><div class="step-v-num">01</div></div>
-      <div class="step-v-content">
-        <div class="step-v-head">Bulk Acquisition at Discount</div>
-        <div class="step-v-body">Taxpayer acquires a partnership interest in a Series LLC holding documented mineral assets. IRC &ldquo;tacking&rdquo; rules grant long-term holding period on Day 1 &mdash; no holding period required.</div>
-      </div>
-    </div>
-    <div class="step-v">
-      <div class="step-v-track"><div class="step-v-num">02</div></div>
-      <div class="step-v-content">
-        <div class="step-v-head">Deduction at Appraised Value</div>
-        <div class="step-v-body">Upon donation to the qualified charity, IRS allows the deduction at full fair market value per qualified appraisal &mdash; not the lower cash outlay. This creates the 5:1 leverage ratio.</div>
-      </div>
-    </div>
-    <div class="step-v">
-      <div class="step-v-track"><div class="step-v-num">03</div></div>
-      <div class="step-v-content" style="padding-bottom:0">
-        <div class="step-v-head">Documented, Compliant Exit</div>
-        <div class="step-v-body">A completed Form 8283 (signed by appraiser + charity officer), partnership K-1, and qualified appraisal are delivered directly for use on the client&rsquo;s tax return. No gaps.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── THE LEVERAGE ── -->
-<section class="s-stone" id="leverage">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">The Leverage</div>
-    <h2 class="sec-title">Why 5:1 Changes the Math</h2>
-  </div>
-  <div class="leverage-layout fade-up">
-    <div class="ratio-box">
-      <div class="ratio-num">5&times;</div>
-      <div class="ratio-lbl">Leverage Ratio</div>
-    </div>
-    <p class="ratio-body">Every <strong>$1 of cash invested</strong> generates a <strong>$5 charitable deduction</strong> against ordinary income. On a standard $60,000 investment for a $1M income earner, that produces a $300,000 deduction &mdash; reducing total tax by over <strong>$90,900 in real cash savings</strong> after accounting for the investment cost.</p>
-  </div>
-  <div class="two-col-bullets">
-    <div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text"><strong>Not a listed transaction.</strong> Unlike conservation easements, backed by a tangible asset with a genuine, non-hypothetical market value and active commercial use.</div></div>
-    <div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text"><strong>5-year carryforward.</strong> Deduct up to 30% of AGI per year and carry forward any excess for five additional tax years.</div></div>
-    <div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text"><strong>Guaranteed 5:1 ratio.</strong> ROI CFO contractually agrees to donate enough minerals to always meet the ratio &mdash; regardless of year-end appraisal outcome.</div></div>
-    <div class="bullet-item"><div class="bullet-dot"></div><div class="bullet-text"><strong>Flexible year-end decision.</strong> Taxpayer-partner retains the option to donate their allocated minerals to a qualified charity OR retain and explore commercial use &mdash; decision made at year end.</div></div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── TAX SAVINGS TABLE ── -->
-<section class="s-white" id="math">
-  <div class="sec-head-wrap fade-up">
-    <div class="table-note">Real Dollar Savings</div>
-    <h2 class="sec-title">The Numbers at $1M Income</h2>
-    <p class="sec-body">Side-by-side comparison. $60,000 investment generating a $300,000 charitable deduction. Federal + California rates shown.</p>
-  </div>
-  <div class="savings-table-wrap">
-    <table class="savings-table">
-      <thead><tr><th>Line Item</th><th>No Transaction</th><th>With Strategy</th></tr></thead>
-      <tbody>
-        <tr class="row-section"><td colspan="3">Income Baseline</td></tr>
-        <tr><td>Estimated Ordinary Income</td><td class="col-notx">$1,000,000</td><td>$1,000,000</td></tr>
-        <tr><td>Investment in Strategy (cost)</td><td class="col-notx">&mdash;</td><td style="color:var(--gold)">&minus;$60,000</td></tr>
-        <tr><td>Charitable Deduction (30% of AGI)</td><td class="col-notx">$0</td><td style="color:var(--gold)">&minus;$300,000</td></tr>
-        <tr><td><strong style="color:var(--navy)">Taxable Income</strong></td><td class="col-notx"><strong>$1,000,000</strong></td><td><strong style="color:var(--navy)">$700,000</strong></td></tr>
-        <tr class="row-section"><td colspan="3">Tax Liability</td></tr>
-        <tr><td>Federal Tax (37% marginal rate)</td><td class="col-notx" style="color:#c9a9a0">&minus;$370,000</td><td style="color:#c0392b">&minus;$259,000</td></tr>
-        <tr><td>State Tax (13.3% &mdash; CA example)</td><td class="col-notx" style="color:#c9a9a0">&minus;$133,000</td><td style="color:#c0392b">&minus;$93,100</td></tr>
-        <tr class="row-total"><td><strong>Total Tax Paid</strong></td><td class="col-notx"><strong>&minus;$503,000</strong></td><td><strong>&minus;$352,100</strong></td></tr>
-        <tr class="row-section"><td colspan="3">After-Tax Result</td></tr>
-        <tr><td>After-Tax Net Income</td><td class="col-notx">$497,000</td><td>$587,900</td></tr>
-        <tr class="row-highlight"><td><strong>NET CASH BENEFIT</strong></td><td class="col-notx">&mdash;</td><td class="gain">+$90,900</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="savings-summary">
-    <div class="sum-card green"><div class="sum-val g">$90,900</div><div class="sum-lbl">Net cash benefit for $1M income taxpayer</div></div>
-    <div class="sum-card gold"><div class="sum-val o">$60K &rarr; $300K</div><div class="sum-lbl">Investment to deduction &mdash; 5&times; leverage ratio</div></div>
-    <div class="sum-card"><div class="sum-val n">151.5%</div><div class="sum-lbl">Gross after-tax ROI on $60K investment</div></div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── INCOME TIER TABLE ── -->
-<section class="s-stone" id="tiers">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">Every Income Level</div>
-    <h2 class="sec-title">Savings Across Income Tiers</h2>
-    <p class="sec-body">The strategy scales with income. State rates shown at CA 13.3% &mdash; adjust for your client&rsquo;s state.</p>
-  </div>
-  <div class="income-table-wrap">
-    <table class="income-table">
-      <thead><tr><th>Scenario</th><th>$500K Income</th><th>$750K Income</th><th>$1M Income</th><th>$2M Income</th><th>$5M Income</th></tr></thead>
-      <tbody>
-        <tr class="row-head"><td colspan="6">Investment Required</td></tr>
-        <tr class="row-invest"><td>Investment (cash out)</td><td>$30,000</td><td>$45,000</td><td>$60,000</td><td>$120,000</td><td>$300,000</td></tr>
-        <tr class="row-invest"><td>Charitable Deduction (5&times;)</td><td>$150,000</td><td>$225,000</td><td>$300,000</td><td>$600,000</td><td>$1,500,000</td></tr>
-        <tr class="row-head"><td colspan="6">Tax Saved</td></tr>
-        <tr class="row-tax"><td>Federal Tax Reduction (37%)</td><td>$55,500</td><td>$83,250</td><td>$111,000</td><td>$222,000</td><td>$555,000</td></tr>
-        <tr class="row-tax"><td>State Tax Reduction (13.3%)</td><td>$19,950</td><td>$29,925</td><td>$39,900</td><td>$79,800</td><td>$199,500</td></tr>
-        <tr class="row-tax"><td>Total Tax Saved</td><td>$75,450</td><td>$113,175</td><td>$150,900</td><td>$301,800</td><td>$754,500</td></tr>
-        <tr class="row-head"><td colspan="6">Net Result</td></tr>
-        <tr class="row-save"><td>Net Cash Benefit</td><td>$45,450</td><td>$68,175</td><td>$90,900</td><td>$181,800</td><td>$454,500</td></tr>
-        <tr class="row-net"><td>After-Tax ROI</td><td>151.5%</td><td>151.5%</td><td>151.5%</td><td>151.5%</td><td>151.5%</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── LIVE CALCULATOR ── -->
-<section class="s-white" id="calculator">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">Interactive Calculator</div>
-    <h2 class="sec-title">Run the Numbers Live</h2>
-    <p class="sec-body">Enter your client&rsquo;s income and state rate. The right panel shows your referral earnings at your current volume tier.</p>
-  </div>
-  <div class="calc-grid">
-    <div class="calc-panel">
-      <div class="calc-panel-head">
-        <svg class="calc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        <div><div class="calc-panel-title">Client Tax Savings</div><div class="calc-panel-sub">Adjust income and tax rates to match your client</div></div>
-      </div>
-      <div class="calc-panel-body">
-        <div class="calc-field"><div class="calc-label">Client Annual Income</div><div class="calc-input-wrap"><span class="calc-input-prefix">$</span><input class="calc-input" id="c-income" type="text" value="1,000,000" oninput="fmtInput(this);calcClient()"></div></div>
-        <div class="calc-two">
-          <div class="calc-field"><div class="calc-label">Federal Rate</div><div class="calc-input-wrap"><input class="calc-input no-prefix has-suffix" id="c-fed" type="number" value="37" min="0" max="50" step="0.1" oninput="calcClient()"><span class="calc-input-suffix">%</span></div></div>
-          <div class="calc-field"><div class="calc-label">State Rate</div><div class="calc-input-wrap"><input class="calc-input no-prefix has-suffix" id="c-state" type="number" value="9.3" min="0" max="15" step="0.1" oninput="calcClient()"><span class="calc-input-suffix">%</span></div></div>
-        </div>
-        <div class="calc-divider"></div>
-        <div class="calc-result-grid">
-          <div class="calc-result"><div class="calc-result-lbl">Investment Required</div><div class="calc-result-val gold" id="r-investment">$60,000</div></div>
-          <div class="calc-result"><div class="calc-result-lbl">Charitable Deduction (5&times;)</div><div class="calc-result-val" id="r-deduction">$300,000</div></div>
-          <div class="calc-result"><div class="calc-result-lbl">Federal Tax Saved</div><div class="calc-result-val green" id="r-fed-saved">$111,000</div></div>
-          <div class="calc-result"><div class="calc-result-lbl">State Tax Saved</div><div class="calc-result-val green" id="r-state-saved">$27,900</div></div>
-          <div class="calc-result full highlight"><div class="calc-result-lbl">Net Cash Benefit (after investment cost)</div><div class="calc-result-val green big" id="r-net">$78,900</div></div>
-          <div class="calc-result full"><div class="calc-result-lbl">Return on Investment</div><div class="calc-result-val gold" id="r-roi">131.5%</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="calc-panel">
-      <div class="calc-panel-head">
-        <svg class="calc-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        <div><div class="calc-panel-title">Your Referral Earnings</div><div class="calc-panel-sub">Tier unlocked by total charitable deductions generated</div></div>
-      </div>
-      <div class="calc-panel-body">
-        <div class="calc-two">
-          <div class="calc-field"><div class="calc-label">Clients Per Year</div><input class="calc-input no-prefix" id="a-clients" type="number" value="5" min="1" max="500" oninput="calcAdvisor()"></div>
-          <div class="calc-field"><div class="calc-label">Avg Client Income</div><div class="calc-input-wrap"><span class="calc-input-prefix">$</span><input class="calc-input" id="a-income" type="text" value="1,000,000" oninput="fmtInput(this);calcAdvisor()"></div></div>
-        </div>
-        <div class="calc-divider"></div>
-        <div class="calc-result-grid">
-          <div class="calc-result"><div class="calc-result-lbl">Avg Investment / Client</div><div class="calc-result-val" id="a-avg-inv">$60,000</div></div>
-          <div class="calc-result"><div class="calc-result-lbl">Total Client Investment</div><div class="calc-result-val" id="a-total-inv">$300,000</div></div>
-          <div class="calc-result full"><div class="calc-result-lbl">Total Charitable Deductions Generated</div><div class="calc-result-val" id="a-total-ded">$1,500,000</div></div>
-        </div>
-        <div style="margin-top:14px">
-          <div class="calc-label" style="margin-bottom:9px">Your Current Tier</div>
-          <span class="tier-label t1" id="a-tier-label">Standard &mdash; 10%</span>
-          <div class="tier-track">
-            <div class="tier-track-bar"><div class="tier-track-fill" id="a-progress-fill" style="width:8%"></div></div>
-            <div class="tier-labels"><span>$0</span><span>$5M &rarr; 15%</span><span>$10M &rarr; 20%</span></div>
-            <div class="tier-next" id="a-next-tier">Generate $5M in charitable deductions to unlock the 15% tier.</div>
-          </div>
-        </div>
-        <div class="calc-result full gold-hl" style="margin-top:14px">
-          <div class="calc-result-lbl">Your Annual Referral Fee</div>
-          <div class="calc-result-val gold big" id="a-fee">$15,000</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── THE ASSET ── -->
-<section class="s-stone" id="asset">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">The Underlying Asset</div>
-    <h2 class="sec-title">The Asset Is Real &mdash; and Independently Documented</h2>
-    <p class="sec-body">Unlike conservation easements, this deduction is backed by a tangible mineral deposit with independent geologist reports, lab assays, an active BLM/SITLA claims record, and a qualified third-party appraisal &mdash; not a hypothetical development restriction.</p>
-  </div>
-  <div class="stout-box fade-up">
-    <div>
-      <div class="stout-label">Independent Third-Party Appraisal</div>
-      <div class="stout-firm">STOUT RISK, LLC &mdash; Qualified Appraisal</div>
-      <div class="stout-detail">Stout Risk, LLC conducted a full Discounted Cash Flow appraisal of the documented mineral reserves using 5, 10, and 15-year DCF models, weighted at 25% / 50% / 25%. The concluded Fair Market Value drives the Form 8283 deduction amount. Signed by a Managing Director with CMA credentials. Independent geologist reports (Kohler, P.G. 2023; Beard, P.G. 2025) and Stukenholtz/Midwest Labs assay sheets underlying the appraisal are held in the data room.</div>
-    </div>
-    <div class="stout-val">
-      <div class="stout-num">$196.4M</div>
-      <div class="stout-num-label">Concluded FMV<br>300,000 Tons</div>
-    </div>
-  </div>
-  <div class="asset-grid">
-    <div class="asset-card accent">
-      <div class="asset-label">The Mineral</div>
-      <div class="asset-head">Lake Bonneville Lacustrine Clay &amp; Marl &mdash; Sevier Desert</div>
-      <div class="asset-body">300,000 tons of documented calcium- and magnesium-rich surface deposit (not a deep hard-rock mine), sampled and reported on BLM placer claims and an adjacent SITLA limestone lease in Millard County, Utah. Long-term holding period inherited by taxpayer-partner via IRC tacking rules on day one &mdash; completing the long-term capital asset requirement before donation.</div>
-    </div>
-    <div class="asset-card">
-      <div class="asset-label">Field Documentation</div>
-      <div class="asset-head">Geologist Reports &amp; Lab Assays in the Data Room</div>
-      <div class="asset-body">Kohler (2023) and Beard (2025) auger-hole sampling reports, Stukenholtz manure/compost-method lab averages (calcium, magnesium, sulfur, K2O, P2O5, iron), and a separate Midwest Labs total-soil suite support the Stout Risk appraisal and are available to advisors and counsel in the password-protected data room at utahseabed.com.</div>
-      <div class="product-row">
-        <div class="product-item">
-          <svg class="product-item-icon" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5"><path d="M12 22V8M5 3l7 5 7-5M5 3v14l7 5 7-5V3"/></svg>
-          <div><div class="product-name">Soil Amendment</div><div class="product-sub">Calcareous Sediment &middot; Amendment Use</div></div>
-        </div>
-        <div class="product-item">
-          <svg class="product-item-icon" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-          <div><div class="product-name">Handling &amp; Bagging</div><div class="product-sub">Nephi, Utah Ranch Facility</div></div>
-        </div>
-      </div>
-    </div>
-    <div class="asset-card">
-      <div class="asset-label">Related-Use Application</div>
-      <div class="asset-head">Applied on Tribal &amp; Working Farmland</div>
-      <div class="asset-body">Donated material is applied by alliance partners on market garden plots and Tribal farmland (e.g. Oklahoma, Wind River, Lower Brule) as a soil amendment for agricultural and land-restoration use, demonstrating a real, active related-use program.</div>
-    </div>
-  </div>
-  <div class="charity-banner">
-    <div>
-      <div class="charity-title">Related-Use Charitable Donation</div>
-      <div class="charity-body">Donated minerals go to a qualified 501(c)(3) charity that commits in writing to use the material for exempt agricultural or land-restoration work for a minimum of three years &mdash; measurable, mission-aligned charitable impact with no circular flow of funds.</div>
-    </div>
-    <div>
-      <ul class="charity-bullets">
-        <li>Minimum 3-year related-use commitment, in writing</li>
-        <li>Enhances nutritional content and crop yield</li>
-        <li>Empowers harvesters toward self-sufficiency</li>
-        <li>Qualified 501(c)(3) donee confirmed per Form 8283</li>
-        <li>Donee acknowledgment signature required on Form 8283 Part V</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── DOCUMENTATION ── -->
-<section class="s-white" id="documentation">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">The Tax Documentation Package</div>
-    <h2 class="sec-title">Every Document the IRS Expects &mdash; Delivered</h2>
-    <p class="sec-body">Each investor receives a complete documentation package prepared to IRS standards. The client&rsquo;s CPA gets everything needed to file confidently &mdash; no gaps, no missing signatures, no ambiguity.</p>
-  </div>
-  <div class="doc-grid">
-    <div class="doc-card gold-border">
-      <div class="doc-num">DOC 01 &mdash; APPRAISAL</div>
-      <div class="doc-head">Stout Risk LLC Qualified Appraisal</div>
-      <div class="doc-body">A full DCF appraisal of the donated mineral property. Three DCF periods (5, 10, 15-year), weighted average methodology, concluded FMV of <strong>$196,400,000</strong> for 300,000 tons. Signed by a CMA-credentialed Managing Director. Meets all IRS requirements for a &ldquo;qualified appraisal&rdquo; under IRC &sect;170(f)(11).</div>
-      <div class="doc-highlight">5yr ($247M) &middot; 10yr ($192M) &middot; 15yr ($193M) &rarr; Concluded: $196.4M</div>
-    </div>
-    <div class="doc-card gold-border">
-      <div class="doc-num">DOC 02 &mdash; FORM 8283</div>
-      <div class="doc-head">Noncash Charitable Contribution Form 8283</div>
-      <div class="doc-body">IRS Form 8283 completed with all required fields. Contains both the <strong>qualified appraiser signature</strong> (Part IV) and the <strong>donee acknowledgment signature</strong> (Part V) from the qualified 501(c)(3) charity &mdash; both legally required.</div>
-      <div class="doc-highlight">FMV: $196,400,000 &middot; Soil Amendment Minerals</div>
-    </div>
-    <div class="doc-card">
-      <div class="doc-num">DOC 03 &mdash; SCHEDULE K-1</div>
-      <div class="doc-head">Partnership K-1 &mdash; Line 13 Code E Reporting</div>
-      <div class="doc-body">Each partner receives a Schedule K-1 (Form 1065) reporting the charitable contribution under <strong>Line 13, Code E</strong> &mdash; the specific code for capital gain donations to charity exempt from tax. Boxes 8 and 9 intentionally blank. Positive ending capital account confirmed.</div>
-      <div class="k1-example">
-        <div class="k1-label">K-1 (Form 1065) &mdash; Example at $50,000 Investment</div>
-        <div class="k1-row"><span>Line 13 Code E &mdash; Capital Gain Donation (tax-exempt)</span><span class="k1-val gold">$250,000</span></div>
-        <div class="k1-row"><span>Box 8 &mdash; Net LTCG (taxable)</span><span class="k1-val">$0</span></div>
-        <div class="k1-row"><span>Box 9 &mdash; Royalties (taxable)</span><span class="k1-val">$0</span></div>
-        <div class="k1-row highlight"><span>Section L &mdash; Ending Capital Account</span><span class="k1-val">Positive &#10003;</span></div>
-      </div>
-    </div>
-    <div class="doc-card">
-      <div class="doc-num">DOC 04 &mdash; PARTNERSHIP AGREEMENT</div>
-      <div class="doc-head">Series LLC Partnership Documents &amp; LOI</div>
-      <div class="doc-body">Client executes a Letter of Intent via DocuSign, then a full partnership agreement forming the Series LLC. The taxpayer is admitted as a limited partner with documented capital account basis. IRC tacking applies &mdash; long-term holding period inherited on day one. No wet signatures required. Attorney-managed throughout.</div>
-      <div class="doc-highlight">DocuSign LOI &rarr; Wire to Attorney Escrow &rarr; DocuSign Partnership Docs</div>
-    </div>
-  </div>
-</section>
-
-<div class="s-divider-navy" style="height:1px;background:rgba(255,255,255,0.08)"></div>
-
-<!-- ── COMPLIANCE — navy section ── -->
-<section id="compliance">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker on-dark">Risk &amp; Compliance</div>
-    <h2 class="sec-title on-dark">Why This Stands Up</h2>
-    <p class="sec-body on-dark">Specifically designed to avoid the pitfalls that plagued listed transactions like conservation easements. Four structural differences protect clients.</p>
-  </div>
-  <div class="compliance-grid">
-    <div class="comp-card">
-      <div class="comp-icon"><svg class="comp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-      <div><div class="comp-head">Not a Listed Transaction</div><div class="comp-body">The IRS has not identified this transaction type as a listed or reportable transaction. Unlike many easements, there is no disclosure requirement under Reg &sect;1.6011-4.</div></div>
-    </div>
-    <div class="comp-card">
-      <div class="comp-icon"><svg class="comp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg></div>
-      <div><div class="comp-head">Tangible Asset, Real Market</div><div class="comp-body">The donated asset (volcanic mineral) has an active commercial market and real buyers. The FMV is not theoretical &mdash; it reflects an actual traded commodity.</div></div>
-    </div>
-    <div class="comp-card">
-      <div class="comp-icon"><svg class="comp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-      <div><div class="comp-head">Full Documentation Package</div><div class="comp-body">Each investor receives: Qualified Appraisal, Form 8283 signed by appraiser and charity officer, Partnership K-1 with Code E reporting, and positive capital account basis.</div></div>
-    </div>
-    <div class="comp-card">
-      <div class="comp-icon"><svg class="comp-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
-      <div><div class="comp-head">Mission-Aligned Charity</div><div class="comp-body">Minerals are donated to qualified 501(c)(3) charities that commit in writing to a minimum 3-year related-use period on agricultural or land-restoration work &mdash; genuine, documented charitable impact with no circular flow of funds.</div></div>
-    </div>
-  </div>
-  <div class="vs-bar">
-    <div class="vs-col bad">
-      <div class="vs-head red">Conservation Easements</div>
-      <div class="vs-item"><span class="vs-icon">&#10007;</span> Listed transaction &mdash; disclosure required</div>
-      <div class="vs-item"><span class="vs-icon">&#10007;</span> Hypothetical value (no-development restriction)</div>
-      <div class="vs-item"><span class="vs-icon">&#10007;</span> Active IRS audit campaigns; penalty exposure</div>
-      <div class="vs-item"><span class="vs-icon">&#10007;</span> Charity receives non-commercializable restriction</div>
-    </div>
-    <div class="vs-col good">
-      <div class="vs-head grn">This Strategy</div>
-      <div class="vs-item"><span class="vs-icon grn">&#10003;</span> Not a listed transaction &mdash; no disclosure required</div>
-      <div class="vs-item"><span class="vs-icon grn">&#10003;</span> Tangible mineral with real commercial market value</div>
-      <div class="vs-item"><span class="vs-icon grn">&#10003;</span> Compliant IRC tacking + qualified appraisal structure</div>
-      <div class="vs-item"><span class="vs-icon grn">&#10003;</span> Charity receives a usable, beneficial asset</div>
-    </div>
-  </div>
-</section>
-
-<div style="height:1px;background:rgba(255,255,255,0.08)"></div>
-
-<!-- ── PROCESS ── -->
-<section class="s-stone" id="process">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">For Advisors</div>
-    <h2 class="sec-title">5-Step Turnkey Process</h2>
-    <p class="sec-body">Designed to be completely turnkey for CPAs and financial planners. Your only job is the referral &mdash; we handle all documentation, escrow, entity setup, and tax forms.</p>
-  </div>
-  <div class="p-steps">
-    <div class="p-step"><div class="p-step-num">1</div><div class="p-step-head">Advisor Shares Link</div><div class="p-step-body">You receive a unique referral link to share directly with your client.</div></div>
-    <div class="p-step"><div class="p-step-num">2</div><div class="p-step-head">Client Signs LOI</div><div class="p-step-body">Client executes a Letter of Intent via DocuSign &mdash; no wet signatures required.</div></div>
-    <div class="p-step"><div class="p-step-num">3</div><div class="p-step-head">Wire to Escrow</div><div class="p-step-body">Funds wired to attorney-managed escrow. $50,000 minimum per client.</div></div>
-    <div class="p-step"><div class="p-step-num">4</div><div class="p-step-head">Partnership Docs</div><div class="p-step-body">Client executes partnership agreement via DocuSign. Series LLC is formed.</div></div>
-    <div class="p-step"><div class="p-step-num">5</div><div class="p-step-head">Tax Package Delivered</div><div class="p-step-body">K-1, Form 8283, qualified appraisal, and all supporting docs delivered for filing.</div></div>
-  </div>
-</section>
-
-<div class="s-divider"></div>
-
-<!-- ── COMPENSATION ── -->
-<section class="s-white" id="compensation">
-  <div class="sec-head-wrap fade-up">
-    <div class="sec-kicker">Referral Compensation</div>
-    <h2 class="sec-title">There Is Room to Be Paid for Referrals</h2>
-    <p class="sec-body" style="max-width:640px">How you&rsquo;re compensated depends on your professional designation. Both tracks are clean &mdash; structure is different, not the outcome.</p>
-  </div>
-  <div class="track-grid">
-    <div class="track-card">
-      <div class="track-head">
-        <svg class="track-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-        <div><div class="track-title">CFOs, Consultants &amp; Business Managers</div><div class="track-sub">No securities license required &middot; Simplest path</div></div>
-      </div>
-      <div class="track-body">
-        <div class="track-row"><div class="track-row-lbl">Fee structure</div><div class="track-row-val gold">10% &ndash; 20% of client investment, volume-based</div></div>
-        <div class="track-row"><div class="track-row-lbl">Agreement required</div><div class="track-row-val">Simple referral agreement &mdash; we provide the template</div></div>
-        <div class="track-row"><div class="track-row-lbl">Client disclosure</div><div class="track-row-val">None required for unlicensed introducers</div></div>
-        <div class="track-row"><div class="track-row-lbl">When you get paid</div><div class="track-row-val green">On confirmed wire to escrow</div></div>
-        <div class="track-row"><div class="track-row-lbl">Best for</div><div class="track-row-val">CFOs, family office staff, business consultants, unlicensed tax advisors</div></div>
-      </div>
-    </div>
-    <div class="track-card">
-      <div class="track-head">
-        <svg class="track-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        <div><div class="track-title">Licensed Financial Advisors &amp; RIAs</div><div class="track-sub">SEC / FINRA / state-registered &middot; Standard solicitor structure</div></div>
-      </div>
-      <div class="track-body">
-        <div class="track-row"><div class="track-row-lbl">Fee structure</div><div class="track-row-val gold">10% &ndash; 20% of client investment, volume-based</div></div>
-        <div class="track-row"><div class="track-row-lbl">Agreement required</div><div class="track-row-val">Written solicitor agreement per SEC Rule 206(4)-3 / Regulation BI</div></div>
-        <div class="track-row"><div class="track-row-lbl">Client disclosure</div><div class="track-row-val">Written disclosure to client required at referral &mdash; we provide the form</div></div>
-        <div class="track-row"><div class="track-row-lbl">When you get paid</div><div class="track-row-val green">On confirmed wire to escrow</div></div>
-        <div class="track-row"><div class="track-row-lbl">Best for</div><div class="track-row-val">RIAs, broker-dealers, registered reps, wealth managers</div></div>
-      </div>
-    </div>
-  </div>
-  <div class="vol-tier-wrap">
-    <div class="vol-tier-head">
-      <span class="vol-tier-title">Referral Fee Schedule</span>
-      <span class="vol-tier-sub">Based on total charitable deductions generated &middot; fee paid on client investment amount</span>
-    </div>
-    <div class="vol-tiers">
-      <div class="vol-tier"><div class="vol-tier-threshold">Standard</div><div class="vol-tier-pct">10%</div><div class="vol-tier-lbl">Under $5M in charitable deductions<br>$60K client = <strong style="color:var(--green)">$6,000</strong></div></div>
-      <div class="vol-tier-div"></div>
-      <div class="vol-tier t2"><div class="vol-tier-threshold">$5M+ Deductions</div><div class="vol-tier-pct">15%</div><div class="vol-tier-lbl">Unlocked at $5M total deductions<br>$60K client = <strong style="color:var(--gold)">$9,000</strong></div></div>
-      <div class="vol-tier-div"></div>
-      <div class="vol-tier t3"><div class="vol-tier-threshold">$10M+ Deductions</div><div class="vol-tier-pct">20%</div><div class="vol-tier-lbl">Maximum tier &mdash; unlocked at $10M<br>$60K client = <strong style="color:var(--green)">$12,000</strong></div></div>
-      <div class="vol-tier-div"></div>
-      <div class="vol-tier tbulk"><div class="vol-tier-threshold">High Volume</div><div class="vol-tier-pct">Custom</div><div class="vol-tier-lbl">Bulk referral payout structure available<br><strong style="color:var(--navy)">Contact to negotiate</strong></div></div>
-    </div>
-  </div>
-  <div class="comp-note"><strong>Note for CPAs:</strong> AICPA Rule 1.510 restricts contingent fees on tax engagements &mdash; but a flat referral fee for an introduction is a distinct arrangement and does not trigger that rule. Confirm with your ethics counsel if in doubt &mdash; we&rsquo;re happy to provide supporting language.</div>
-</section>
-
-<div style="height:1px;background:rgba(255,255,255,0.08)"></div>
-
-<!-- ── CTA ── -->
-<section id="cta">
-  <div class="cta-inner">
-    <div class="sec-kicker on-dark" style="text-align:center">Ready to Learn More?</div>
-    <h2 class="sec-title on-dark" style="text-align:center;margin-bottom:6px">Start Referring Clients Today</h2>
-    <p class="sec-body on-dark" style="margin:0 auto;text-align:center;max-width:500px">Request your unique advisor referral link. We&rsquo;ll walk you through the structure, answer compliance questions, and deliver a customizable client-ready summary.</p>
-    <div class="cta-box">
-      <div class="cta-title">Request Advisor Package</div>
-      <p class="cta-body">Get your referral agreement, client one-pager, K-1 sample, and full compliance documentation &mdash; everything you need for a confident client conversation.</p>
-      <div class="cta-details">
-        <div class="cta-detail"><div class="cta-detail-lbl">Minimum Per Client</div><div class="cta-detail-val">$50,000</div></div>
-        <div class="cta-detail"><div class="cta-detail-lbl">Deduction Ratio</div><div class="cta-detail-val">5:1 Guaranteed</div></div>
-        <div class="cta-detail"><div class="cta-detail-lbl">Documentation</div><div class="cta-detail-val">K-1 + Form 8283</div></div>
-        <div class="cta-detail"><div class="cta-detail-lbl">Referral Fee</div><div class="cta-detail-val">10% &ndash; 20% + Custom</div></div>
-      </div>
-      <a class="btn-primary" href="mailto:advisors@roicfo.com?subject=Leveraged%20Donation%20Strategy%20%E2%80%94%20Advisor%20Package%20Request" style="display:block;text-align:center;margin-bottom:22px">Email Us Directly &rarr;</a>
-      <div class="cta-divider"></div>
-      <div class="lead-form-title">Or fill out your info &mdash; we&rsquo;ll reply within 24 hours</div>
-      <form class="lead-form" action="https://formspree.io/f/xdarooko" method="POST">
-        <input type="hidden" name="_subject" value="Leveraged Donation — ROI CFO — New Advisor Lead">
-        <input type="hidden" name="product" value="Leveraged Donation Strategy — ROI CFO">
-        <div class="lead-form-row">
-          <div class="lead-form-group"><label class="lead-form-label">First Name</label><input class="lead-form-input" type="text" name="first_name" placeholder="Jane" required></div>
-          <div class="lead-form-group"><label class="lead-form-label">Last Name</label><input class="lead-form-input" type="text" name="last_name" placeholder="Smith" required></div>
-        </div>
-        <div class="lead-form-row">
-          <div class="lead-form-group"><label class="lead-form-label">Email</label><input class="lead-form-input" type="email" name="email" placeholder="jane@smithcpa.com" required></div>
-          <div class="lead-form-group"><label class="lead-form-label">Phone (optional)</label><input class="lead-form-input" type="tel" name="phone" placeholder="(801) 555-0182"></div>
-        </div>
-        <div class="lead-form-row">
-          <div class="lead-form-group"><label class="lead-form-label">Firm Name</label><input class="lead-form-input" type="text" name="firm" placeholder="Smith CPA Group" required></div>
-          <div class="lead-form-group"><label class="lead-form-label">Your Role</label><select class="lead-form-input" name="role"><option value="">Select...</option><option>CPA / Tax Partner</option><option>RIA / Financial Advisor</option><option>CFP</option><option>CFO / Business Manager</option><option>Family Office</option><option>Other</option></select></div>
-        </div>
-        <div class="lead-form-group"><label class="lead-form-label">Client Tax Liability Range</label><select class="lead-form-input" name="tax_liability"><option value="">Select range...</option><option>Under $500K</option><option>$500K &ndash; $1M</option><option>$1M &ndash; $5M</option><option>$5M &ndash; $20M</option><option>$20M+</option></select></div>
-        <button class="lead-form-btn" type="submit">Send My Advisor Packet &rarr;</button>
-        <p class="lead-form-note">For licensed professionals only. We&rsquo;ll reply within 24 hours. bryson@roicfo.com</p>
-      </form>
-      <p class="cta-legal">This document is for licensed financial professionals, CPAs, and business advisors only. All appraisals under IRC &sect;170(f)(11)(E). 2025 Offering &middot; ROI CFO &middot; Utah &middot; <a href="https://roicfo.com" style="color:var(--gold-light);">roicfo.com</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <div>
-      <div class="footer-brand-mark">R</div>
-      <div class="footer-brand-name">ROI CFO</div>
-      <div class="footer-tagline">Advisor-exclusive tax strategies for high-income taxpayers. Utah.</div>
-    </div>
-    <div class="footer-links-wrap">
-      <div>
-        <div class="footer-col-title">Strategy</div>
-        <ul class="footer-links">
-          <li><a href="#how">How It Works</a></li>
-          <li><a href="#math">The Math</a></li>
-          <li><a href="#calculator">Calculator</a></li>
-          <li><a href="#asset">The Asset</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">For Advisors</div>
-        <ul class="footer-links">
-          <li><a href="#compliance">Compliance</a></li>
-          <li><a href="#documentation">Documentation</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#compensation">Compensation</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="#cta">Request Advisor Package</a></li>
-          <li><a href="mailto:advisors@roicfo.com">advisors@roicfo.com</a></li>
-          <li><a href="https://roicfo.com">roicfo.com</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-copy">&copy; 2026 ROI CFO LLC &middot; For Advisor Use Only &middot; Consult qualified tax counsel</div>
-    <div class="footer-copy"><a href="https://roicfo.com" style="color:rgba(255,255,255,0.2);text-decoration:none">roicfo.com</a></div>
-  </div>
-</footer>
-
+<div id="progress"></div>
+<nav class="fl" aria-label="Primary"><div class="in">
+<a class="mark" href="https://roicfo.com" aria-label="ROI CFO home"><img class="full" src="/assets/brand/roicfo-logo.png" width="545" height="180" alt="ROI CFO"></a>
+<div class="links"><a class="t" href="#how">How It Works</a><a class="t" href="#math">The Math</a><a class="t" href="#asset">The Asset</a><a class="t" href="#compliance">Compliance</a><a class="t" href="#compensation">Compensation</a><a class="btn sm cta-d" href="#cta" ><span>Get Started</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></div>
+<button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</div></nav>
+<div class="mobile-nav" id="mobile-nav"><a href="#how">How It Works</a><a href="#math">The Math</a><a href="#asset">The Asset</a><a href="#compliance">Compliance</a><a href="#compensation">Compensation</a><a href="#cta">Get Started</a></div>
+<header class="hero" id="hero"><div class="pxw" data-px="46" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i></div><div class="pxw" data-px="-30" aria-hidden="true"><i class="orb o3"></i></div><div class="gridbg" aria-hidden="true"></div><div class="arcs pxw" data-px="18" aria-hidden="true"><i></i><i></i></div>
+<div class="wrap wide"><div class="hero-grid"><div>
+<div class="kicker rv">ROI CFO · 2025 Advisor Offering</div>
+<h1 class=""><span class="ln"><span style="--d:0">Turn Tax Liability Into</span></span><span class="ln"><span style="--d:1"><em>Real Cash Return</em></span></span></h1>
+<p class="lead rv" style="--d:2">A federally compliant 5:1 leveraged donation strategy for high-income taxpayers. Verified appraisal, K-1 documentation, and zero listed-transaction risk — delivered exclusively through advisors, CPAs, and family offices.</p>
+<div class="cta rv" style="--d:3"><a class="btn " href="#cta" ><span>Request Advisor Package</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><a class="btn ghost" href="#how" ><span>See How It Works</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></div>
+<div class="rl rv" style="--d:4"><span>Not a Listed Transaction</span><span>5-Year Carryforward</span><span>K-1 + Form 8283</span><span>Qualified Appraisal</span><span>Related-Use Charitable Donation</span></div>
+<p class="legalline rv" style="--d:5">FOR ADVISOR USE ONLY · Confidential. Not for distribution to end investors without review. Consult qualified tax counsel.</p>
+</div>
+<div class="rv" style="--d:3"><div class="globe"><div id="hero-three"></div></div></div></div>
+<div class="stats stg herostats" style="--cols:4"><div class="stat rv"><span class="gl"></span><div class="v"><span class="val" data-count="5" data-suffix="×">5×</span></div><div class="t">Deduction Ratio</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="val" data-count="151.5" data-suffix="%" data-decimals="1">151.5%</span></div><div class="t">After-Tax ROI</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="val" data-count="50" data-prefix="$" data-suffix="K">$50K</span></div><div class="t">Min. Investment</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="val" data-count="5" data-suffix=" Yr">5 Yr</span></div><div class="t">Carryforward</div></div></div></div>
+</header>
+<div class="marq" aria-hidden="true"><div class="track"><span>Deduction</span><span>Documentation</span><span>Qualified Appraisal</span><span>Related Use</span><span>Form 8283</span><span>K-1</span><span>Deduction</span><span>Documentation</span><span>Qualified Appraisal</span><span>Related Use</span><span>Form 8283</span><span>K-1</span></div></div><section id="how" class="lt"><div class="wrap wide"><div class="split hd">
+<div><div class="kicker rv ">The Strategy</div><h2 class="rv">3 Steps. One Clean Structure.</h2></div><p class="lead rv">U.S. tax law allows contributors to deduct the fair market value of donated assets — not just their cost basis. ROI CFO structures a bulk mineral acquisition at a fraction of appraised FMV, then allows taxpayer-partners to donate their allocated portion at full FMV.</p></div>
+<div class="vt"><div class="vi rv"><div class="stepn">01</div><h4>Bulk Acquisition at Discount</h4><p>Taxpayer acquires a partnership interest in a Series LLC holding documented mineral assets. IRC “tacking” rules grant long-term holding period on Day 1 — no holding period required.</p></div><div class="vi rv"><div class="stepn">02</div><h4>Deduction at Appraised Value</h4><p>Upon donation to the qualified charity, IRS allows the deduction at full fair market value per qualified appraisal — not the lower cash outlay. This creates the 5:1 leverage ratio.</p></div><div class="vi rv"><div class="stepn">03</div><h4>Documented, Compliant Exit</h4><p>A completed Form 8283 (signed by appraiser + charity officer), partnership K-1, and qualified appraisal are delivered directly for use on the client’s tax return. No gaps.</p></div></div></div></section>
+<section id="leverage" class="dk"><div class="amb" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><div class="gridbg"></div></div><div class="wrap wide">
+<div class="split hd"><div><div class="kicker rv ">The Leverage</div><h2 class="rv">Why 5:1 Changes the Math</h2></div><div class="rv"><div class="bignum gd">5×</div><div class="lbl" style="margin-top:8px">Leverage Ratio</div></div></div>
+<p class="statement wide" style="margin-top:50px">Every <strong>$1 of cash invested</strong> generates a <strong>$5 charitable deduction</strong> against ordinary income. On a standard $60,000 investment for a $1M income earner, that produces a $300,000 deduction — reducing total tax by over <strong>$90,900 in real cash savings</strong> after accounting for the investment cost.</p>
+<div class="bento stg"><div class="bezel s6 rv"><div class="core2"><span class="gl"></span><h3>Not a listed transaction.</h3><p>Unlike conservation easements, backed by a tangible asset with a genuine, non-hypothetical market value and active commercial use.</p></div></div><div class="bezel s6 rv"><div class="core2"><span class="gl"></span><h3>5-year carryforward.</h3><p>Deduct up to 30% of AGI per year and carry forward any excess for five additional tax years.</p></div></div><div class="bezel s6 rv"><div class="core2"><span class="gl"></span><h3>Guaranteed 5:1 ratio.</h3><p>ROI CFO contractually agrees to donate enough minerals to always meet the ratio — regardless of year-end appraisal outcome.</p></div></div><div class="bezel s6 rv"><div class="core2"><span class="gl"></span><h3>Flexible year-end decision.</h3><p>Taxpayer-partner retains the option to donate their allocated minerals to a qualified charity OR retain and explore commercial use — decision made at year end.</p></div></div></div></div></section>
+<section id="math" class="lt"><div class="wrap wide"><div class="split hd"><div><div class="kicker rv ">Real Dollar Savings</div><h2 class="rv">The Numbers at $1M Income</h2></div><p class="lead rv">Side-by-side comparison. $60,000 investment generating a $300,000 charitable deduction. Federal + California rates shown.</p></div>
+<div class="bezel rv" style="margin-top:56px"><div class="core2" style="padding:0;overflow:hidden"><div class="tbl"><table class="savings-table">
+<thead><tr><th>Line Item</th><th>No Transaction</th><th>With Strategy</th></tr></thead>
+<tbody>
+<tr class="row-section"><td colspan="3">Income Baseline</td></tr>
+<tr><td>Estimated Ordinary Income</td><td class="col-notx">$1,000,000</td><td>$1,000,000</td></tr>
+<tr><td>Investment in Strategy (cost)</td><td class="col-notx">—</td><td>−$60,000</td></tr>
+<tr><td>Charitable Deduction (30% of AGI)</td><td class="col-notx">$0</td><td>−$300,000</td></tr>
+<tr><td><strong>Taxable Income</strong></td><td class="col-notx"><strong>$1,000,000</strong></td><td><strong>$700,000</strong></td></tr>
+<tr class="row-section"><td colspan="3">Tax Liability</td></tr>
+<tr><td>Federal Tax (37% marginal rate)</td><td class="col-notx">−$370,000</td><td>−$259,000</td></tr>
+<tr><td>State Tax (13.3% — CA example)</td><td class="col-notx">−$133,000</td><td>−$93,100</td></tr>
+<tr class="row-total"><td><strong>Total Tax Paid</strong></td><td class="col-notx"><strong>−$503,000</strong></td><td><strong>−$352,100</strong></td></tr>
+<tr class="row-section"><td colspan="3">After-Tax Result</td></tr>
+<tr><td>After-Tax Net Income</td><td class="col-notx">$497,000</td><td>$587,900</td></tr>
+<tr class="row-highlight"><td><strong>NET CASH BENEFIT</strong></td><td class="col-notx">—</td><td class="gain">+$90,900</td></tr>
+</tbody>
+</table></div></div></div>
+<div class="stats stg" style="--cols:3;margin-top:60px"><div class="stat rv"><span class="gl"></span><div class="v"><span class="gr">$90,900</span></div><div class="t" style="text-transform:none;letter-spacing:0;font-size:14px;line-height:1.6;font-weight:400">Net cash benefit for $1M income taxpayer</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="acc">$60K → $300K</span></div><div class="t" style="text-transform:none;letter-spacing:0;font-size:14px;line-height:1.6;font-weight:400">Investment to deduction — 5× leverage ratio</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="">151.5%</span></div><div class="t" style="text-transform:none;letter-spacing:0;font-size:14px;line-height:1.6;font-weight:400">Gross after-tax ROI on $60K investment</div></div></div></div></section>
+<section id="tiers" class="st2"><div class="wrap wide"><div class="split hd"><div><div class="kicker rv ">Every Income Level</div><h2 class="rv">Savings Across Income Tiers</h2></div><p class="lead rv">The strategy scales with income. State rates shown at CA 13.3% — adjust for your client’s state.</p></div>
+<div class="bezel rv" style="margin-top:56px"><div class="core2" style="padding:0;overflow:hidden"><div class="tbl"><table class="income-table">
+<thead><tr><th>Scenario</th><th>$500K Income</th><th>$750K Income</th><th>$1M Income</th><th>$2M Income</th><th>$5M Income</th></tr></thead>
+<tbody>
+<tr class="row-head"><td colspan="6">Investment Required</td></tr>
+<tr class="row-invest"><td>Investment (cash out)</td><td>$30,000</td><td>$45,000</td><td>$60,000</td><td>$120,000</td><td>$300,000</td></tr>
+<tr class="row-invest"><td>Charitable Deduction (5×)</td><td>$150,000</td><td>$225,000</td><td>$300,000</td><td>$600,000</td><td>$1,500,000</td></tr>
+<tr class="row-head"><td colspan="6">Tax Saved</td></tr>
+<tr class="row-tax"><td>Federal Tax Reduction (37%)</td><td>$55,500</td><td>$83,250</td><td>$111,000</td><td>$222,000</td><td>$555,000</td></tr>
+<tr class="row-tax"><td>State Tax Reduction (13.3%)</td><td>$19,950</td><td>$29,925</td><td>$39,900</td><td>$79,800</td><td>$199,500</td></tr>
+<tr class="row-tax"><td>Total Tax Saved</td><td>$75,450</td><td>$113,175</td><td>$150,900</td><td>$301,800</td><td>$754,500</td></tr>
+<tr class="row-head"><td colspan="6">Net Result</td></tr>
+<tr class="row-save"><td>Net Cash Benefit</td><td>$45,450</td><td>$68,175</td><td>$90,900</td><td>$181,800</td><td>$454,500</td></tr>
+<tr class="row-net"><td>After-Tax ROI</td><td>151.5%</td><td>151.5%</td><td>151.5%</td><td>151.5%</td><td>151.5%</td></tr>
+</tbody>
+</table></div></div></div></div></section>
+<section id="calculator" class="lt"><div class="wrap wide"><div class="split hd"><div><div class="kicker rv ">Interactive Calculator</div><h2 class="rv">Run the Numbers Live</h2></div><p class="lead rv">Enter your client’s income and state rate. The right panel shows your referral earnings at your current volume tier.</p></div>
+<div class="calcgrid stg"><div class="bezel rv"><div class="core2"><span class="ph">Client Tax Savings</span><h3>Client Tax Savings</h3><p>Adjust income and tax rates to match your client</p>
+<div style="margin-top:26px"><div class="cfield"><label class="l">Client Annual Income</label><div class="cwrap"><span class="pre">$</span><input class="hp" id="c-income" oninput="fmtInput(this);calcClient()" type="text" value="1,000,000"></div></div>
+<div class="two"><div class="cfield"><label class="l">Federal Rate</label><div class="cwrap"><input class="hs" id="c-fed" max="50" min="0" oninput="calcClient()" step="0.1" type="number" value="37"><span class="suf">%</span></div></div><div class="cfield"><label class="l">State Rate</label><div class="cwrap"><input class="hs" id="c-state" max="15" min="0" oninput="calcClient()" step="0.1" type="number" value="9.3"><span class="suf">%</span></div></div></div></div>
+<div class="cres"><div class=""><span class="rl2">Investment Required</span><span class="rv2 gold" id="r-investment">$60,000</span></div><div class=""><span class="rl2">Charitable Deduction (5×)</span><span class="rv2 " id="r-deduction">$300,000</span></div><div class=""><span class="rl2">Federal Tax Saved</span><span class="rv2 green" id="r-fed-saved">$111,000</span></div><div class=""><span class="rl2">State Tax Saved</span><span class="rv2 green" id="r-state-saved">$27,900</span></div><div class="full hi"><span class="rl2">Net Cash Benefit (after investment cost)</span><span class="rv2 green big" id="r-net">$78,900</span></div><div class="full "><span class="rl2">Return on Investment</span><span class="rv2 gold" id="r-roi">131.5%</span></div></div></div></div><div class="bezel rv"><div class="core2"><span class="ph">Your Referral Earnings</span><h3>Your Referral Earnings</h3><p>Tier unlocked by total charitable deductions generated</p>
+<div style="margin-top:26px" class="two"><div class="cfield"><label class="l">Clients Per Year</label><div class="cwrap"><input id="a-clients" max="500" min="1" oninput="calcAdvisor()" type="number" value="5"></div></div><div class="cfield"><label class="l">Avg Client Income</label><div class="cwrap"><span class="pre">$</span><input class="hp" id="a-income" oninput="fmtInput(this);calcAdvisor()" type="text" value="1,000,000"></div></div></div>
+<div class="cres"><div class=""><span class="rl2">Avg Investment / Client</span><span class="rv2 " id="a-avg-inv">$60,000</span></div><div class=""><span class="rl2">Total Client Investment</span><span class="rv2 " id="a-total-inv">$300,000</span></div><div class="full "><span class="rl2">Total Charitable Deductions Generated</span><span class="rv2 " id="a-total-ded">$1,500,000</span></div></div>
+<div style="margin-top:22px"><span class="rl2">Your Current Tier</span><span class="tier-label t1" id="a-tier-label">Standard — 10%</span>
+<div class="tier-track"><div class="tier-track-bar"><div class="tier-track-fill" id="a-progress-fill" style="width:8%"></div></div><div class="tier-labels"><span>$0</span><span>$5M → 15%</span><span>$10M → 20%</span></div><div class="tier-next" id="a-next-tier">Generate $5M in charitable deductions to unlock the 15% tier.</div></div></div>
+<div class="cres"><div class="full hi"><span class="rl2">Your Annual Referral Fee</span><span class="rv2 gold big" id="a-fee">$15,000</span></div></div></div></div></div></div></section>
+<section id="asset" class="st2"><div class="wrap wide"><div class="head2"><div><div class="kicker rv ">The Underlying Asset</div><h2 class="rv">The Asset Is Real — and Independently Documented</h2></div><p class="lead rv">Unlike conservation easements, this deduction is backed by a tangible mineral deposit with independent geologist reports, lab assays, an active BLM/SITLA claims record, and a qualified third-party appraisal — not a hypothetical development restriction.</p></div>
+<div class="bezel rv" style="margin-top:56px"><div class="core2 navycore"><div class="banner"><div><span class="ph">Independent Third-Party Appraisal</span><h3>STOUT RISK, LLC — Qualified Appraisal</h3><p>Stout Risk, LLC conducted a full Discounted Cash Flow appraisal of the documented mineral reserves using 5, 10, and 15-year DCF models, weighted at 25% / 50% / 25%. The concluded Fair Market Value drives the Form 8283 deduction amount. Signed by a Managing Director with CMA credentials. Independent geologist reports (Kohler, P.G. 2023; Beard, P.G. 2025) and Stukenholtz/Midwest Labs assay sheets underlying the appraisal are held in the data room.</p></div>
+<div style="text-align:right"><div class="bignum gd">$196.4M</div><div class="lbl" style="margin-top:10px">Concluded FMV<br/>300,000 Tons</div></div></div></div></div>
+<div class="bento stg"><div class="bezel s6 rv"><div class="core2"><span class="ph">The Mineral</span><h3>Lake Bonneville Lacustrine Clay &amp; Marl — Sevier Desert</h3><p>300,000 tons of documented calcium- and magnesium-rich surface deposit (not a deep hard-rock mine), sampled and reported on BLM placer claims and an adjacent SITLA limestone lease in Millard County, Utah. Long-term holding period inherited by taxpayer-partner via IRC tacking rules on day one — completing the long-term capital asset requirement before donation.</p></div></div><div class="bezel s6 rv"><div class="core2"><span class="ph">Field Documentation</span><h3>Geologist Reports &amp; Lab Assays in the Data Room</h3><p>Kohler (2023) and Beard (2025) auger-hole sampling reports, Stukenholtz manure/compost-method lab averages (calcium, magnesium, sulfur, K2O, P2O5, iron), and a separate Midwest Labs total-soil suite support the Stout Risk appraisal and are available to advisors and counsel in the password-protected data room at utahseabed.com.</p><ul class="srvlist"><li><b>Soil Amendment</b> · Calcareous Sediment · Amendment Use</li><li><b>Handling &amp; Bagging</b> · Nephi, Utah Ranch Facility</li></ul></div></div><div class="bezel s12 rv"><div class="core2"><span class="ph">Related-Use Application</span><h3>Applied on Tribal &amp; Working Farmland</h3><p>Donated material is applied by alliance partners on market garden plots and Tribal farmland (e.g. Oklahoma, Wind River, Lower Brule) as a soil amendment for agricultural and land-restoration use, demonstrating a real, active related-use program.</p></div></div>
+<div class="bezel s12 rv"><div class="core2"><div class="banner"><div><span class="ph">Related-Use Charitable Donation</span><h3>Related-Use Charitable Donation</h3><p>Donated minerals go to a qualified 501(c)(3) charity that commits in writing to use the material for exempt agricultural or land-restoration work for a minimum of three years — measurable, mission-aligned charitable impact with no circular flow of funds.</p></div><ul class="tick"><li>Minimum 3-year related-use commitment, in writing</li><li>Enhances nutritional content and crop yield</li><li>Empowers harvesters toward self-sufficiency</li><li>Qualified 501(c)(3) donee confirmed per Form 8283</li><li>Donee acknowledgment signature required on Form 8283 Part V</li></ul></div></div></div></div></div></section>
+<section id="documentation" class="dk"><div class="amb" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><div class="gridbg"></div></div><div class="wrap wide"><div class="head2"><div><div class="kicker rv ">The Tax Documentation Package</div><h2 class="rv">Every Document the IRS Expects — Delivered</h2></div><p class="lead rv">Each investor receives a complete documentation package prepared to IRS standards. The client’s CPA gets everything needed to file confidently — no gaps, no missing signatures, no ambiguity.</p></div>
+<div class="bento stg"><div class="bezel s6 rv"><div class="core2"><span class="ph">DOC 01 — APPRAISAL</span><h3>Stout Risk LLC Qualified Appraisal</h3><p>A full DCF appraisal of the donated mineral property. Three DCF periods (5, 10, 15-year), weighted average methodology, concluded FMV of <strong>$196,400,000</strong> for 300,000 tons. Signed by a CMA-credentialed Managing Director. Meets all IRS requirements for a “qualified appraisal” under IRC §170(f)(11).</p><span class="hl" style="display:block;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--gold2);letter-spacing:.04em">5yr ($247M) · 10yr ($192M) · 15yr ($193M) → Concluded: $196.4M</span></div></div><div class="bezel s6 rv"><div class="core2"><span class="ph">DOC 02 — FORM 8283</span><h3>Noncash Charitable Contribution Form 8283</h3><p>IRS Form 8283 completed with all required fields. Contains both the <strong>qualified appraiser signature</strong> (Part IV) and the <strong>donee acknowledgment signature</strong> (Part V) from the qualified 501(c)(3) charity — both legally required.</p><span class="hl" style="display:block;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--gold2);letter-spacing:.04em">FMV: $196,400,000 · Soil Amendment Minerals</span></div></div><div class="bezel s7 rv"><div class="core2"><span class="ph">DOC 03 — SCHEDULE K-1</span><h3>Partnership K-1 — Line 13 Code E Reporting</h3><p>Each partner receives a Schedule K-1 (Form 1065) reporting the charitable contribution under <strong>Line 13, Code E</strong> — the specific code for capital gain donations to charity exempt from tax. Boxes 8 and 9 intentionally blank. Positive ending capital account confirmed.</p><div class="k1"><span class="ph" style="margin-top:20px">K-1 (Form 1065) — Example at $50,000 Investment</span><div class="tbl"><table style="min-width:0"><tbody><tr class=""><td>Line 13 Code E — Capital Gain Donation (tax-exempt)</td><td>$250,000</td></tr><tr class=""><td>Box 8 — Net LTCG (taxable)</td><td>$0</td></tr><tr class=""><td>Box 9 — Royalties (taxable)</td><td>$0</td></tr><tr class="row-highlight"><td>Section L — Ending Capital Account</td><td>Positive ✓</td></tr></tbody></table></div></div></div></div><div class="bezel s5 rv"><div class="core2"><span class="ph">DOC 04 — PARTNERSHIP AGREEMENT</span><h3>Series LLC Partnership Documents &amp; LOI</h3><p>Client executes a Letter of Intent via DocuSign, then a full partnership agreement forming the Series LLC. The taxpayer is admitted as a limited partner with documented capital account basis. IRC tacking applies — long-term holding period inherited on day one. No wet signatures required. Attorney-managed throughout.</p><span class="hl" style="display:block;margin-top:18px;font-family:var(--mono);font-size:12.5px;color:var(--gold2);letter-spacing:.04em">DocuSign LOI → Wire to Attorney Escrow → DocuSign Partnership Docs</span></div></div></div></div></section>
+<section id="compliance" class="lt"><div class="wrap wide"><div class="head2"><div><div class="kicker rv ">Risk &amp; Compliance</div><h2 class="rv">Why This Stands Up</h2></div><p class="lead rv">Specifically designed to avoid the pitfalls that plagued listed transactions like conservation easements. Four structural differences protect clients.</p></div>
+<div class="bento stg"><div class="bezel s6 rv"><div class="core2"><div class="sicon"><svg class="comp-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div><h3>Not a Listed Transaction</h3><p>The IRS has not identified this transaction type as a listed or reportable transaction. Unlike many easements, there is no disclosure requirement under Reg §1.6011-4.</p></div></div><div class="bezel s6 rv"><div class="core2"><div class="sicon"><svg class="comp-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg></div><h3>Tangible Asset, Real Market</h3><p>The donated asset (volcanic mineral) has an active commercial market and real buyers. The FMV is not theoretical — it reflects an actual traded commodity.</p></div></div><div class="bezel s6 rv"><div class="core2"><div class="sicon"><svg class="comp-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div><h3>Full Documentation Package</h3><p>Each investor receives: Qualified Appraisal, Form 8283 signed by appraiser and charity officer, Partnership K-1 with Code E reporting, and positive capital account basis.</p></div></div><div class="bezel s6 rv"><div class="core2"><div class="sicon"><svg class="comp-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg></div><h3>Mission-Aligned Charity</h3><p>Minerals are donated to qualified 501(c)(3) charities that commit in writing to a minimum 3-year related-use period on agricultural or land-restoration work — genuine, documented charitable impact with no circular flow of funds.</p></div></div></div>
+<div class="vs stg" style="margin-top:18px"><div class="good-wrap"><div class="bezel rv"><div class="core2 bad"><h4>Conservation Easements</h4><ul><li><i>✗</i><span>Listed transaction — disclosure required</span></li><li><i>✗</i><span>Hypothetical value (no-development restriction)</span></li><li><i>✗</i><span>Active IRS audit campaigns; penalty exposure</span></li><li><i>✗</i><span>Charity receives non-commercializable restriction</span></li></ul></div></div></div><div class="good good-wrap"><div class="bezel rv"><div class="core2 good"><h4>This Strategy</h4><ul><li><i>✓</i><span>Not a listed transaction — no disclosure required</span></li><li><i>✓</i><span>Tangible mineral with real commercial market value</span></li><li><i>✓</i><span>Compliant IRC tacking + qualified appraisal structure</span></li><li><i>✓</i><span>Charity receives a usable, beneficial asset</span></li></ul></div></div></div></div></div></section>
+<section id="process" class="st2"><div class="wrap wide"><div class="split hd"><div><div class="kicker rv ">For Advisors</div><h2 class="rv">5-Step Turnkey Process</h2></div><p class="lead rv">Designed to be completely turnkey for CPAs and financial planners. Your only job is the referral — we handle all documentation, escrow, entity setup, and tax forms.</p></div>
+<div class="steps" style="--n:5"><div class="step rv"><div class="stepn">01</div><h4>Advisor Shares Link</h4><p>You receive a unique referral link to share directly with your client.</p></div><div class="step rv"><div class="stepn">02</div><h4>Client Signs LOI</h4><p>Client executes a Letter of Intent via DocuSign — no wet signatures required.</p></div><div class="step rv"><div class="stepn">03</div><h4>Wire to Escrow</h4><p>Funds wired to attorney-managed escrow. $50,000 minimum per client.</p></div><div class="step rv"><div class="stepn">04</div><h4>Partnership Docs</h4><p>Client executes partnership agreement via DocuSign. Series LLC is formed.</p></div><div class="step rv"><div class="stepn">05</div><h4>Tax Package Delivered</h4><p>K-1, Form 8283, qualified appraisal, and all supporting docs delivered for filing.</p></div></div></div></section>
+<section id="compensation" class="dk"><div class="amb" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><div class="gridbg"></div></div><div class="wrap wide"><div class="split hd"><div><div class="kicker rv ">Referral Compensation</div><h2 class="rv">There Is Room to Be Paid for Referrals</h2></div><p class="lead rv">How you’re compensated depends on your professional designation. Both tracks are clean — structure is different, not the outcome.</p></div>
+<div class="bento stg"><div class="bezel s6 rv"><div class="core2"><div class="sicon"><svg class="track-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><rect height="14" rx="2" width="20" x="2" y="7"></rect><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"></path><line x1="12" x2="12" y1="12" y2="16"></line><line x1="10" x2="14" y1="14" y2="14"></line></svg></div><h3>CFOs, Consultants &amp; Business Managers</h3><span class="ph">No securities license required · Simplest path</span><ul class="tick rows"><li><b>Fee structure</b>10% – 20% of client investment, volume-based</li><li><b>Agreement required</b>Simple referral agreement — we provide the template</li><li><b>Client disclosure</b>None required for unlicensed introducers</li><li><b>When you get paid</b>On confirmed wire to escrow</li><li><b>Best for</b>CFOs, family office staff, business consultants, unlicensed tax advisors</li></ul></div></div><div class="bezel s6 rv"><div class="core2"><div class="sicon"><svg class="track-icon-svg" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg></div><h3>Licensed Financial Advisors &amp; RIAs</h3><span class="ph">SEC / FINRA / state-registered · Standard solicitor structure</span><ul class="tick rows"><li><b>Fee structure</b>10% – 20% of client investment, volume-based</li><li><b>Agreement required</b>Written solicitor agreement per SEC Rule 206(4)-3 / Regulation BI</li><li><b>Client disclosure</b>Written disclosure to client required at referral — we provide the form</li><li><b>When you get paid</b>On confirmed wire to escrow</li><li><b>Best for</b>RIAs, broker-dealers, registered reps, wealth managers</li></ul></div></div></div>
+<div class="bezel rv" style="margin-top:18px"><div class="core2"><span class="ph">Referral Fee Schedule</span><p style="margin-bottom:6px">Based on total charitable deductions generated · fee paid on client investment amount</p><div class="tiers vtiers"><div class="tier"><div class="tn">Standard</div><div class="tp">10%</div><div class="tv">Under $5M in charitable deductions<br/>$60K client = <strong>$6,000</strong></div></div><div class="tier f"><div class="tn">$5M+ Deductions</div><div class="tp">15%</div><div class="tv">Unlocked at $5M total deductions<br/>$60K client = <strong>$9,000</strong></div></div><div class="tier"><div class="tn">$10M+ Deductions</div><div class="tp">20%</div><div class="tv">Maximum tier — unlocked at $10M<br/>$60K client = <strong>$12,000</strong></div></div><div class="tier"><div class="tn">High Volume</div><div class="tp">Custom</div><div class="tv">Bulk referral payout structure available<br/><strong>Contact to negotiate</strong></div></div></div></div></div>
+<p class="note2 rv" style="margin-top:28px;max-width:80ch"><strong>Note for CPAs:</strong> AICPA Rule 1.510 restricts contingent fees on tax engagements — but a flat referral fee for an introduction is a distinct arrangement and does not trigger that rule. Confirm with your ethics counsel if in doubt — we’re happy to provide supporting language.</p></div></section>
+<section id="cta" class="dk close"><div class="amb" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i><div class="gridbg"></div></div><div class="wrap wide"><div class="split">
+<div><div class="kicker rv ">Ready to Learn More?</div><h2 class="closeh rv">Start Referring<br><em>Clients Today</em></h2><p class="lead rv">Request your unique advisor referral link. We’ll walk you through the structure, answer compliance questions, and deliver a customizable client-ready summary.</p>
+<div class="rv" style="margin-top:36px"><span class="ph">Request Advisor Package</span><p class="lead" style="margin-top:0">Get your referral agreement, client one-pager, K-1 sample, and full compliance documentation — everything you need for a confident client conversation.</p></div>
+<div class="rv" style="margin-top:28px"><a class="btn " href="mailto:advisors@roicfo.com?subject=Leveraged%20Donation%20Strategy%20%E2%80%94%20Advisor%20Package%20Request" ><span>Email Us Directly</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></div></div>
+<div class="rv"><div class="formbox"><div class="formin"><div class="ftitle">Or fill out your info — we’ll reply within 24 hours</div><form action="https://formspree.io/f/xdarooko" method="POST">
+<input name="_subject" type="hidden" value="Leveraged Donation — ROI CFO — New Advisor Lead"/>
+<input name="product" type="hidden" value="Leveraged Donation Strategy — ROI CFO"/>
+<div class="frow"><div><label class="l" for="l-fn">First Name</label><input id="l-fn" name="first_name" placeholder="Jane" type="text" required></div><div><label class="l" for="l-ln">Last Name</label><input id="l-ln" name="last_name" placeholder="Smith" type="text" required></div></div>
+<div class="frow"><div><label class="l" for="l-em">Email</label><input id="l-em" name="email" placeholder="jane@smithcpa.com" type="email" required></div><div><label class="l" for="l-ph">Phone (optional)</label><input id="l-ph" name="phone" placeholder="(801) 555-0182" type="tel"></div></div>
+<div class="frow"><div><label class="l" for="l-fm">Firm Name</label><input id="l-fm" name="firm" placeholder="Smith CPA Group" type="text" required></div><div><label class="l" for="l-rl">Your Role</label><select id="l-rl" name="role"><option value="">Select...</option><option>CPA / Tax Partner</option><option>RIA / Financial Advisor</option><option>CFP</option><option>CFO / Business Manager</option><option>Family Office</option><option>Other</option></select></div></div>
+<div><label class="l" for="l-tl">Client Tax Liability Range</label><select id="l-tl" name="tax_liability"><option value="">Select range...</option><option>Under $500K</option><option>$500K – $1M</option><option>$1M – $5M</option><option>$5M – $20M</option><option>$20M+</option></select></div>
+<button class="btn" type="submit"><span>Send My Advisor Packet</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></button>
+<p class="fnote">For licensed professionals only. We’ll reply within 24 hours. bryson@roicfo.com</p>
+</form></div></div></div></div>
+<p class="fine2 rv">This document is for licensed financial professionals, CPAs, and business advisors only. All appraisals under IRC §170(f)(11)(E). 2025 Offering · ROI CFO · Utah · <a href="https://roicfo.com">roicfo.com</a></p><div class="meta4 stg"><div class="rv"><b>$50,000</b><span>Minimum Per Client</span></div><div class="rv"><b>5:1 Guaranteed</b><span>Deduction Ratio</span></div><div class="rv"><b>K-1 + Form 8283</b><span>Documentation</span></div><div class="rv"><b>10% – 20% + Custom</b><span>Referral Fee</span></div></div></div></section>
+<footer><div class="amb" aria-hidden="true"><i class="orb o1"></i><div class="gridbg"></div></div><div class="wrap wide"><div class="cols"><div>
+<a class="logoplate" href="https://roicfo.com" aria-label="ROI CFO"><img src="/assets/brand/roicfo-logo.png" width="545" height="180" alt="ROI CFO"></a>
+<div class="tagline">Advisor-exclusive tax strategies for high-income taxpayers. Utah.</div></div><div><h5>Strategy</h5><a href="#how">How It Works</a><a href="#math">The Math</a><a href="#calculator">Calculator</a><a href="#asset">The Asset</a></div><div><h5>For Advisors</h5><a href="#compliance">Compliance</a><a href="#documentation">Documentation</a><a href="#process">Process</a><a href="#compensation">Compensation</a></div><div><h5>Contact</h5><a href="#cta">Request Advisor Package</a><a href="mailto:advisors@roicfo.com">advisors@roicfo.com</a><a href="https://roicfo.com">roicfo.com</a></div></div>
+<div class="fine">© 2026 ROI CFO LLC · For Advisor Use Only · Consult qualified tax counsel</div></div></footer>
+<script src="/assets/js/fx.js?v=2"></script>
 <script>
+
 /* ── GLOBE (hero right panel) ── */
 (function(){
   const container = document.getElementById('hero-three');
@@ -1153,23 +214,12 @@ img,svg{max-width:100%}
   draw();
 })();
 
-/* ── NAV ── */
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',window.scrollY>40); document.getElementById('scroll-bar').style.width=(document.documentElement.scrollTop/(document.documentElement.scrollHeight-document.documentElement.clientHeight)*100)+'%'; },{passive:true});
 
 /* ── COUNT UP ── */
 function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t);}
 function countUp(el){ const target=parseFloat(el.dataset.count),prefix=el.dataset.prefix||'',suffix=el.dataset.suffix||'',dec=parseInt(el.dataset.decimals||'0'),dur=1600,start=Date.now(); function tick(){ const p=Math.min((Date.now()-start)/dur,1),v=target*easeOutExpo(p); el.textContent=prefix+v.toFixed(dec)+suffix; if(p<1)requestAnimationFrame(tick); else el.textContent=prefix+target.toFixed(dec)+suffix; } requestAnimationFrame(tick); }
 setTimeout(()=>{ document.querySelectorAll('.hero-stat .val[data-count]').forEach((el,i)=>setTimeout(()=>countUp(el),i*180)); },500);
 
-/* ── FADE UP ── */
-const fadeObs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');fadeObs.unobserve(e.target);} }); },{threshold:.01,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-up,.stout-box,.charity-banner,.leverage-layout').forEach(el=>fadeObs.observe(el));
-const staggerObs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(!e.isIntersecting)return; e.target.querySelectorAll('.comp-card,.p-step,.track-card,.asset-card,.doc-card,.bullet-item').forEach((c,i)=>setTimeout(()=>c.classList.add('in'),i*80)); staggerObs.unobserve(e.target); }); },{threshold:.01,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.compliance-grid,.p-steps,.track-grid,.asset-grid,.doc-grid,.two-col-bullets').forEach(el=>staggerObs.observe(el));
-const tableObs=new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(!e.isIntersecting)return; e.target.querySelectorAll('tbody tr').forEach((r,i)=>setTimeout(()=>r.classList.add('row-in'),i*45)); tableObs.unobserve(e.target); }); },{threshold:.01,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.savings-table,.income-table').forEach(t=>tableObs.observe(t));
-setTimeout(()=>{ document.querySelectorAll('.comp-card,.p-step,.track-card,.asset-card,.doc-card,.bullet-item,.fade-up,.stout-box,.charity-banner,.leverage-layout').forEach(el=>el.classList.add('in')); document.querySelectorAll('tbody tr').forEach(r=>r.classList.add('row-in')); },3000);
 
 /* ── CALCULATOR ── */
 function fmtInput(el){const raw=el.value.replace(/[^0-9]/g,'');el.value=raw?parseInt(raw,10).toLocaleString('en-US'):'';}
@@ -1201,6 +251,7 @@ function calcAdvisor(){
   document.getElementById('a-next-tier').textContent=msg;
 }
 calcClient(); calcAdvisor();
+
 </script>
 </body>
 </html>
