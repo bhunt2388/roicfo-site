@@ -94,6 +94,61 @@ a.btn:not(.ghost):not(.sm):hover::after{transform:translateX(120%)}
 .talk-l a:hover{color:#fff;border-color:var(--gold2)}
 .fnote a{color:inherit}
 </style>
+<style id="enh-v3">
+/* ===== interactive v3 ===== */
+.marq:hover .track{animation-play-state:paused}
+
+.pick{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:34px 0 0}
+.pick-k{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--slate);margin-right:6px}
+.pick button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(11,37,69,.22);background:transparent;font-family:var(--sans);font-size:14px;font-weight:500;color:var(--navy);cursor:pointer;transition:background .4s var(--ease),color .4s var(--ease),border-color .4s var(--ease),transform .4s var(--ease)}
+.pick button:hover{border-color:var(--gold);transform:translateY(-2px)}
+.pick button[aria-pressed=true]{background:var(--navy);color:var(--stone);border-color:var(--navy)}
+.pick-go{flex-basis:100%;min-height:24px;font-size:15px;color:var(--slate);opacity:0;transform:translateY(6px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.pick-go.on{opacity:1;transform:none}
+.pick-go a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)}
+.pick-on .bento .bezel{transition:opacity .6s var(--ease),filter .6s var(--ease),transform .6s var(--ease),border-color .6s var(--ease)}
+.pick-on .bento .bezel:not(.hit){opacity:.38!important;filter:saturate(.5)}
+.pick-on .bento .bezel.hit{border-color:var(--gold)!important;box-shadow:0 24px 60px -24px rgba(184,138,34,.5)}
+
+.tsl{margin-top:26px;padding:22px 22px 20px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(247,245,240,.16)}
+.tsl-top{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap}
+.tsl-l{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(247,245,240,.72)}
+.tsl-v{font-family:var(--serif);font-size:clamp(30px,3.2vw,44px);line-height:1;color:var(--gold2)}
+.tsl input[type=range]{width:100%;margin:18px 0 8px;height:44px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+.tsl input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--gold2) var(--fill,0%),rgba(247,245,240,.2) var(--fill,0%))}
+.tsl input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:rgba(247,245,240,.2)}
+.tsl input[type=range]::-moz-range-progress{height:4px;border-radius:4px;background:var(--gold2)}
+.tsl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--stone);border:3px solid var(--gold2);margin-top:-10px;box-shadow:0 4px 14px rgba(0,0,0,.4)}
+.tsl input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--stone);border:3px solid var(--gold2)}
+.tsl input[type=range]:focus-visible{outline:2px solid var(--gold2);outline-offset:4px;border-radius:8px}
+.tsl-m{display:flex;justify-content:space-between;font-size:12px;color:rgba(247,245,240,.6)}
+.tsl-r{margin-top:12px;font-size:15px;line-height:1.5;color:rgba(247,245,240,.86)}
+.tsl-r b{color:var(--gold2);font-weight:600}
+.tiers .tier{transition:border-color .5s var(--ease),background .5s var(--ease),transform .5s var(--ease),opacity .5s var(--ease)}
+.tsl-on .tier{opacity:.5}
+.tsl-on .tier.lit{opacity:1;transform:translateY(-4px);border-color:var(--gold2);background:rgba(184,138,34,.16)}
+
+.steps.sp::after{transform:scaleX(var(--sp,0))!important;transition:transform .25s linear!important}
+.steps.sp .step{opacity:.45;transition:opacity .6s var(--ease)}
+.steps.sp .step.act{opacity:1}
+.steps.sp .step.act .stepn{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+@media(max-width:900px){.steps.sp::after{display:none}}
+
+.obj.acc-on>div{cursor:pointer}
+.obj.acc-on h4{position:relative;padding-right:46px;outline:none}
+.obj.acc-on h4::after{content:"+";position:absolute;right:0;top:2px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--sans);font-style:normal;font-size:20px;line-height:1;color:var(--gold);transition:transform .5s var(--ease),background .4s var(--ease)}
+.obj.acc-on .open h4::after{transform:rotate(45deg);background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.obj.acc-on h4:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:6px}
+.obj .ans{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+.obj .ans>div{overflow:hidden}
+.obj .open .ans{grid-template-rows:1fr}
+.obj .open .ans>div p{padding-top:2px}
+.obj.acc-on h4{margin-bottom:0}
+.obj.acc-on .open h4{margin-bottom:14px}
+
+.bgnum{transform:translateY(var(--py,0px))}
+@media(prefers-reduced-motion:reduce){.bgnum{transform:none}.obj .ans,.pick-go,.tsl-on .tier{transition:none}.steps.sp::after{transition:none!important}}
+</style>
 </head>
 <body>
 <div id="pre" aria-hidden="true"><div class="pm"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" pathLength="1"/></svg><img src="/assets/hero-logo-coin.png" alt="" width="84" height="84"></div><div class="nm">ROI CFO</div></div>
@@ -186,6 +241,12 @@ a.btn:not(.ghost):not(.sm):hover::after{transform:translateX(120%)}
 <section id="serve" class="st2"><div class="wrap wide">
 <div class="head2"><div><div class="kicker rv ">Our Partners</div><h2 class="rv">Designed for the Advisors<br><em>Families Already Trust.</em></h2></div>
 <p class="statement" style="font-size:clamp(24px,2.6vw,38px);max-width:22ch;margin-bottom:14px">ROI CFO does not disintermediate. Every engagement runs through the professionals who already hold the relationship.</p></div>
+<div class="pick rv" id="pick" role="group" aria-label="Choose who you are"><span class="pick-k">I am a</span>
+<button type="button" data-i="0" data-role="Family Office" aria-pressed="false">Family Office</button>
+<button type="button" data-i="1" data-role="RIA / Financial Advisor" aria-pressed="false">RIA or Advisor</button>
+<button type="button" data-i="2" data-role="CPA / Tax Partner" aria-pressed="false">CPA or Accounting Firm</button>
+<button type="button" data-i="3" data-role="Other" aria-pressed="false">High-Net-Worth Individual</button>
+<div class="pick-go" id="pickGo" aria-live="polite"></div></div>
 <div class="bento stg"><div class="bezel s7 rv"><div class="core2"><div class="sicon"><svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <rect fill="#0B2545" height="2.5" rx="1.25" width="40" x="4" y="38"></rect>
 <rect fill="#0B2545" height="2.5" rx="1.25" width="40" x="4" y="8"></rect>
@@ -254,6 +315,10 @@ a.btn:not(.ghost):not(.sm):hover::after{transform:translateX(120%)}
 <polyline points="11,4.5 16,8 11,11.5" stroke="#146B3A" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></polyline>
 </svg></div><div><b>Early Access to New Strategies</b><span>Active network members receive first access to new strategies as they are cleared for advisor use — expanding what you can deliver to clients over time.</span></div></div></div></div>
 <div class="rv"><div class="bezel"><div class="core2"><span class="ph">Advisor Compensation Structure</span><div class="tiers"><div class="tier"><div class="tn">Standard</div><div class="tp">10%</div><div class="tv">Of strategy fee<br/>on first close</div></div><div class="tier f"><div class="tn">Performance</div><div class="tp">15%</div><div class="tv">&gt;$5M in client<br/>deductions placed</div></div><div class="tier"><div class="tn">Elite</div><div class="tp">20%</div><div class="tv">&gt;$10M in client<br/>deductions placed</div></div></div>
+<div class="tsl" id="tsl"><div class="tsl-top"><label class="tsl-l" for="tslR">Client deductions you place</label><div class="tsl-v" id="tslV">$0</div></div>
+<input type="range" id="tslR" min="0" max="15" step="0.5" value="0" aria-describedby="tslRes">
+<div class="tsl-m"><span>$0</span><span>$5M</span><span>$10M</span><span>$15M+</span></div>
+<div class="tsl-r" id="tslRes" aria-live="polite">Drag to see where your volume lands.</div></div>
 <p class="note2" style="margin-top:26px"><strong>Compensation is paid at strategy close</strong> — not contingent on the client's final tax outcome. Referral fees are disclosed to clients per applicable law. Fiduciary and disclosure obligations remain with the referring advisor.</p><div class="rule"></div>
 <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px"><div><div style="font-family:var(--serif);font-size:30px;line-height:1.1">Ready to join?</div><div class="lbl" style="margin-top:4px">Applications reviewed within 48 hours.</div></div><a class="btn " href="#cta" ><span>Apply to the Network</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></div></div></div></div>
 </div></div></section>
@@ -435,6 +500,111 @@ a.btn:not(.ghost):not(.sm):hover::after{transform:translateX(120%)}
       else{var ta=d.createElement('textarea');ta.value=t;d.body.appendChild(ta);ta.select();try{d.execCommand('copy');ok();}catch(e){}d.body.removeChild(ta);}
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var d=document,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $$(q,c){return Array.prototype.slice.call((c||d).querySelectorAll(q));}
+  function ease(t){return 1-Math.pow(1-t,3);}
+
+  /* 1. stat count-up */
+  if(!reduce&&'IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(!e.isIntersecting)return;cio.unobserve(e.target);run(e.target);});},{threshold:.4});
+    $$('.stat .v').forEach(function(v){
+      var nodes=[];
+      (function walk(n){for(var c=n.firstChild;c;c=c.nextSibling){if(c.nodeType===3){var m=c.nodeValue.match(/\d[\d,]*\.?\d*/);if(m){nodes.push({n:c,src:c.nodeValue,m:m[0]});}}else if(c.nodeType===1)walk(c);}})(v);
+      if(!nodes.length)return;v._cu=nodes;
+      nodes.forEach(function(o){o.n.nodeValue=o.src.replace(o.m,o.m.replace(/\d/g,'0'));});
+      cio.observe(v);
+    });
+  }
+  function run(v){
+    var t0=null,dur=1500;
+    function fmt(o,val){var dec=(o.m.split('.')[1]||'').length,comma=o.m.indexOf(',')>-1;var str=val.toFixed(dec);if(comma)str=str.replace(/\B(?=(\d{3})+(?!\d))/g,',');return o.src.replace(o.m,str);}
+    function step(ts){if(!t0)t0=ts;var p=Math.min(1,(ts-t0)/dur),k=ease(p);
+      v._cu.forEach(function(o){var end=parseFloat(o.m.replace(/,/g,''));o.n.nodeValue=fmt(o,end*k);});
+      if(p<1)requestAnimationFrame(step);else v._cu.forEach(function(o){o.n.nodeValue=o.src;});}
+    requestAnimationFrame(step);
+  }
+
+  /* 2. who are you picker */
+  var pick=d.getElementById('pick'),sv=d.getElementById('serve');
+  if(pick&&sv){
+    var cards=$$('.bento > .bezel',sv),btns=$$('button',pick),go=d.getElementById('pickGo');
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      var i=+b.getAttribute('data-i'),was=b.getAttribute('aria-pressed')==='true';
+      btns.forEach(function(x){x.setAttribute('aria-pressed','false');});
+      cards.forEach(function(c){c.classList.remove('hit');});
+      if(was){sv.classList.remove('pick-on');go.classList.remove('on');go.innerHTML='';return;}
+      b.setAttribute('aria-pressed','true');sv.classList.add('pick-on');
+      if(cards[i]){cards[i].classList.add('hit');setTimeout(function(){var r=cards[i].getBoundingClientRect();if(r.bottom>innerHeight||r.top<0)cards[i].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'});},120);}
+      go.innerHTML='Here is what we do for you. <a href="#cta" data-role="'+b.getAttribute('data-role')+'">Start your introduction</a>';
+      go.classList.add('on');
+      var a=go.querySelector('a');a.addEventListener('click',function(){
+        var sel=d.getElementById('h-rl');if(sel){for(var k=0;k<sel.options.length;k++){if(sel.options[k].text===a.getAttribute('data-role')){sel.selectedIndex=k;break;}}}
+      });
+    });});
+  }
+
+  /* 3. compensation tier slider */
+  var r=d.getElementById('tslR'),tsl=d.getElementById('tsl');
+  if(r&&tsl){
+    var tv=d.getElementById('tslV'),res=d.getElementById('tslRes'),tiers=$$('.tiers .tier'),wrap=tsl.parentNode.querySelector('.tiers');
+    var host=tsl.closest('#network');
+    function upd(){
+      var v=+r.value,i=v>10?2:(v>5?1:0),pct=[10,15,20][i],name=['Standard','Performance','Elite'][i];
+      tv.textContent='$'+(v>=15?'15M+':(v%1?v.toFixed(1):v)+(v?'M':''));
+      r.style.setProperty('--fill',(v/15*100)+'%');
+      tiers.forEach(function(t,k){t.classList.toggle('lit',k===i);});
+      if(wrap)wrap.classList.add('tsl-on');
+      var nx=i===0?'Place more than $5M to reach Performance (15%).':(i===1?'Place more than $10M to reach Elite (20%).':'You are at the top tier.');
+      res.innerHTML=v===0?'Drag to see where your volume lands.':'<b>'+name+' tier, '+pct+'%.</b> '+nx;
+    }
+    r.addEventListener('input',upd);upd();if(+r.value===0){tiers.forEach(function(t){t.classList.remove('lit');});if(wrap)wrap.classList.remove('tsl-on');}
+    r.addEventListener('input',function(){if(+r.value===0&&wrap){wrap.classList.remove('tsl-on');tiers.forEach(function(t){t.classList.remove('lit');});}});
+  }
+
+  /* 4. process scroll progress */
+  var st=d.querySelector('#process .steps');
+  if(st){
+    var items=$$('.step',st);st.classList.add('sp');
+    function sp(){
+      var rc=st.getBoundingClientRect(),vh=innerHeight;
+      var p=Math.min(1,Math.max(0,(vh*.78-rc.top)/(rc.height+vh*.1)));
+      st.style.setProperty('--sp',p.toFixed(3));
+      items.forEach(function(it,i){it.classList.toggle('act',p>=(i/items.length)+.02||reduce);});
+    }
+    addEventListener('scroll',sp,{passive:true});addEventListener('resize',sp);sp();
+    items.forEach(function(it){it.addEventListener('click',function(){items.forEach(function(x){x.classList.remove('act');});it.classList.add('act');});});
+  }
+
+  /* 5. objections accordion */
+  var obj=d.querySelector('#objections .obj');
+  if(obj){
+    var rows=$$(':scope > div',obj);
+    rows.forEach(function(row,i){
+      var body=row.querySelector(':scope > div'),h=body&&body.querySelector('h4'),pp=body&&body.querySelector('p');
+      if(!h||!pp)return;
+      var ans=d.createElement('div');ans.className='ans';var inner=d.createElement('div');pp.parentNode.insertBefore(ans,pp);inner.appendChild(pp);ans.appendChild(inner);
+      var id='obj-a'+i;ans.id=id;h.setAttribute('role','button');h.setAttribute('tabindex','0');h.setAttribute('aria-controls',id);
+      function set(o){row.classList.toggle('open',o);h.setAttribute('aria-expanded',o?'true':'false');}
+      set(i===0);
+      function tg(){var o=!row.classList.contains('open');rows.forEach(function(x){if(x!==row){x.classList.remove('open');var hh=x.querySelector('h4');if(hh)hh.setAttribute('aria-expanded','false');}});set(o);}
+      row.addEventListener('click',function(e){if(e.target.closest('a'))return;tg();});
+      h.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();tg();}});
+    });
+    obj.classList.add('acc-on');
+  }
+
+  /* 6. pillar number drift */
+  var nums=$$('.bgnum');
+  if(nums.length&&!reduce){
+    var tk=false;
+    function drift(){tk=false;var vh=innerHeight;nums.forEach(function(n){var rc=n.parentNode.getBoundingClientRect();if(rc.bottom<-100||rc.top>vh+100)return;n.style.setProperty('--py',((rc.top+rc.height/2-vh/2)*-.12).toFixed(1)+'px');});}
+    addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(drift);}},{passive:true});drift();
+  }
 })();
 </script>
 </body>
