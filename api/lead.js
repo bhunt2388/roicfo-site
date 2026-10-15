@@ -14,7 +14,8 @@ export default async function handler(req, res) {
   if (typeof body === "string") { try { body = JSON.parse(body); } catch { body = {}; } }
   if (body.website) return res.status(200).json({ ok: true }); // honeypot
   delete body.testMode;
-  const payload = { ...body, site: SITE };
+  const ip = String(req.headers["x-forwarded-for"] || "").split(",")[0].trim();
+  const payload = { ...body, site: SITE, ip };
   if (!(payload.name || payload.first_name) || !payload.email) {
     return res.status(400).json({ ok: false, error: "Name and email are required" });
   }

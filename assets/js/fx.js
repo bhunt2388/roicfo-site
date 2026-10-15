@@ -78,10 +78,15 @@ onScroll();setTimeout(onScroll,300);
       var b=f.querySelector('button[type=submit]'),o=b?b.innerHTML:'';
       if(b){b.textContent='Sending...';b.disabled=true}
       var d=Object.fromEntries(new FormData(f)); d.source=location.pathname;
+      function ck(n){var m=document.cookie.match(new RegExp('(?:^|; )'+n+'=([^;]*)'));return m?decodeURIComponent(m[1]):''}
+      d.event_id='lead_'+Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+      d.fbp=ck('_fbp');d.fbc=ck('_fbc')||(/[?&]fbclid=([^&]+)/.test(location.search)?'fb.1.'+Date.now()+'.'+RegExp.$1:'');
+      d.ua=navigator.userAgent;d.source_url=location.href.split('#')[0];
       fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
         .then(function(r){return r.json().then(function(j){return r.ok&&j.ok})})
         .then(function(ok){
           if(ok){
+            try{if(d.audience==='advisor'&&window.fbq)fbq('track','Lead',{content_name:d.product||'ROI CFO'},{eventID:d.event_id})}catch(e){}
             var nm=((d.first_name||'')+' '+(d.last_name||d.name||'')).trim(),
                 cal='https://calendly.com/d/dv9z-zgv-63g/roi-cfo-tax-strategy-explainer?'+new URLSearchParams({name:nm,email:d.email||'',utm_source:'roicfo.com',utm_medium:'site',utm_campaign:'form-success',utm_content:location.pathname}).toString();
             f.innerHTML='<p style="font-size:20px;line-height:1.6;font-family:var(--serif,serif)">Received. We will be in touch within 24 hours.</p><p style="margin:18px 0 14px;line-height:1.6">Want to skip the wait? Pick a time now and we will already have your details.</p><a class="btn" href="'+cal.replace(/"/g,'&quot;')+'" target="_blank" rel="noopener"><span>Book a 20-Minute Explainer</span></a>';
