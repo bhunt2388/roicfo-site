@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css?v=2">
 
-<script>document.documentElement.className='js';</script>
+<script>document.documentElement.className='js';try{if(!sessionStorage.getItem('roi')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){sessionStorage.setItem('roi','1');document.documentElement.className+=' pre-on'}}catch(e){}</script>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -40,8 +40,59 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=1100474599438079&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<style id="enh-v2">
+/* ===== enhancements v2 ===== */
+#pre{position:fixed;inset:0;z-index:3000;background:var(--navy);display:grid;place-items:center;animation:preOut .9s var(--ease) 1.45s forwards}
+#pre .pm{position:relative;width:140px;height:140px;display:grid;place-items:center}
+#pre img{width:84px;height:84px;object-fit:contain;opacity:0;transform:scale(.86);animation:preImg 1s var(--ease) .15s forwards;filter:drop-shadow(0 18px 40px rgba(217,178,76,.3))}
+#pre svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;transform:rotate(-90deg)}
+#pre circle{fill:none;stroke:var(--gold2);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1;animation:preDraw 1.25s var(--ease) .1s forwards}
+#pre .nm{position:absolute;left:0;right:0;top:calc(50% + 100px);text-align:center;font-family:var(--mono);font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);opacity:0;animation:preImg .8s var(--ease) .7s forwards}
+@keyframes preOut{to{opacity:0;visibility:hidden;transform:translateY(-3%)}}
+@keyframes preImg{to{opacity:1;transform:none}}
+@keyframes preDraw{to{stroke-dashoffset:0}}
+html:not(.pre-on) #pre{display:none}
+.pre-on .hero h1 .ln>span{transition-delay:calc(var(--d,0)*130ms + 1650ms)!important}
+.pre-on .hero .rv{transition-delay:calc(var(--d,0)*100ms + 1500ms)!important}
+
+.hero-light{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(560px circle at var(--lx,68%) var(--ly,40%),rgba(217,178,76,.12),transparent 62%)}
+
+.marq.rev{padding:16px 0}
+.marq.rev .track{animation-direction:reverse;animation-duration:58s;gap:44px}
+.marq.rev .track span{font-family:var(--mono);font-style:normal;font-size:clamp(11px,1.15vw,14px);letter-spacing:.3em;text-transform:uppercase;color:var(--slate);gap:44px}
+.marq.rev .track span:nth-child(even){color:var(--gold)}
+.marq.rev .track span::after{width:5px;height:5px;transform:rotate(45deg)}
+
+.rail{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:90;display:flex;flex-direction:column;gap:6px;mix-blend-mode:difference;opacity:0;visibility:hidden;transition:opacity .6s var(--ease),visibility .6s}
+.rail.show{opacity:1;visibility:visible}
+.rail a{position:relative;display:flex;align-items:center;justify-content:flex-end;height:26px;color:#F7F5F0;text-decoration:none}
+.rail a i{display:block;width:7px;height:7px;border:1px solid #F7F5F0;border-radius:50%;transition:transform .5s var(--ease),background .4s}
+.rail a span{position:absolute;right:22px;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;opacity:0;transform:translateX(8px);transition:opacity .4s var(--ease),transform .5s var(--ease);white-space:nowrap;pointer-events:none}
+.rail a:hover span,.rail a:focus-visible span,.rail a.on span{opacity:1;transform:none}
+.rail a.on i{background:#F7F5F0;transform:scale(1.5)}
+@media(max-width:1100px){.rail{display:none}}
+
+.cur{position:fixed;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border:1px solid #F7F5F0;border-radius:50%;pointer-events:none;z-index:2500;mix-blend-mode:difference;opacity:0;transition:width .45s var(--ease),height .45s var(--ease),margin .45s var(--ease),opacity .4s,background .4s;will-change:transform}
+.cur.on{opacity:.85}
+.cur.big{width:70px;height:70px;margin:-35px 0 0 -35px;background:rgba(247,245,240,.12)}
+@media(hover:none),(pointer:coarse){.cur{display:none}}
+
+.bezel:hover{transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(-4px);transition:transform .22s ease-out,border-color .6s var(--ease)}
+.hero h1{transform:translateY(calc(var(--hy,0px)*-1));opacity:var(--ho,1)}
+a.btn:not(.ghost):not(.sm){position:relative;overflow:hidden}
+a.btn:not(.ghost):not(.sm)::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 35%,rgba(217,178,76,.38) 50%,transparent 65%);transform:translateX(-120%);transition:transform .9s var(--ease);pointer-events:none}
+a.btn:not(.ghost):not(.sm):hover::after{transform:translateX(120%)}
+
+.copy{display:inline-flex;align-items:center;margin:8px 0 14px;min-height:44px;padding:0 18px;border-radius:12px;border:1px solid rgba(247,245,240,.28);background:transparent;font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);cursor:pointer;transition:background .4s var(--ease),border-color .4s}
+.copy:hover{border-color:var(--gold2);background:rgba(217,178,76,.1)}
+.copy.done{background:var(--gold2);border-color:var(--gold2);color:var(--navy)}
+@media(prefers-reduced-motion:reduce){#pre{display:none}.hero-light,.cur{display:none}.hero h1{transform:none;opacity:1}.marq.rev .track{width:auto;padding:0 28px;flex-wrap:wrap;gap:8px 32px}.pre-on .hero .rv,.pre-on .hero h1 .ln>span{transition-delay:0s!important}}
+</style>
 </head>
 <body>
+<div id="pre" aria-hidden="true"><div class="pm"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="48" pathLength="1"/></svg><img src="/assets/hero-logo-coin.png" alt="" width="84" height="84"></div><div class="nm">ROI CFO</div></div>
+<div class="rail" id="rail" role="navigation" aria-label="Section progress"><a href="#hero" data-s="hero"><span>Top</span><i></i></a><a href="#strategies" data-s="strategies"><span>Strategies</span><i></i></a><a href="#serve" data-s="serve"><span>Who We Serve</span><i></i></a><a href="#network" data-s="network"><span>Advisors</span><i></i></a><a href="#process" data-s="process"><span>Process</span><i></i></a><a href="#insights" data-s="insights"><span>Insights</span><i></i></a><a href="#cta" data-s="cta"><span>Contact</span><i></i></a></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
 <div id="progress"></div>
 <nav class="fl" aria-label="Primary"><div class="in">
 <a class="mark" href="#hero" aria-label="ROI CFO home"><img class="full" src="/assets/brand/roicfo-logo.png" width="545" height="180" alt="ROI CFO"></a>
@@ -49,7 +100,7 @@ src="https://www.facebook.com/tr?id=1100474599438079&ev=PageView&noscript=1"
 <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
 </div></nav>
 <div class="mobile-nav" id="mobile-nav"><a href="#strategies">Strategies</a><a href="#serve">Who We Serve</a><a href="#network">For Advisors</a><a href="#insights">Insights</a><a href="#cta">Request Introduction</a></div>
-<header class="hero" id="hero"><div class="pxw" data-px="46" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i></div><div class="pxw" data-px="-30" aria-hidden="true"><i class="orb o3"></i></div><div class="gridbg" aria-hidden="true"></div><div class="arcs pxw" data-px="18" aria-hidden="true"><i></i><i></i></div>
+<header class="hero" id="hero"><div class="pxw" data-px="46" aria-hidden="true"><i class="orb o1"></i><i class="orb o2"></i></div><div class="pxw" data-px="-30" aria-hidden="true"><i class="orb o3"></i></div><div class="gridbg" aria-hidden="true"></div><div class="hero-light" id="heroLight" aria-hidden="true"></div><div class="arcs pxw" data-px="18" aria-hidden="true"><i></i><i></i></div>
 <div class="wrap wide"><div class="hero-grid"><div>
 <div class="kicker rv">Advisor-Only Access. Tax Strategies That File Clean.</div>
 <h1 class=""><span class="ln"><span style="--d:0">Your Clients</span></span><span class="ln"><span style="--d:1">Owe Less.</span></span><span class="ln"><span style="--d:2"><em>Here's the Math.</em></span></span></h1>
@@ -103,7 +154,8 @@ src="https://www.facebook.com/tr?id=1100474599438079&ev=PageView&noscript=1"
 <div class="scrollcue" aria-hidden="true">Scroll</div>
 </header>
 <section class="st2" id="stats" style="padding:70px 0 80px"><div class="wrap wide"><div class="stats stg" style="--cols:4"><div class="stat rv" id="stat45QCredits"><span class="gl"></span><div class="v">$<span class="acc">30M</span></div><div class="t">Tax Credits<br/>Available — 2025</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="acc">5</span><span class="sm">:1</span></div><div class="t">Charitable Deduction<br/>Leverage Ratio</div></div><div class="stat rv" id="stat45QDollar"><span class="gl"></span><div class="v">$<span class="gr">0.85</span></div><div class="t">Per Dollar of Federal<br/>Tax Credit Purchased</div></div><div class="stat rv"><span class="gl"></span><div class="v"><span class="acc">10</span><span class="sm">–20%</span></div><div class="t">Advisor Referral<br/>Compensation</div></div></div></div></section>
-<div class="marq" aria-hidden="true"><div class="track"><span>Return</span><span>Trust</span><span>Longevity</span><span>Betterment</span><span>Strategic Returns</span><span>Responsible Impact</span><span>Return</span><span>Trust</span><span>Longevity</span><span>Betterment</span><span>Strategic Returns</span><span>Responsible Impact</span></div></div><section id="pain" class="lt"><div class="wrap wide">
+<div class="marq" aria-hidden="true"><div class="track"><span>Return</span><span>Trust</span><span>Longevity</span><span>Betterment</span><span>Strategic Returns</span><span>Responsible Impact</span><span>Return</span><span>Trust</span><span>Longevity</span><span>Betterment</span><span>Strategic Returns</span><span>Responsible Impact</span></div></div>
+<div class="marq rev" aria-hidden="true"><div class="track" id="track2"><span>Family Offices</span><span>CPAs</span><span>Registered Advisors</span><span>Business Owners</span><span>EBITDA</span><span>Tax Drag</span><span>Legacy</span><span>Impact</span></div></div><section id="pain" class="lt"><div class="wrap wide">
 <div class="head2"><div><div class="kicker rv ">The Problem Nobody Talks About</div><h2 class="rv">Your Clients Are Overpaying the IRS.<br><em>Significantly.</em></h2></div>
 <p class="lead rv">These strategies have been codified in the IRC since 2022. They are used every year by institutional family offices. Most advisors don't know how to access them. That is not a compliance problem. It is an access problem.</p></div>
 <div class="stats stg" style="--cols:3;margin-top:70px"><div class="stat rv"><span class="gl"></span><div class="v" style="color:var(--gold)">$750K</div><div class="t" style="text-transform:none;letter-spacing:0;font-size:14px;line-height:1.65;font-weight:400">Left on the table by a client paying $5M in federal tax — had they purchased §45Q credits this year at $0.85 on the dollar.</div></div><div class="stat rv"><span class="gl"></span><div class="v" style="color:var(--gold)">$1.5M</div><div class="t" style="text-transform:none;letter-spacing:0;font-size:14px;line-height:1.65;font-weight:400">Left on the table by a client paying $10M in tax — same strategy, same statute, same vintage year.</div></div><div class="stat rv"><span class="gl"></span><div class="v" style="color:var(--green)">$30M</div><div class="t" style="text-transform:none;letter-spacing:0;font-size:14px;line-height:1.65;font-weight:400">Face value of 2025-vintage §45Q credits currently available. When this pool clears, it does not reopen until new credits are registered.</div></div></div>
@@ -276,7 +328,7 @@ src="https://www.facebook.com/tr?id=1100474599438079&ev=PageView&noscript=1"
 <footer><div class="amb" aria-hidden="true"><i class="orb o1"></i><div class="gridbg"></div></div><div class="wrap wide"><div class="cols"><div>
 <a class="logoplate" href="#hero" aria-label="ROI CFO"><img src="/assets/brand/roicfo-logo.png" width="545" height="180" alt="ROI CFO"></a>
 <div class="tagline">Strategic Returns. Responsible Impact.</div><p>ROI CFO provides advanced financial and tax strategy for business owners, family offices, advisors, CPAs, and high-net-worth clients — improving EBITDA, reducing tax drag, and creating measurable upside with responsible impact.</p>
-<div style="margin-top:20px"><div style="margin-bottom:6px;font-size:14px">3300 Triumph Blvd, Lehi, UT 84043</div><a href="mailto:bryson@roicfo.com">bryson@roicfo.com</a><a href="https://roicfo.com">roicfo.com</a></div></div>
+<div style="margin-top:20px"><div style="margin-bottom:6px;font-size:14px">3300 Triumph Blvd, Lehi, UT 84043</div><a href="mailto:bryson@roicfo.com">bryson@roicfo.com</a><button type="button" class="copy" data-copy="bryson@roicfo.com">Copy email</button><a href="https://roicfo.com">roicfo.com</a></div></div>
 <div><h5>Strategies</h5><a href="/carbon-credits/" id="footer45QLink" target="_blank">Section 45Q Carbon Credits</a><a href="/leveraged-donation">Leveraged Donation Strategy</a><a href="#strategies">Qualified Opportunity Zones</a><a href="#strategies">Cost Segregation</a><a href="#strategies">Charitable Remainder Trusts</a></div><div><h5>Who We Serve</h5><a href="#serve">Family Offices</a><a href="#serve">RIAs &amp; Advisors</a><a href="#serve">Accounting Firms &amp; CPAs</a><a href="#serve">High-Net-Worth Individuals</a></div><div><h5>Network</h5><a href="#network">Join the Network</a><a href="#network">Compensation Structure</a><a href="#insights">Thought Leadership</a><a href="#cta">Request a Consultation</a><a href="mailto:advisors@roicfo.com">advisors@roicfo.com</a></div></div>
 <div class="fine">ROI CFO is not a registered investment adviser, broker-dealer, or tax adviser. The strategies referenced herein are presented for informational purposes only and do not constitute tax, legal, or investment advice. All strategies are subject to the applicable provisions of the Internal Revenue Code as cited. Clients and advisors are strongly encouraged to engage qualified legal counsel and a licensed CPA before implementing any tax strategy.  ·  IRC §45Q · IRC §6418 · IRC §170 · Inflation Reduction Act 2022.<br><br>© 2026 ROI CFO LLC. All rights reserved.</div></div></footer>
 <div class="sticky-cta" id="stickyCta"><div class="tx"><strong>ROI CFO — Advisor Network.</strong> Leveraged mineral donation strategy. Schedule a Zoom with one of our advisors.</div><div class="bt"><a class="btn sm" href="https://calendly.com/d/dv9z-zgv-63g/roi-cfo-tax-strategy-explainer" target="_blank"><span>Schedule a Zoom</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><a class="btn sm ghost" href="#cta" ><span>Request Packet</span><span class="ic"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a><button class="x" id="stickyClose" aria-label="Dismiss">&times;</button></div></div>
@@ -317,6 +369,63 @@ src="https://www.facebook.com/tr?id=1100474599438079&ev=PageView&noscript=1"
   var pain=document.getElementById('pain');if(pain)pain.style.display='none';
   var cu=document.getElementById('ctaUrgency45Q');if(cu)cu.style.display='none';
   var hl=document.getElementById('hnwi45QLine');if(hl)hl.style.display='none';
+})();
+</script>
+<script>
+(function(){
+  var d=document,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function clamp(v,a,b){return Math.min(b,Math.max(a,v));}
+  var t2=d.getElementById('track2');if(t2)t2.innerHTML+=t2.innerHTML;
+  var rail=d.getElementById('rail'),rl=rail?rail.querySelectorAll('a'):[];
+  var ids=['hero','strategies','serve','network','process','insights','cta'];
+  function railSync(){
+    var y=pageYOffset,mid=y+innerHeight*.45,cur='hero';
+    ids.forEach(function(id){var el=d.getElementById(id);if(el&&el.offsetParent!==null&&el.getBoundingClientRect().top+y<=mid)cur=id;});
+    rl.forEach(function(a){a.classList.toggle('on',a.getAttribute('data-s')===cur);});
+    if(rail)rail.classList.toggle('show',y>innerHeight*.6);
+  }
+  addEventListener('scroll',railSync,{passive:true});railSync();
+  var h1=d.querySelector('.hero h1');
+  if(h1&&!reduce){
+    addEventListener('scroll',function(){
+      var y=pageYOffset;if(y>innerHeight*1.1)return;
+      h1.style.setProperty('--hy',(y*.12).toFixed(1)+'px');
+      h1.style.setProperty('--ho',clamp(1-y/(innerHeight*.9),0,1).toFixed(2));
+    },{passive:true});
+  }
+  var hero=d.querySelector('.hero'),hl=d.getElementById('heroLight');
+  if(hero&&hl&&fine&&!reduce){
+    hero.addEventListener('pointermove',function(e){var r=hero.getBoundingClientRect();hl.style.setProperty('--lx',(e.clientX-r.left)+'px');hl.style.setProperty('--ly',(e.clientY-r.top)+'px');});
+  }
+  var cur=d.getElementById('cur');
+  if(cur&&fine&&!reduce){
+    var tx=0,ty=0,x=0,y=0,run=false;
+    function loop(){x+=(tx-x)*.18;y+=(ty-y)*.18;cur.style.transform='translate3d('+x.toFixed(1)+'px,'+y.toFixed(1)+'px,0)';if(Math.abs(tx-x)>.2||Math.abs(ty-y)>.2)requestAnimationFrame(loop);else run=false;}
+    addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;cur.classList.add('on');if(!run){run=true;requestAnimationFrame(loop);}});
+    d.documentElement.addEventListener('pointerleave',function(){cur.classList.remove('on');});
+    d.querySelectorAll('a,button,input,textarea,select').forEach(function(el){
+      el.addEventListener('pointerenter',function(){cur.classList.add('big');});
+      el.addEventListener('pointerleave',function(){cur.classList.remove('big');});
+    });
+  }
+  if(fine&&!reduce){
+    d.querySelectorAll('.bezel').forEach(function(b){
+      b.addEventListener('pointermove',function(e){
+        var r=b.getBoundingClientRect(),px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+        b.style.setProperty('--ry',(px*6).toFixed(2)+'deg');b.style.setProperty('--rx',(py*-6).toFixed(2)+'deg');
+      });
+      b.addEventListener('pointerleave',function(){b.style.setProperty('--ry','0deg');b.style.setProperty('--rx','0deg');});
+    });
+  }
+  d.querySelectorAll('.copy').forEach(function(btn){
+    var label=btn.textContent;
+    btn.addEventListener('click',function(){
+      var t=btn.getAttribute('data-copy');
+      function ok(){btn.textContent='Copied';btn.classList.add('done');setTimeout(function(){btn.textContent=label;btn.classList.remove('done');},1800);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){});}
+      else{var ta=d.createElement('textarea');ta.value=t;d.body.appendChild(ta);ta.select();try{d.execCommand('copy');ok();}catch(e){}d.body.removeChild(ta);}
+    });
+  });
 })();
 </script>
 </body>
