@@ -9,7 +9,7 @@ def txt(sel,root=None): return inner(sel,root)
 def rv(c,extra=''): return f'<div class="rv {extra}">{c}</div>'
 
 out=head('ROI CFO — Strategic Returns. Responsible Impact.','ROI CFO — Institutional-grade tax and financial strategy delivered exclusively through elite family offices, registered investment advisors, and accounting firms.','/')
-links=[('Strategies','#strategies'),('Who We Serve','#serve'),('For Advisors','#network'),('Insights','#insights')]
+links=[('Strategies','#strategies'),('Who We Serve','#serve'),('For Advisors','#network'),('Insights','#insights'),('Data Room','/data-room/')]
 out+=navbar(links,('Request Introduction','#cta'),'#hero')
 
 # HERO

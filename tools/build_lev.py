@@ -24,7 +24,7 @@ ca=main_js.index('/* ── CALCULATOR ── */')
 calc=main_js[ca:]
 
 out=head('Leveraged Donation Strategy — ROI CFO','ROI CFO — A federally compliant 5:1 leveraged donation strategy for high-income taxpayers.','/leveraged-donation/')
-links=[('How It Works','#how'),('The Math','#math'),('The Asset','#asset'),('Compliance','#compliance'),('Compensation','#compensation')]
+links=[('How It Works','#how'),('The Math','#math'),('The Asset','#asset'),('Compliance','#compliance'),('Compensation','#compensation'),('Data Room','/data-room/')]
 out+=navbar(links,('Get Started','#cta'),'https://roicfo.com')
 
 # HERO
