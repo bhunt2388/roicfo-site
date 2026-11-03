@@ -91,9 +91,9 @@ onScroll();setTimeout(onScroll,300);
                 cal='https://calendly.com/d/dv9z-zgv-63g/roi-cfo-tax-strategy-explainer?'+new URLSearchParams({name:nm,email:d.email||'',utm_source:'roicfo.com',utm_medium:'site',utm_campaign:'form-success',utm_content:location.pathname}).toString();
             f.innerHTML='<p style="font-size:20px;line-height:1.6;font-family:var(--serif,serif)">Received. We will be in touch within 24 hours.</p><p style="margin:18px 0 14px;line-height:1.6">Want to skip the wait? Pick a time now and we will already have your details.</p><a class="btn" href="'+cal.replace(/"/g,'&quot;')+'" target="_blank" rel="noopener"><span>Book a 20-Minute Explainer</span></a>';
           }
-          else{if(b){b.innerHTML=o;b.disabled=false}alert('Something went wrong. Please email bryson@roicfo.com directly.')}
+          else{if(b){b.innerHTML=o;b.disabled=false}alert('Something went wrong. Please email info@roicfo.com directly.')}
         })
-        .catch(function(){if(b){b.innerHTML=o;b.disabled=false}alert('Network error. Please email bryson@roicfo.com directly.')});
+        .catch(function(){if(b){b.innerHTML=o;b.disabled=false}alert('Network error. Please email info@roicfo.com directly.')});
     });
   });
 })();

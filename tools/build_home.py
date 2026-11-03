@@ -163,7 +163,7 @@ out+=f'''<section id="objections" class="st2"><div class="wrap wide"><div class=
 # CTA dark close
 fsel=select('Interested In','product_interest',['Select strategy...','Section 45Q Carbon Tax Credits','Leveraged Donation Strategy','Both / Not Sure Yet','Other Strategy'],'cta-pi')
 tsel=select('Client Tax Liability Range','tax_liability',['Select range...','Under $500K','$500K – $1M','$1M – $5M','$5M – $30M','$30M+'],'cta-tl')
-frm=form(FORMSPREE,'ROI CFO Homepage — Advisor Introduction Request','ROI CFO — General Inquiry','h-',fsel+tsel,'Request Confidential Introduction','Advisor-only. Conversations held in strict confidence. 48-hour response commitment. bryson@roicfo.com')
+frm=form(FORMSPREE,'ROI CFO Homepage — Advisor Introduction Request','ROI CFO — General Inquiry','h-',fsel+tsel,'Request Confidential Introduction','Advisor-only. Conversations held in strict confidence. 48-hour response commitment. info@roicfo.com')
 meta=''.join(f'<div><b>{txt(".cta-meta-val",m)}</b><span>{txt(".cta-meta-lbl",m)}</span></div>' for m in L.select('.cta-meta-item'))
 urg=L.select_one('#ctaUrgency45Q span').decode_contents()
 out+=f'''<section id="cta" class="dk close">{amb()}<div class="wrap wide"><div class="split">

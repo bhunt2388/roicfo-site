@@ -179,7 +179,7 @@ cta=[x for x in L.find_all('section') if x.get('id')=='cta'][0]
 det=''.join(f'<div class="rv"><b>{I(".cta-detail-val",x)}</b><span>{I(".cta-detail-lbl",x)}</span></div>' for x in cta.select('.cta-detail'))
 frm=form(FORMSPREE,'Leveraged Donation — ROI CFO — New Advisor Lead','Leveraged Donation Strategy — ROI CFO','l-',
   select('Client Tax Liability Range','tax_liability',['Select range...','Under $500K','$500K – $1M','$1M – $5M','$5M – $20M','$20M+'],'l-tl'),
-  'Send My Advisor Packet','For licensed professionals only. We’ll reply within 24 hours. bryson@roicfo.com','(801) 555-0182')
+  'Send My Advisor Packet','For licensed professionals only. We’ll reply within 24 hours. info@roicfo.com','(801) 555-0182')
 mailto=cta.select_one('a.btn-primary').get('href')
 out+=f'''<section id="cta" class="dk close">{amb()}<div class="wrap wide"><div class="split">
 <div>{kicker(I('.sec-kicker',cta))}<h2 class="closeh rv">Start Referring<br><em>Clients Today</em></h2><p class="lead rv">{I('.sec-body',cta)}</p>
