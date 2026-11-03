@@ -211,7 +211,7 @@ fc=L.select_one('.footer-contact')
 out+=f'''<footer>{amb(1)}<div class="wrap wide"><div class="cols"><div>
 <a class="logoplate" href="#hero" aria-label="ROI CFO"><img src="/assets/brand/roicfo-logo.png" width="545" height="180" alt="ROI CFO"></a>
 <div class="tagline">{txt('.footer-tagline')}</div><p>{txt('.footer-about')}</p>
-<div style="margin-top:20px"><div style="margin-bottom:6px;font-size:14px">{txt('.footer-contact div')}</div><a href="mailto:bryson@roicfo.com">bryson@roicfo.com</a><a href="https://roicfo.com">roicfo.com</a></div></div>
+<div style="margin-top:20px"><div style="margin-bottom:6px;font-size:14px">{txt('.footer-contact div')}</div><a href="mailto:info@roicfo.com">info@roicfo.com</a><a href="https://roicfo.com">roicfo.com</a></div></div>
 {fcols}</div>
 <div class="fine">{txt('.footer-legal')}<br><br>{txt('.footer-copy')}</div></div></footer>
 '''
